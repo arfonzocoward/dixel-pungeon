@@ -15,14 +15,14 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
-package com.watabou.pixeldungeon.effects;
+package com.poorcoding.dixelpungeon.effects;
 
-import com.watabou.noosa.particles.Emitter;
-import com.watabou.noosa.particles.PixelParticle;
-import com.watabou.pixeldungeon.DungeonTilemap;
-import com.watabou.pixeldungeon.scenes.GameScene;
-import com.watabou.utils.PointF;
-import com.watabou.utils.Random;
+import com.poorcoding.noosa.particles.Emitter;
+import com.poorcoding.noosa.particles.PixelParticle;
+import com.poorcoding.dixelpungeon.DungeonTilemap;
+import com.poorcoding.dixelpungeon.scenes.GameScene;
+import com.poorcoding.utils.PointF;
+import com.poorcoding.utils.Random;
 
 public class Splash {
 	

@@ -15,17 +15,17 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
-package com.watabou.pixeldungeon.plants;
+package com.poorcoding.dixelpungeon.plants;
 
-import com.watabou.pixeldungeon.Dungeon;
-import com.watabou.pixeldungeon.actors.Char;
-import com.watabou.pixeldungeon.actors.blobs.Fire;
-import com.watabou.pixeldungeon.actors.blobs.Freezing;
-import com.watabou.pixeldungeon.items.potions.PotionOfFrost;
-import com.watabou.pixeldungeon.levels.Level;
-import com.watabou.pixeldungeon.sprites.ItemSpriteSheet;
-import com.watabou.pixeldungeon.utils.BArray;
-import com.watabou.utils.PathFinder;
+import com.poorcoding.dixelpungeon.Dungeon;
+import com.poorcoding.dixelpungeon.actors.Char;
+import com.poorcoding.dixelpungeon.actors.blobs.Fire;
+import com.poorcoding.dixelpungeon.actors.blobs.Freezing;
+import com.poorcoding.dixelpungeon.items.potions.PotionOfFrost;
+import com.poorcoding.dixelpungeon.levels.Level;
+import com.poorcoding.dixelpungeon.sprites.ItemSpriteSheet;
+import com.poorcoding.dixelpungeon.utils.BArray;
+import com.poorcoding.utils.PathFinder;
 
 public class Icecap extends Plant {
 

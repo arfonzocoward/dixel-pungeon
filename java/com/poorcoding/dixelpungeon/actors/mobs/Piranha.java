@@ -15,23 +15,23 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
-package com.watabou.pixeldungeon.actors.mobs;
+package com.poorcoding.dixelpungeon.actors.mobs;
 
 import java.util.HashSet;
 
-import com.watabou.pixeldungeon.Badges;
-import com.watabou.pixeldungeon.Dungeon;
-import com.watabou.pixeldungeon.Statistics;
-import com.watabou.pixeldungeon.actors.Char;
-import com.watabou.pixeldungeon.actors.blobs.ToxicGas;
-import com.watabou.pixeldungeon.actors.buffs.Burning;
-import com.watabou.pixeldungeon.actors.buffs.Frost;
-import com.watabou.pixeldungeon.actors.buffs.Paralysis;
-import com.watabou.pixeldungeon.actors.buffs.Roots;
-import com.watabou.pixeldungeon.items.food.MysteryMeat;
-import com.watabou.pixeldungeon.levels.Level;
-import com.watabou.pixeldungeon.sprites.PiranhaSprite;
-import com.watabou.utils.Random;
+import com.poorcoding.dixelpungeon.Badges;
+import com.poorcoding.dixelpungeon.Dungeon;
+import com.poorcoding.dixelpungeon.Statistics;
+import com.poorcoding.dixelpungeon.actors.Char;
+import com.poorcoding.dixelpungeon.actors.blobs.ToxicGas;
+import com.poorcoding.dixelpungeon.actors.buffs.Burning;
+import com.poorcoding.dixelpungeon.actors.buffs.Frost;
+import com.poorcoding.dixelpungeon.actors.buffs.Paralysis;
+import com.poorcoding.dixelpungeon.actors.buffs.Roots;
+import com.poorcoding.dixelpungeon.items.food.MysteryMeat;
+import com.poorcoding.dixelpungeon.levels.Level;
+import com.poorcoding.dixelpungeon.sprites.PiranhaSprite;
+import com.poorcoding.utils.Random;
 
 public class Piranha extends Mob {
 	

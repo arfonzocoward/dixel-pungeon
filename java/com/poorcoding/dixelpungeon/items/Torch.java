@@ -15,16 +15,16 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
-package com.watabou.pixeldungeon.items;
+package com.poorcoding.dixelpungeon.items;
 
 import java.util.ArrayList;
 
-import com.watabou.noosa.particles.Emitter;
-import com.watabou.pixeldungeon.actors.buffs.Buff;
-import com.watabou.pixeldungeon.actors.buffs.Light;
-import com.watabou.pixeldungeon.actors.hero.Hero;
-import com.watabou.pixeldungeon.effects.particles.FlameParticle;
-import com.watabou.pixeldungeon.sprites.ItemSpriteSheet;
+import com.poorcoding.noosa.particles.Emitter;
+import com.poorcoding.dixelpungeon.actors.buffs.Buff;
+import com.poorcoding.dixelpungeon.actors.buffs.Light;
+import com.poorcoding.dixelpungeon.actors.hero.Hero;
+import com.poorcoding.dixelpungeon.effects.particles.FlameParticle;
+import com.poorcoding.dixelpungeon.sprites.ItemSpriteSheet;
 
 public class Torch extends Item {
 

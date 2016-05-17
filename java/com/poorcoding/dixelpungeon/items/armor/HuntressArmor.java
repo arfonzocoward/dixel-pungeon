@@ -15,21 +15,21 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
-package com.watabou.pixeldungeon.items.armor;
+package com.poorcoding.dixelpungeon.items.armor;
 
 import java.util.HashMap;
 
-import com.watabou.pixeldungeon.Dungeon;
-import com.watabou.pixeldungeon.actors.hero.Hero;
-import com.watabou.pixeldungeon.actors.hero.HeroClass;
-import com.watabou.pixeldungeon.actors.mobs.Mob;
-import com.watabou.pixeldungeon.items.Item;
-import com.watabou.pixeldungeon.items.weapon.missiles.Shuriken;
-import com.watabou.pixeldungeon.levels.Level;
-import com.watabou.pixeldungeon.sprites.ItemSpriteSheet;
-import com.watabou.pixeldungeon.sprites.MissileSprite;
-import com.watabou.pixeldungeon.utils.GLog;
-import com.watabou.utils.Callback;
+import com.poorcoding.dixelpungeon.Dungeon;
+import com.poorcoding.dixelpungeon.actors.hero.Hero;
+import com.poorcoding.dixelpungeon.actors.hero.HeroClass;
+import com.poorcoding.dixelpungeon.actors.mobs.Mob;
+import com.poorcoding.dixelpungeon.items.Item;
+import com.poorcoding.dixelpungeon.items.weapon.missiles.Shuriken;
+import com.poorcoding.dixelpungeon.levels.Level;
+import com.poorcoding.dixelpungeon.sprites.ItemSpriteSheet;
+import com.poorcoding.dixelpungeon.sprites.MissileSprite;
+import com.poorcoding.dixelpungeon.utils.GLog;
+import com.poorcoding.utils.Callback;
 
 public class HuntressArmor extends ClassArmor {
 	

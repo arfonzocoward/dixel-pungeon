@@ -15,29 +15,29 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
-package com.watabou.pixeldungeon.ui;
+package com.poorcoding.dixelpungeon.ui;
 
-import com.watabou.input.Touchscreen.Touch;
-import com.watabou.noosa.BitmapText;
-import com.watabou.noosa.Camera;
-import com.watabou.noosa.Image;
-import com.watabou.noosa.NinePatch;
-import com.watabou.noosa.TouchArea;
-import com.watabou.noosa.audio.Sample;
-import com.watabou.noosa.particles.BitmaskEmitter;
-import com.watabou.noosa.particles.Emitter;
-import com.watabou.noosa.ui.Button;
-import com.watabou.noosa.ui.Component;
-import com.watabou.pixeldungeon.Assets;
-import com.watabou.pixeldungeon.Dungeon;
-import com.watabou.pixeldungeon.effects.Speck;
-import com.watabou.pixeldungeon.effects.particles.BloodParticle;
-import com.watabou.pixeldungeon.items.keys.IronKey;
-import com.watabou.pixeldungeon.scenes.GameScene;
-import com.watabou.pixeldungeon.scenes.PixelScene;
-import com.watabou.pixeldungeon.sprites.HeroSprite;
-import com.watabou.pixeldungeon.windows.WndGame;
-import com.watabou.pixeldungeon.windows.WndHero;
+import com.poorcoding.input.Touchscreen.Touch;
+import com.poorcoding.noosa.BitmapText;
+import com.poorcoding.noosa.Camera;
+import com.poorcoding.noosa.Image;
+import com.poorcoding.noosa.NinePatch;
+import com.poorcoding.noosa.TouchArea;
+import com.poorcoding.noosa.audio.Sample;
+import com.poorcoding.noosa.particles.BitmaskEmitter;
+import com.poorcoding.noosa.particles.Emitter;
+import com.poorcoding.noosa.ui.Button;
+import com.poorcoding.noosa.ui.Component;
+import com.poorcoding.dixelpungeon.Assets;
+import com.poorcoding.dixelpungeon.Dungeon;
+import com.poorcoding.dixelpungeon.effects.Speck;
+import com.poorcoding.dixelpungeon.effects.particles.BloodParticle;
+import com.poorcoding.dixelpungeon.items.keys.IronKey;
+import com.poorcoding.dixelpungeon.scenes.GameScene;
+import com.poorcoding.dixelpungeon.scenes.PixelScene;
+import com.poorcoding.dixelpungeon.sprites.HeroSprite;
+import com.poorcoding.dixelpungeon.windows.WndGame;
+import com.poorcoding.dixelpungeon.windows.WndHero;
 
 public class StatusPane extends Component {
 	

@@ -15,15 +15,15 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
-package com.watabou.pixeldungeon.windows;
+package com.poorcoding.dixelpungeon.windows;
 
-import com.watabou.noosa.BitmapText;
-import com.watabou.noosa.BitmapTextMultiline;
-import com.watabou.noosa.Image;
-import com.watabou.pixeldungeon.Badges;
-import com.watabou.pixeldungeon.effects.BadgeBanner;
-import com.watabou.pixeldungeon.scenes.PixelScene;
-import com.watabou.pixeldungeon.ui.Window;
+import com.poorcoding.noosa.BitmapText;
+import com.poorcoding.noosa.BitmapTextMultiline;
+import com.poorcoding.noosa.Image;
+import com.poorcoding.dixelpungeon.Badges;
+import com.poorcoding.dixelpungeon.effects.BadgeBanner;
+import com.poorcoding.dixelpungeon.scenes.PixelScene;
+import com.poorcoding.dixelpungeon.ui.Window;
 
 public class WndBadge extends Window {
 	

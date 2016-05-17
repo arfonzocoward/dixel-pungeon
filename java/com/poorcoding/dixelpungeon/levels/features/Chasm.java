@@ -15,28 +15,28 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
-package com.watabou.pixeldungeon.levels.features;
+package com.poorcoding.dixelpungeon.levels.features;
 
-import com.watabou.noosa.Camera;
-import com.watabou.noosa.Game;
-import com.watabou.noosa.audio.Sample;
-import com.watabou.pixeldungeon.Assets;
-import com.watabou.pixeldungeon.Badges;
-import com.watabou.pixeldungeon.Dungeon;
-import com.watabou.pixeldungeon.ResultDescriptions;
-import com.watabou.pixeldungeon.actors.buffs.Buff;
-import com.watabou.pixeldungeon.actors.buffs.Cripple;
-import com.watabou.pixeldungeon.actors.hero.Hero;
-import com.watabou.pixeldungeon.actors.mobs.Mob;
-import com.watabou.pixeldungeon.levels.RegularLevel;
-import com.watabou.pixeldungeon.levels.Room;
-import com.watabou.pixeldungeon.scenes.GameScene;
-import com.watabou.pixeldungeon.scenes.InterlevelScene;
-import com.watabou.pixeldungeon.sprites.MobSprite;
-import com.watabou.pixeldungeon.utils.GLog;
-import com.watabou.pixeldungeon.utils.Utils;
-import com.watabou.pixeldungeon.windows.WndOptions;
-import com.watabou.utils.Random;
+import com.poorcoding.noosa.Camera;
+import com.poorcoding.noosa.Game;
+import com.poorcoding.noosa.audio.Sample;
+import com.poorcoding.dixelpungeon.Assets;
+import com.poorcoding.dixelpungeon.Badges;
+import com.poorcoding.dixelpungeon.Dungeon;
+import com.poorcoding.dixelpungeon.ResultDescriptions;
+import com.poorcoding.dixelpungeon.actors.buffs.Buff;
+import com.poorcoding.dixelpungeon.actors.buffs.Cripple;
+import com.poorcoding.dixelpungeon.actors.hero.Hero;
+import com.poorcoding.dixelpungeon.actors.mobs.Mob;
+import com.poorcoding.dixelpungeon.levels.RegularLevel;
+import com.poorcoding.dixelpungeon.levels.Room;
+import com.poorcoding.dixelpungeon.scenes.GameScene;
+import com.poorcoding.dixelpungeon.scenes.InterlevelScene;
+import com.poorcoding.dixelpungeon.sprites.MobSprite;
+import com.poorcoding.dixelpungeon.utils.GLog;
+import com.poorcoding.dixelpungeon.utils.Utils;
+import com.poorcoding.dixelpungeon.windows.WndOptions;
+import com.poorcoding.utils.Random;
 
 public class Chasm {
 	

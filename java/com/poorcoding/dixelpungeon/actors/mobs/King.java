@@ -15,37 +15,37 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
-package com.watabou.pixeldungeon.actors.mobs;
+package com.poorcoding.dixelpungeon.actors.mobs;
 
 import java.util.HashSet;
 
-import com.watabou.noosa.audio.Sample;
-import com.watabou.pixeldungeon.Assets;
-import com.watabou.pixeldungeon.Badges;
-import com.watabou.pixeldungeon.Dungeon;
-import com.watabou.pixeldungeon.Statistics;
-import com.watabou.pixeldungeon.actors.Actor;
-import com.watabou.pixeldungeon.actors.Char;
-import com.watabou.pixeldungeon.actors.blobs.ToxicGas;
-import com.watabou.pixeldungeon.actors.buffs.Buff;
-import com.watabou.pixeldungeon.actors.buffs.Paralysis;
-import com.watabou.pixeldungeon.actors.buffs.Vertigo;
-import com.watabou.pixeldungeon.effects.Flare;
-import com.watabou.pixeldungeon.effects.Speck;
-import com.watabou.pixeldungeon.items.ArmorKit;
-import com.watabou.pixeldungeon.items.keys.SkeletonKey;
-import com.watabou.pixeldungeon.items.scrolls.ScrollOfPsionicBlast;
-import com.watabou.pixeldungeon.items.wands.WandOfBlink;
-import com.watabou.pixeldungeon.items.wands.WandOfDisintegration;
-import com.watabou.pixeldungeon.items.weapon.enchantments.Death;
-import com.watabou.pixeldungeon.levels.CityBossLevel;
-import com.watabou.pixeldungeon.levels.Level;
-import com.watabou.pixeldungeon.scenes.GameScene;
-import com.watabou.pixeldungeon.sprites.KingSprite;
-import com.watabou.pixeldungeon.sprites.UndeadSprite;
-import com.watabou.utils.Bundle;
-import com.watabou.utils.PathFinder;
-import com.watabou.utils.Random;
+import com.poorcoding.noosa.audio.Sample;
+import com.poorcoding.dixelpungeon.Assets;
+import com.poorcoding.dixelpungeon.Badges;
+import com.poorcoding.dixelpungeon.Dungeon;
+import com.poorcoding.dixelpungeon.Statistics;
+import com.poorcoding.dixelpungeon.actors.Actor;
+import com.poorcoding.dixelpungeon.actors.Char;
+import com.poorcoding.dixelpungeon.actors.blobs.ToxicGas;
+import com.poorcoding.dixelpungeon.actors.buffs.Buff;
+import com.poorcoding.dixelpungeon.actors.buffs.Paralysis;
+import com.poorcoding.dixelpungeon.actors.buffs.Vertigo;
+import com.poorcoding.dixelpungeon.effects.Flare;
+import com.poorcoding.dixelpungeon.effects.Speck;
+import com.poorcoding.dixelpungeon.items.ArmorKit;
+import com.poorcoding.dixelpungeon.items.keys.SkeletonKey;
+import com.poorcoding.dixelpungeon.items.scrolls.ScrollOfPsionicBlast;
+import com.poorcoding.dixelpungeon.items.wands.WandOfBlink;
+import com.poorcoding.dixelpungeon.items.wands.WandOfDisintegration;
+import com.poorcoding.dixelpungeon.items.weapon.enchantments.Death;
+import com.poorcoding.dixelpungeon.levels.CityBossLevel;
+import com.poorcoding.dixelpungeon.levels.Level;
+import com.poorcoding.dixelpungeon.scenes.GameScene;
+import com.poorcoding.dixelpungeon.sprites.KingSprite;
+import com.poorcoding.dixelpungeon.sprites.UndeadSprite;
+import com.poorcoding.utils.Bundle;
+import com.poorcoding.utils.PathFinder;
+import com.poorcoding.utils.Random;
 
 public class King extends Mob {
 	

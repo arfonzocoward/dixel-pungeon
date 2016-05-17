@@ -15,16 +15,16 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
-package com.watabou.pixeldungeon.sprites;
+package com.poorcoding.dixelpungeon.sprites;
 
-import com.watabou.noosa.TextureFilm;
-import com.watabou.noosa.audio.Sample;
-import com.watabou.noosa.particles.Emitter;
-import com.watabou.pixeldungeon.Assets;
-import com.watabou.pixeldungeon.Dungeon;
-import com.watabou.pixeldungeon.actors.Char;
-import com.watabou.pixeldungeon.effects.Speck;
-import com.watabou.pixeldungeon.levels.Level;
+import com.poorcoding.noosa.TextureFilm;
+import com.poorcoding.noosa.audio.Sample;
+import com.poorcoding.noosa.particles.Emitter;
+import com.poorcoding.dixelpungeon.Assets;
+import com.poorcoding.dixelpungeon.Dungeon;
+import com.poorcoding.dixelpungeon.actors.Char;
+import com.poorcoding.dixelpungeon.effects.Speck;
+import com.poorcoding.dixelpungeon.levels.Level;
 
 public class BlacksmithSprite extends MobSprite {
 	

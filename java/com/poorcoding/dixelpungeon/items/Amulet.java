@@ -15,18 +15,18 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
-package com.watabou.pixeldungeon.items;
+package com.poorcoding.dixelpungeon.items;
 
 import java.io.IOException;
 import java.util.ArrayList;
 
-import com.watabou.noosa.Game;
-import com.watabou.pixeldungeon.Badges;
-import com.watabou.pixeldungeon.Dungeon;
-import com.watabou.pixeldungeon.Statistics;
-import com.watabou.pixeldungeon.actors.hero.Hero;
-import com.watabou.pixeldungeon.scenes.AmuletScene;
-import com.watabou.pixeldungeon.sprites.ItemSpriteSheet;
+import com.poorcoding.noosa.Game;
+import com.poorcoding.dixelpungeon.Badges;
+import com.poorcoding.dixelpungeon.Dungeon;
+import com.poorcoding.dixelpungeon.Statistics;
+import com.poorcoding.dixelpungeon.actors.hero.Hero;
+import com.poorcoding.dixelpungeon.scenes.AmuletScene;
+import com.poorcoding.dixelpungeon.sprites.ItemSpriteSheet;
 
 public class Amulet extends Item {
 	

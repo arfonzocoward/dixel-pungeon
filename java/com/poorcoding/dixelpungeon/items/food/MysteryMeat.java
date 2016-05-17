@@ -15,19 +15,19 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
-package com.watabou.pixeldungeon.items.food;
+package com.poorcoding.dixelpungeon.items.food;
 
-import com.watabou.pixeldungeon.actors.buffs.Buff;
-import com.watabou.pixeldungeon.actors.buffs.Burning;
-import com.watabou.pixeldungeon.actors.buffs.Hunger;
-import com.watabou.pixeldungeon.actors.buffs.Paralysis;
-import com.watabou.pixeldungeon.actors.buffs.Poison;
-import com.watabou.pixeldungeon.actors.buffs.Roots;
-import com.watabou.pixeldungeon.actors.buffs.Slow;
-import com.watabou.pixeldungeon.actors.hero.Hero;
-import com.watabou.pixeldungeon.sprites.ItemSpriteSheet;
-import com.watabou.pixeldungeon.utils.GLog;
-import com.watabou.utils.Random;
+import com.poorcoding.dixelpungeon.actors.buffs.Buff;
+import com.poorcoding.dixelpungeon.actors.buffs.Burning;
+import com.poorcoding.dixelpungeon.actors.buffs.Hunger;
+import com.poorcoding.dixelpungeon.actors.buffs.Paralysis;
+import com.poorcoding.dixelpungeon.actors.buffs.Poison;
+import com.poorcoding.dixelpungeon.actors.buffs.Roots;
+import com.poorcoding.dixelpungeon.actors.buffs.Slow;
+import com.poorcoding.dixelpungeon.actors.hero.Hero;
+import com.poorcoding.dixelpungeon.sprites.ItemSpriteSheet;
+import com.poorcoding.dixelpungeon.utils.GLog;
+import com.poorcoding.utils.Random;
 
 public class MysteryMeat extends Food {
 

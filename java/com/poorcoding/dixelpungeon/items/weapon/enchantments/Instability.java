@@ -15,10 +15,10 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
-package com.watabou.pixeldungeon.items.weapon.enchantments;
+package com.poorcoding.dixelpungeon.items.weapon.enchantments;
 
-import com.watabou.pixeldungeon.actors.Char;
-import com.watabou.pixeldungeon.items.weapon.Weapon;
+import com.poorcoding.dixelpungeon.actors.Char;
+import com.poorcoding.dixelpungeon.items.weapon.Weapon;
 
 public class Instability extends Weapon.Enchantment {
 

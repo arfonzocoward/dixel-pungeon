@@ -15,26 +15,26 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
-package com.watabou.pixeldungeon.actors.mobs;
+package com.poorcoding.dixelpungeon.actors.mobs;
 
 import java.util.HashSet;
 
-import com.watabou.noosa.audio.Sample;
-import com.watabou.pixeldungeon.Assets;
-import com.watabou.pixeldungeon.actors.Actor;
-import com.watabou.pixeldungeon.actors.Char;
-import com.watabou.pixeldungeon.actors.buffs.Buff;
-import com.watabou.pixeldungeon.actors.buffs.Charm;
-import com.watabou.pixeldungeon.actors.buffs.Light;
-import com.watabou.pixeldungeon.actors.buffs.Sleep;
-import com.watabou.pixeldungeon.effects.Speck;
-import com.watabou.pixeldungeon.items.scrolls.ScrollOfLullaby;
-import com.watabou.pixeldungeon.items.wands.WandOfBlink;
-import com.watabou.pixeldungeon.items.weapon.enchantments.Leech;
-import com.watabou.pixeldungeon.levels.Level;
-import com.watabou.pixeldungeon.mechanics.Ballistica;
-import com.watabou.pixeldungeon.sprites.SuccubusSprite;
-import com.watabou.utils.Random;
+import com.poorcoding.noosa.audio.Sample;
+import com.poorcoding.dixelpungeon.Assets;
+import com.poorcoding.dixelpungeon.actors.Actor;
+import com.poorcoding.dixelpungeon.actors.Char;
+import com.poorcoding.dixelpungeon.actors.buffs.Buff;
+import com.poorcoding.dixelpungeon.actors.buffs.Charm;
+import com.poorcoding.dixelpungeon.actors.buffs.Light;
+import com.poorcoding.dixelpungeon.actors.buffs.Sleep;
+import com.poorcoding.dixelpungeon.effects.Speck;
+import com.poorcoding.dixelpungeon.items.scrolls.ScrollOfLullaby;
+import com.poorcoding.dixelpungeon.items.wands.WandOfBlink;
+import com.poorcoding.dixelpungeon.items.weapon.enchantments.Leech;
+import com.poorcoding.dixelpungeon.levels.Level;
+import com.poorcoding.dixelpungeon.mechanics.Ballistica;
+import com.poorcoding.dixelpungeon.sprites.SuccubusSprite;
+import com.poorcoding.utils.Random;
 
 public class Succubus extends Mob {
 	

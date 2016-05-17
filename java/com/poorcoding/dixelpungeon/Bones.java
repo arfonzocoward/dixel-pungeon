@@ -15,18 +15,18 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
-package com.watabou.pixeldungeon;
+package com.poorcoding.dixelpungeon;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
-import com.watabou.noosa.Game;
-import com.watabou.pixeldungeon.items.Gold;
-import com.watabou.pixeldungeon.items.Item;
-import com.watabou.pixeldungeon.items.rings.Ring;
-import com.watabou.utils.Bundle;
-import com.watabou.utils.Random;
+import com.poorcoding.noosa.Game;
+import com.poorcoding.dixelpungeon.items.Gold;
+import com.poorcoding.dixelpungeon.items.Item;
+import com.poorcoding.dixelpungeon.items.rings.Ring;
+import com.poorcoding.utils.Bundle;
+import com.poorcoding.utils.Random;
 
 public class Bones {
 

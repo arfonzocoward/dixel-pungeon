@@ -15,40 +15,40 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
-package com.watabou.pixeldungeon.windows;
+package com.poorcoding.dixelpungeon.windows;
 
 import android.graphics.RectF;
 
-import com.watabou.gltextures.TextureCache;
-import com.watabou.noosa.BitmapText;
-import com.watabou.noosa.ColorBlock;
-import com.watabou.noosa.Image;
-import com.watabou.noosa.audio.Sample;
-import com.watabou.pixeldungeon.Assets;
-import com.watabou.pixeldungeon.Dungeon;
-import com.watabou.pixeldungeon.PixelDungeon;
-import com.watabou.pixeldungeon.actors.hero.Belongings;
-import com.watabou.pixeldungeon.actors.hero.Hero;
-import com.watabou.pixeldungeon.items.Gold;
-import com.watabou.pixeldungeon.items.Item;
-import com.watabou.pixeldungeon.items.armor.Armor;
-import com.watabou.pixeldungeon.items.bags.Bag;
-import com.watabou.pixeldungeon.items.bags.Keyring;
-import com.watabou.pixeldungeon.items.bags.ScrollHolder;
-import com.watabou.pixeldungeon.items.bags.SeedPouch;
-import com.watabou.pixeldungeon.items.bags.WandHolster;
-import com.watabou.pixeldungeon.items.wands.Wand;
-import com.watabou.pixeldungeon.items.weapon.melee.MeleeWeapon;
-import com.watabou.pixeldungeon.items.weapon.missiles.Boomerang;
-import com.watabou.pixeldungeon.plants.Plant.Seed;
-import com.watabou.pixeldungeon.scenes.GameScene;
-import com.watabou.pixeldungeon.scenes.PixelScene;
-import com.watabou.pixeldungeon.sprites.ItemSpriteSheet;
-import com.watabou.pixeldungeon.ui.Icons;
-import com.watabou.pixeldungeon.ui.ItemSlot;
-import com.watabou.pixeldungeon.ui.QuickSlot;
-import com.watabou.pixeldungeon.utils.Utils;
-import com.watabou.utils.GameMath;
+import com.poorcoding.gltextures.TextureCache;
+import com.poorcoding.noosa.BitmapText;
+import com.poorcoding.noosa.ColorBlock;
+import com.poorcoding.noosa.Image;
+import com.poorcoding.noosa.audio.Sample;
+import com.poorcoding.dixelpungeon.Assets;
+import com.poorcoding.dixelpungeon.Dungeon;
+import com.poorcoding.dixelpungeon.PixelDungeon;
+import com.poorcoding.dixelpungeon.actors.hero.Belongings;
+import com.poorcoding.dixelpungeon.actors.hero.Hero;
+import com.poorcoding.dixelpungeon.items.Gold;
+import com.poorcoding.dixelpungeon.items.Item;
+import com.poorcoding.dixelpungeon.items.armor.Armor;
+import com.poorcoding.dixelpungeon.items.bags.Bag;
+import com.poorcoding.dixelpungeon.items.bags.Keyring;
+import com.poorcoding.dixelpungeon.items.bags.ScrollHolder;
+import com.poorcoding.dixelpungeon.items.bags.SeedPouch;
+import com.poorcoding.dixelpungeon.items.bags.WandHolster;
+import com.poorcoding.dixelpungeon.items.wands.Wand;
+import com.poorcoding.dixelpungeon.items.weapon.melee.MeleeWeapon;
+import com.poorcoding.dixelpungeon.items.weapon.missiles.Boomerang;
+import com.poorcoding.dixelpungeon.plants.Plant.Seed;
+import com.poorcoding.dixelpungeon.scenes.GameScene;
+import com.poorcoding.dixelpungeon.scenes.PixelScene;
+import com.poorcoding.dixelpungeon.sprites.ItemSpriteSheet;
+import com.poorcoding.dixelpungeon.ui.Icons;
+import com.poorcoding.dixelpungeon.ui.ItemSlot;
+import com.poorcoding.dixelpungeon.ui.QuickSlot;
+import com.poorcoding.dixelpungeon.utils.Utils;
+import com.poorcoding.utils.GameMath;
 
 public class WndBag extends WndTabbed {
 	

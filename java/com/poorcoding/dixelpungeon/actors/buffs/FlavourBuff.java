@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
-package com.watabou.pixeldungeon.actors.buffs;
+package com.poorcoding.dixelpungeon.actors.buffs;
 
 public class FlavourBuff extends Buff {
 	

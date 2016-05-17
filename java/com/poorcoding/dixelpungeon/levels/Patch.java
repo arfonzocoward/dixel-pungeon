@@ -15,9 +15,9 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
-package com.watabou.pixeldungeon.levels;
+package com.poorcoding.dixelpungeon.levels;
 
-import com.watabou.utils.Random;
+import com.poorcoding.utils.Random;
 
 public class Patch {
 	

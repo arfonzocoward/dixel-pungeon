@@ -15,44 +15,44 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
-package com.watabou.pixeldungeon.actors.mobs;
+package com.poorcoding.dixelpungeon.actors.mobs;
 
 import java.util.ArrayList;
 import java.util.HashSet;
 
-import com.watabou.pixeldungeon.Dungeon;
-import com.watabou.pixeldungeon.ResultDescriptions;
-import com.watabou.pixeldungeon.Statistics;
-import com.watabou.pixeldungeon.actors.Actor;
-import com.watabou.pixeldungeon.actors.Char;
-import com.watabou.pixeldungeon.actors.blobs.Blob;
-import com.watabou.pixeldungeon.actors.blobs.Fire;
-import com.watabou.pixeldungeon.actors.blobs.ToxicGas;
-import com.watabou.pixeldungeon.actors.buffs.Amok;
-import com.watabou.pixeldungeon.actors.buffs.Buff;
-import com.watabou.pixeldungeon.actors.buffs.Burning;
-import com.watabou.pixeldungeon.actors.buffs.Charm;
-import com.watabou.pixeldungeon.actors.buffs.Ooze;
-import com.watabou.pixeldungeon.actors.buffs.Poison;
-import com.watabou.pixeldungeon.actors.buffs.Sleep;
-import com.watabou.pixeldungeon.actors.buffs.Terror;
-import com.watabou.pixeldungeon.actors.buffs.Vertigo;
-import com.watabou.pixeldungeon.effects.Pushing;
-import com.watabou.pixeldungeon.effects.particles.ShadowParticle;
-import com.watabou.pixeldungeon.items.keys.SkeletonKey;
-import com.watabou.pixeldungeon.items.scrolls.ScrollOfPsionicBlast;
-import com.watabou.pixeldungeon.items.weapon.enchantments.Death;
-import com.watabou.pixeldungeon.levels.Level;
-import com.watabou.pixeldungeon.mechanics.Ballistica;
-import com.watabou.pixeldungeon.scenes.GameScene;
-import com.watabou.pixeldungeon.sprites.BurningFistSprite;
-import com.watabou.pixeldungeon.sprites.CharSprite;
-import com.watabou.pixeldungeon.sprites.LarvaSprite;
-import com.watabou.pixeldungeon.sprites.RottingFistSprite;
-import com.watabou.pixeldungeon.sprites.YogSprite;
-import com.watabou.pixeldungeon.utils.GLog;
-import com.watabou.pixeldungeon.utils.Utils;
-import com.watabou.utils.Random;
+import com.poorcoding.dixelpungeon.Dungeon;
+import com.poorcoding.dixelpungeon.ResultDescriptions;
+import com.poorcoding.dixelpungeon.Statistics;
+import com.poorcoding.dixelpungeon.actors.Actor;
+import com.poorcoding.dixelpungeon.actors.Char;
+import com.poorcoding.dixelpungeon.actors.blobs.Blob;
+import com.poorcoding.dixelpungeon.actors.blobs.Fire;
+import com.poorcoding.dixelpungeon.actors.blobs.ToxicGas;
+import com.poorcoding.dixelpungeon.actors.buffs.Amok;
+import com.poorcoding.dixelpungeon.actors.buffs.Buff;
+import com.poorcoding.dixelpungeon.actors.buffs.Burning;
+import com.poorcoding.dixelpungeon.actors.buffs.Charm;
+import com.poorcoding.dixelpungeon.actors.buffs.Ooze;
+import com.poorcoding.dixelpungeon.actors.buffs.Poison;
+import com.poorcoding.dixelpungeon.actors.buffs.Sleep;
+import com.poorcoding.dixelpungeon.actors.buffs.Terror;
+import com.poorcoding.dixelpungeon.actors.buffs.Vertigo;
+import com.poorcoding.dixelpungeon.effects.Pushing;
+import com.poorcoding.dixelpungeon.effects.particles.ShadowParticle;
+import com.poorcoding.dixelpungeon.items.keys.SkeletonKey;
+import com.poorcoding.dixelpungeon.items.scrolls.ScrollOfPsionicBlast;
+import com.poorcoding.dixelpungeon.items.weapon.enchantments.Death;
+import com.poorcoding.dixelpungeon.levels.Level;
+import com.poorcoding.dixelpungeon.mechanics.Ballistica;
+import com.poorcoding.dixelpungeon.scenes.GameScene;
+import com.poorcoding.dixelpungeon.sprites.BurningFistSprite;
+import com.poorcoding.dixelpungeon.sprites.CharSprite;
+import com.poorcoding.dixelpungeon.sprites.LarvaSprite;
+import com.poorcoding.dixelpungeon.sprites.RottingFistSprite;
+import com.poorcoding.dixelpungeon.sprites.YogSprite;
+import com.poorcoding.dixelpungeon.utils.GLog;
+import com.poorcoding.dixelpungeon.utils.Utils;
+import com.poorcoding.utils.Random;
 
 public class Yog extends Mob {
 	

@@ -15,19 +15,19 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
-package com.watabou.pixeldungeon.windows;
+package com.poorcoding.dixelpungeon.windows;
 
-import com.watabou.noosa.BitmapTextMultiline;
-import com.watabou.noosa.Game;
-import com.watabou.pixeldungeon.Rankings;
-import com.watabou.pixeldungeon.Statistics;
-import com.watabou.pixeldungeon.actors.hero.Hero;
-import com.watabou.pixeldungeon.items.Ankh;
-import com.watabou.pixeldungeon.scenes.InterlevelScene;
-import com.watabou.pixeldungeon.scenes.PixelScene;
-import com.watabou.pixeldungeon.sprites.ItemSprite;
-import com.watabou.pixeldungeon.ui.RedButton;
-import com.watabou.pixeldungeon.ui.Window;
+import com.poorcoding.noosa.BitmapTextMultiline;
+import com.poorcoding.noosa.Game;
+import com.poorcoding.dixelpungeon.Rankings;
+import com.poorcoding.dixelpungeon.Statistics;
+import com.poorcoding.dixelpungeon.actors.hero.Hero;
+import com.poorcoding.dixelpungeon.items.Ankh;
+import com.poorcoding.dixelpungeon.scenes.InterlevelScene;
+import com.poorcoding.dixelpungeon.scenes.PixelScene;
+import com.poorcoding.dixelpungeon.sprites.ItemSprite;
+import com.poorcoding.dixelpungeon.ui.RedButton;
+import com.poorcoding.dixelpungeon.ui.Window;
 
 public class WndResurrect extends Window {
 	

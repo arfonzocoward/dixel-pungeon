@@ -15,40 +15,40 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
-package com.watabou.pixeldungeon.items;
+package com.poorcoding.dixelpungeon.items;
 
 import java.util.Collection;
 import java.util.LinkedList;
 
-import com.watabou.noosa.audio.Sample;
-import com.watabou.noosa.tweeners.AlphaTweener;
-import com.watabou.pixeldungeon.Assets;
-import com.watabou.pixeldungeon.Badges;
-import com.watabou.pixeldungeon.Dungeon;
-import com.watabou.pixeldungeon.Statistics;
-import com.watabou.pixeldungeon.actors.buffs.Buff;
-import com.watabou.pixeldungeon.actors.buffs.Burning;
-import com.watabou.pixeldungeon.actors.buffs.Frost;
-import com.watabou.pixeldungeon.actors.hero.Hero;
-import com.watabou.pixeldungeon.actors.mobs.Mimic;
-import com.watabou.pixeldungeon.actors.mobs.Wraith;
-import com.watabou.pixeldungeon.effects.CellEmitter;
-import com.watabou.pixeldungeon.effects.Speck;
-import com.watabou.pixeldungeon.effects.Splash;
-import com.watabou.pixeldungeon.effects.particles.ElmoParticle;
-import com.watabou.pixeldungeon.effects.particles.FlameParticle;
-import com.watabou.pixeldungeon.effects.particles.ShadowParticle;
-import com.watabou.pixeldungeon.items.food.ChargrilledMeat;
-import com.watabou.pixeldungeon.items.food.FrozenCarpaccio;
-import com.watabou.pixeldungeon.items.food.MysteryMeat;
-import com.watabou.pixeldungeon.items.scrolls.Scroll;
-import com.watabou.pixeldungeon.plants.Plant.Seed;
-import com.watabou.pixeldungeon.sprites.ItemSprite;
-import com.watabou.pixeldungeon.sprites.ItemSpriteSheet;
-import com.watabou.pixeldungeon.utils.GLog;
-import com.watabou.utils.Bundlable;
-import com.watabou.utils.Bundle;
-import com.watabou.utils.Random;
+import com.poorcoding.noosa.audio.Sample;
+import com.poorcoding.noosa.tweeners.AlphaTweener;
+import com.poorcoding.dixelpungeon.Assets;
+import com.poorcoding.dixelpungeon.Badges;
+import com.poorcoding.dixelpungeon.Dungeon;
+import com.poorcoding.dixelpungeon.Statistics;
+import com.poorcoding.dixelpungeon.actors.buffs.Buff;
+import com.poorcoding.dixelpungeon.actors.buffs.Burning;
+import com.poorcoding.dixelpungeon.actors.buffs.Frost;
+import com.poorcoding.dixelpungeon.actors.hero.Hero;
+import com.poorcoding.dixelpungeon.actors.mobs.Mimic;
+import com.poorcoding.dixelpungeon.actors.mobs.Wraith;
+import com.poorcoding.dixelpungeon.effects.CellEmitter;
+import com.poorcoding.dixelpungeon.effects.Speck;
+import com.poorcoding.dixelpungeon.effects.Splash;
+import com.poorcoding.dixelpungeon.effects.particles.ElmoParticle;
+import com.poorcoding.dixelpungeon.effects.particles.FlameParticle;
+import com.poorcoding.dixelpungeon.effects.particles.ShadowParticle;
+import com.poorcoding.dixelpungeon.items.food.ChargrilledMeat;
+import com.poorcoding.dixelpungeon.items.food.FrozenCarpaccio;
+import com.poorcoding.dixelpungeon.items.food.MysteryMeat;
+import com.poorcoding.dixelpungeon.items.scrolls.Scroll;
+import com.poorcoding.dixelpungeon.plants.Plant.Seed;
+import com.poorcoding.dixelpungeon.sprites.ItemSprite;
+import com.poorcoding.dixelpungeon.sprites.ItemSpriteSheet;
+import com.poorcoding.dixelpungeon.utils.GLog;
+import com.poorcoding.utils.Bundlable;
+import com.poorcoding.utils.Bundle;
+import com.poorcoding.utils.Random;
 
 public class Heap implements Bundlable {
 

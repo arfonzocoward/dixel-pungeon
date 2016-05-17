@@ -15,43 +15,43 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
-package com.watabou.pixeldungeon.actors.mobs.npcs;
+package com.poorcoding.dixelpungeon.actors.mobs.npcs;
 
 import java.util.HashSet;
 
-import com.watabou.noosa.audio.Sample;
-import com.watabou.noosa.tweeners.AlphaTweener;
-import com.watabou.pixeldungeon.Assets;
-import com.watabou.pixeldungeon.Challenges;
-import com.watabou.pixeldungeon.Dungeon;
-import com.watabou.pixeldungeon.Journal;
-import com.watabou.pixeldungeon.actors.Actor;
-import com.watabou.pixeldungeon.actors.Char;
-import com.watabou.pixeldungeon.actors.buffs.Buff;
-import com.watabou.pixeldungeon.actors.buffs.Paralysis;
-import com.watabou.pixeldungeon.actors.buffs.Roots;
-import com.watabou.pixeldungeon.actors.mobs.CursePersonification;
-import com.watabou.pixeldungeon.actors.mobs.FetidRat;
-import com.watabou.pixeldungeon.actors.mobs.Mob;
-import com.watabou.pixeldungeon.effects.CellEmitter;
-import com.watabou.pixeldungeon.effects.Speck;
-import com.watabou.pixeldungeon.effects.particles.ShadowParticle;
-import com.watabou.pixeldungeon.items.Generator;
-import com.watabou.pixeldungeon.items.Item;
-import com.watabou.pixeldungeon.items.armor.Armor;
-import com.watabou.pixeldungeon.items.armor.ClothArmor;
-import com.watabou.pixeldungeon.items.quest.DriedRose;
-import com.watabou.pixeldungeon.items.quest.RatSkull;
-import com.watabou.pixeldungeon.items.weapon.Weapon;
-import com.watabou.pixeldungeon.items.weapon.missiles.MissileWeapon;
-import com.watabou.pixeldungeon.levels.SewerLevel;
-import com.watabou.pixeldungeon.scenes.GameScene;
-import com.watabou.pixeldungeon.sprites.GhostSprite;
-import com.watabou.pixeldungeon.utils.Utils;
-import com.watabou.pixeldungeon.windows.WndQuest;
-import com.watabou.pixeldungeon.windows.WndSadGhost;
-import com.watabou.utils.Bundle;
-import com.watabou.utils.Random;
+import com.poorcoding.noosa.audio.Sample;
+import com.poorcoding.noosa.tweeners.AlphaTweener;
+import com.poorcoding.dixelpungeon.Assets;
+import com.poorcoding.dixelpungeon.Challenges;
+import com.poorcoding.dixelpungeon.Dungeon;
+import com.poorcoding.dixelpungeon.Journal;
+import com.poorcoding.dixelpungeon.actors.Actor;
+import com.poorcoding.dixelpungeon.actors.Char;
+import com.poorcoding.dixelpungeon.actors.buffs.Buff;
+import com.poorcoding.dixelpungeon.actors.buffs.Paralysis;
+import com.poorcoding.dixelpungeon.actors.buffs.Roots;
+import com.poorcoding.dixelpungeon.actors.mobs.CursePersonification;
+import com.poorcoding.dixelpungeon.actors.mobs.FetidRat;
+import com.poorcoding.dixelpungeon.actors.mobs.Mob;
+import com.poorcoding.dixelpungeon.effects.CellEmitter;
+import com.poorcoding.dixelpungeon.effects.Speck;
+import com.poorcoding.dixelpungeon.effects.particles.ShadowParticle;
+import com.poorcoding.dixelpungeon.items.Generator;
+import com.poorcoding.dixelpungeon.items.Item;
+import com.poorcoding.dixelpungeon.items.armor.Armor;
+import com.poorcoding.dixelpungeon.items.armor.ClothArmor;
+import com.poorcoding.dixelpungeon.items.quest.DriedRose;
+import com.poorcoding.dixelpungeon.items.quest.RatSkull;
+import com.poorcoding.dixelpungeon.items.weapon.Weapon;
+import com.poorcoding.dixelpungeon.items.weapon.missiles.MissileWeapon;
+import com.poorcoding.dixelpungeon.levels.SewerLevel;
+import com.poorcoding.dixelpungeon.scenes.GameScene;
+import com.poorcoding.dixelpungeon.sprites.GhostSprite;
+import com.poorcoding.dixelpungeon.utils.Utils;
+import com.poorcoding.dixelpungeon.windows.WndQuest;
+import com.poorcoding.dixelpungeon.windows.WndSadGhost;
+import com.poorcoding.utils.Bundle;
+import com.poorcoding.utils.Random;
 
 public class Ghost extends NPC {
 

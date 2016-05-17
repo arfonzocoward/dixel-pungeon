@@ -15,12 +15,12 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
-package com.watabou.pixeldungeon.actors.mobs;
+package com.poorcoding.dixelpungeon.actors.mobs;
 
-import com.watabou.pixeldungeon.actors.Char;
-import com.watabou.pixeldungeon.actors.mobs.Yog.BurningFist;
-import com.watabou.pixeldungeon.actors.mobs.Yog.RottingFist;
-import com.watabou.utils.Random;
+import com.poorcoding.dixelpungeon.actors.Char;
+import com.poorcoding.dixelpungeon.actors.mobs.Yog.BurningFist;
+import com.poorcoding.dixelpungeon.actors.mobs.Yog.RottingFist;
+import com.poorcoding.utils.Random;
 
 public class Bestiary {
 

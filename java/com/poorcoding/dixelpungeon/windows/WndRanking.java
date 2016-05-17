@@ -15,32 +15,32 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
-package com.watabou.pixeldungeon.windows;
+package com.poorcoding.dixelpungeon.windows;
 
 import java.util.Locale;
 
-import com.watabou.noosa.BitmapText;
-import com.watabou.noosa.ColorBlock;
-import com.watabou.noosa.Game;
-import com.watabou.noosa.Group;
-import com.watabou.noosa.Image;
-import com.watabou.noosa.audio.Sample;
-import com.watabou.noosa.ui.Button;
-import com.watabou.pixeldungeon.Assets;
-import com.watabou.pixeldungeon.Badges;
-import com.watabou.pixeldungeon.Dungeon;
-import com.watabou.pixeldungeon.Statistics;
-import com.watabou.pixeldungeon.actors.hero.Belongings;
-import com.watabou.pixeldungeon.items.Item;
-import com.watabou.pixeldungeon.scenes.PixelScene;
-import com.watabou.pixeldungeon.sprites.HeroSprite;
-import com.watabou.pixeldungeon.ui.BadgesList;
-import com.watabou.pixeldungeon.ui.Icons;
-import com.watabou.pixeldungeon.ui.ItemSlot;
-import com.watabou.pixeldungeon.ui.QuickSlot;
-import com.watabou.pixeldungeon.ui.RedButton;
-import com.watabou.pixeldungeon.ui.ScrollPane;
-import com.watabou.pixeldungeon.utils.Utils;
+import com.poorcoding.noosa.BitmapText;
+import com.poorcoding.noosa.ColorBlock;
+import com.poorcoding.noosa.Game;
+import com.poorcoding.noosa.Group;
+import com.poorcoding.noosa.Image;
+import com.poorcoding.noosa.audio.Sample;
+import com.poorcoding.noosa.ui.Button;
+import com.poorcoding.dixelpungeon.Assets;
+import com.poorcoding.dixelpungeon.Badges;
+import com.poorcoding.dixelpungeon.Dungeon;
+import com.poorcoding.dixelpungeon.Statistics;
+import com.poorcoding.dixelpungeon.actors.hero.Belongings;
+import com.poorcoding.dixelpungeon.items.Item;
+import com.poorcoding.dixelpungeon.scenes.PixelScene;
+import com.poorcoding.dixelpungeon.sprites.HeroSprite;
+import com.poorcoding.dixelpungeon.ui.BadgesList;
+import com.poorcoding.dixelpungeon.ui.Icons;
+import com.poorcoding.dixelpungeon.ui.ItemSlot;
+import com.poorcoding.dixelpungeon.ui.QuickSlot;
+import com.poorcoding.dixelpungeon.ui.RedButton;
+import com.poorcoding.dixelpungeon.ui.ScrollPane;
+import com.poorcoding.dixelpungeon.utils.Utils;
 
 public class WndRanking extends WndTabbed {
 	

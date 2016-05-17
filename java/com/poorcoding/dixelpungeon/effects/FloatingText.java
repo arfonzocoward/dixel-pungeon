@@ -15,17 +15,17 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
-package com.watabou.pixeldungeon.effects;
+package com.poorcoding.dixelpungeon.effects;
 
 import java.util.ArrayList;
 
-import com.watabou.noosa.BitmapText;
-import com.watabou.noosa.Camera;
-import com.watabou.noosa.Game;
-import com.watabou.pixeldungeon.DungeonTilemap;
-import com.watabou.pixeldungeon.scenes.GameScene;
-import com.watabou.pixeldungeon.scenes.PixelScene;
-import com.watabou.utils.SparseArray;
+import com.poorcoding.noosa.BitmapText;
+import com.poorcoding.noosa.Camera;
+import com.poorcoding.noosa.Game;
+import com.poorcoding.dixelpungeon.DungeonTilemap;
+import com.poorcoding.dixelpungeon.scenes.GameScene;
+import com.poorcoding.dixelpungeon.scenes.PixelScene;
+import com.poorcoding.utils.SparseArray;
 
 public class FloatingText extends BitmapText {
 

@@ -15,27 +15,27 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
-package com.watabou.pixeldungeon.scenes;
+package com.poorcoding.dixelpungeon.scenes;
 
 import java.util.List;
 
-import com.watabou.noosa.BitmapText;
-import com.watabou.noosa.Camera;
-import com.watabou.noosa.Game;
-import com.watabou.noosa.Image;
-import com.watabou.noosa.audio.Music;
-import com.watabou.noosa.audio.Sample;
-import com.watabou.noosa.ui.Button;
-import com.watabou.pixeldungeon.Assets;
-import com.watabou.pixeldungeon.Badges;
-import com.watabou.pixeldungeon.PixelDungeon;
-import com.watabou.pixeldungeon.effects.BadgeBanner;
-import com.watabou.pixeldungeon.ui.Archs;
-import com.watabou.pixeldungeon.ui.ExitButton;
-import com.watabou.pixeldungeon.ui.Window;
-import com.watabou.pixeldungeon.windows.WndBadge;
-import com.watabou.utils.Callback;
-import com.watabou.utils.Random;
+import com.poorcoding.noosa.BitmapText;
+import com.poorcoding.noosa.Camera;
+import com.poorcoding.noosa.Game;
+import com.poorcoding.noosa.Image;
+import com.poorcoding.noosa.audio.Music;
+import com.poorcoding.noosa.audio.Sample;
+import com.poorcoding.noosa.ui.Button;
+import com.poorcoding.dixelpungeon.Assets;
+import com.poorcoding.dixelpungeon.Badges;
+import com.poorcoding.dixelpungeon.PixelDungeon;
+import com.poorcoding.dixelpungeon.effects.BadgeBanner;
+import com.poorcoding.dixelpungeon.ui.Archs;
+import com.poorcoding.dixelpungeon.ui.ExitButton;
+import com.poorcoding.dixelpungeon.ui.Window;
+import com.poorcoding.dixelpungeon.windows.WndBadge;
+import com.poorcoding.utils.Callback;
+import com.poorcoding.utils.Random;
 
 public class BadgesScene extends PixelScene {
 	

@@ -15,16 +15,16 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
-package com.watabou.pixeldungeon.effects;
+package com.poorcoding.dixelpungeon.effects;
 
 import javax.microedition.khronos.opengles.GL10;
 
 import android.opengl.GLES20;
 
-import com.watabou.noosa.Group;
-import com.watabou.noosa.particles.PixelParticle;
-import com.watabou.utils.PointF;
-import com.watabou.utils.Random;
+import com.poorcoding.noosa.Group;
+import com.poorcoding.noosa.particles.PixelParticle;
+import com.poorcoding.utils.PointF;
+import com.poorcoding.utils.Random;
 
 public class Degradation extends Group {
 

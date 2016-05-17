@@ -15,34 +15,34 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
-package com.watabou.pixeldungeon.ui;
+package com.poorcoding.dixelpungeon.ui;
 
-import com.watabou.noosa.Game;
-import com.watabou.noosa.Gizmo;
-import com.watabou.noosa.Image;
-import com.watabou.noosa.ui.Button;
-import com.watabou.noosa.ui.Component;
-import com.watabou.pixeldungeon.Assets;
-import com.watabou.pixeldungeon.Dungeon;
-import com.watabou.pixeldungeon.DungeonTilemap;
-import com.watabou.pixeldungeon.actors.Actor;
-import com.watabou.pixeldungeon.actors.mobs.Mob;
-import com.watabou.pixeldungeon.items.Heap;
-import com.watabou.pixeldungeon.items.Item;
-import com.watabou.pixeldungeon.levels.Level;
-import com.watabou.pixeldungeon.plants.Plant;
-import com.watabou.pixeldungeon.scenes.CellSelector;
-import com.watabou.pixeldungeon.scenes.GameScene;
-import com.watabou.pixeldungeon.sprites.ItemSprite;
-import com.watabou.pixeldungeon.windows.WndCatalogus;
-import com.watabou.pixeldungeon.windows.WndHero;
-import com.watabou.pixeldungeon.windows.WndInfoCell;
-import com.watabou.pixeldungeon.windows.WndInfoItem;
-import com.watabou.pixeldungeon.windows.WndInfoMob;
-import com.watabou.pixeldungeon.windows.WndInfoPlant;
-import com.watabou.pixeldungeon.windows.WndBag;
-import com.watabou.pixeldungeon.windows.WndMessage;
-import com.watabou.pixeldungeon.windows.WndTradeItem;
+import com.poorcoding.noosa.Game;
+import com.poorcoding.noosa.Gizmo;
+import com.poorcoding.noosa.Image;
+import com.poorcoding.noosa.ui.Button;
+import com.poorcoding.noosa.ui.Component;
+import com.poorcoding.dixelpungeon.Assets;
+import com.poorcoding.dixelpungeon.Dungeon;
+import com.poorcoding.dixelpungeon.DungeonTilemap;
+import com.poorcoding.dixelpungeon.actors.Actor;
+import com.poorcoding.dixelpungeon.actors.mobs.Mob;
+import com.poorcoding.dixelpungeon.items.Heap;
+import com.poorcoding.dixelpungeon.items.Item;
+import com.poorcoding.dixelpungeon.levels.Level;
+import com.poorcoding.dixelpungeon.plants.Plant;
+import com.poorcoding.dixelpungeon.scenes.CellSelector;
+import com.poorcoding.dixelpungeon.scenes.GameScene;
+import com.poorcoding.dixelpungeon.sprites.ItemSprite;
+import com.poorcoding.dixelpungeon.windows.WndCatalogus;
+import com.poorcoding.dixelpungeon.windows.WndHero;
+import com.poorcoding.dixelpungeon.windows.WndInfoCell;
+import com.poorcoding.dixelpungeon.windows.WndInfoItem;
+import com.poorcoding.dixelpungeon.windows.WndInfoMob;
+import com.poorcoding.dixelpungeon.windows.WndInfoPlant;
+import com.poorcoding.dixelpungeon.windows.WndBag;
+import com.poorcoding.dixelpungeon.windows.WndMessage;
+import com.poorcoding.dixelpungeon.windows.WndTradeItem;
 
 public class Toolbar extends Component {
 

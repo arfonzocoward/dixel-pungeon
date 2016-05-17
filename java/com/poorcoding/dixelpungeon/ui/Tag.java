@@ -15,12 +15,12 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
-package com.watabou.pixeldungeon.ui;
+package com.poorcoding.dixelpungeon.ui;
 
-import com.watabou.noosa.Game;
-import com.watabou.noosa.NinePatch;
-import com.watabou.noosa.ui.Button;
-import com.watabou.pixeldungeon.Chrome;
+import com.poorcoding.noosa.Game;
+import com.poorcoding.noosa.NinePatch;
+import com.poorcoding.noosa.ui.Button;
+import com.poorcoding.dixelpungeon.Chrome;
 
 public class Tag extends Button {
 

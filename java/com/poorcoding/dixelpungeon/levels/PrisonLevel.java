@@ -15,19 +15,19 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
-package com.watabou.pixeldungeon.levels;
+package com.poorcoding.dixelpungeon.levels;
 
-import com.watabou.noosa.Scene;
-import com.watabou.noosa.particles.Emitter;
-import com.watabou.pixeldungeon.Assets;
-import com.watabou.pixeldungeon.Dungeon;
-import com.watabou.pixeldungeon.DungeonTilemap;
-import com.watabou.pixeldungeon.actors.mobs.npcs.Wandmaker;
-import com.watabou.pixeldungeon.effects.Halo;
-import com.watabou.pixeldungeon.effects.particles.FlameParticle;
-import com.watabou.pixeldungeon.levels.Room.Type;
-import com.watabou.utils.PointF;
-import com.watabou.utils.Random;
+import com.poorcoding.noosa.Scene;
+import com.poorcoding.noosa.particles.Emitter;
+import com.poorcoding.dixelpungeon.Assets;
+import com.poorcoding.dixelpungeon.Dungeon;
+import com.poorcoding.dixelpungeon.DungeonTilemap;
+import com.poorcoding.dixelpungeon.actors.mobs.npcs.Wandmaker;
+import com.poorcoding.dixelpungeon.effects.Halo;
+import com.poorcoding.dixelpungeon.effects.particles.FlameParticle;
+import com.poorcoding.dixelpungeon.levels.Room.Type;
+import com.poorcoding.utils.PointF;
+import com.poorcoding.utils.Random;
 
 public class PrisonLevel extends RegularLevel {
 

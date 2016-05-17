@@ -15,19 +15,19 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
-package com.watabou.pixeldungeon.windows;
+package com.poorcoding.dixelpungeon.windows;
 
 import java.util.ArrayList;
 
-import com.watabou.noosa.BitmapText;
-import com.watabou.noosa.Game;
-import com.watabou.noosa.NinePatch;
-import com.watabou.noosa.audio.Sample;
-import com.watabou.noosa.ui.Button;
-import com.watabou.pixeldungeon.Assets;
-import com.watabou.pixeldungeon.Chrome;
-import com.watabou.pixeldungeon.scenes.PixelScene;
-import com.watabou.pixeldungeon.ui.Window;
+import com.poorcoding.noosa.BitmapText;
+import com.poorcoding.noosa.Game;
+import com.poorcoding.noosa.NinePatch;
+import com.poorcoding.noosa.audio.Sample;
+import com.poorcoding.noosa.ui.Button;
+import com.poorcoding.dixelpungeon.Assets;
+import com.poorcoding.dixelpungeon.Chrome;
+import com.poorcoding.dixelpungeon.scenes.PixelScene;
+import com.poorcoding.dixelpungeon.ui.Window;
 
 public class WndTabbed extends Window {
 

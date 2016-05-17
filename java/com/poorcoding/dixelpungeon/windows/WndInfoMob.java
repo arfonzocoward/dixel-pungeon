@@ -15,16 +15,16 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
-package com.watabou.pixeldungeon.windows;
+package com.poorcoding.dixelpungeon.windows;
 
-import com.watabou.noosa.BitmapText;
-import com.watabou.noosa.ui.Component;
-import com.watabou.pixeldungeon.actors.mobs.Mob;
-import com.watabou.pixeldungeon.scenes.PixelScene;
-import com.watabou.pixeldungeon.sprites.CharSprite;
-import com.watabou.pixeldungeon.ui.BuffIndicator;
-import com.watabou.pixeldungeon.ui.HealthBar;
-import com.watabou.pixeldungeon.utils.Utils;
+import com.poorcoding.noosa.BitmapText;
+import com.poorcoding.noosa.ui.Component;
+import com.poorcoding.dixelpungeon.actors.mobs.Mob;
+import com.poorcoding.dixelpungeon.scenes.PixelScene;
+import com.poorcoding.dixelpungeon.sprites.CharSprite;
+import com.poorcoding.dixelpungeon.ui.BuffIndicator;
+import com.poorcoding.dixelpungeon.ui.HealthBar;
+import com.poorcoding.dixelpungeon.utils.Utils;
 
 public class WndInfoMob extends WndTitledMessage {
 

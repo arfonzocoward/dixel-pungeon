@@ -15,17 +15,17 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
-package com.watabou.pixeldungeon.actors.buffs;
+package com.poorcoding.dixelpungeon.actors.buffs;
 
-import com.watabou.pixeldungeon.Dungeon;
-import com.watabou.pixeldungeon.ResultDescriptions;
-import com.watabou.pixeldungeon.effects.Splash;
-import com.watabou.pixeldungeon.ui.BuffIndicator;
-import com.watabou.pixeldungeon.utils.GLog;
-import com.watabou.pixeldungeon.utils.Utils;
-import com.watabou.utils.Bundle;
-import com.watabou.utils.PointF;
-import com.watabou.utils.Random;
+import com.poorcoding.dixelpungeon.Dungeon;
+import com.poorcoding.dixelpungeon.ResultDescriptions;
+import com.poorcoding.dixelpungeon.effects.Splash;
+import com.poorcoding.dixelpungeon.ui.BuffIndicator;
+import com.poorcoding.dixelpungeon.utils.GLog;
+import com.poorcoding.dixelpungeon.utils.Utils;
+import com.poorcoding.utils.Bundle;
+import com.poorcoding.utils.PointF;
+import com.poorcoding.utils.Random;
 
 public class Bleeding extends Buff {
 	

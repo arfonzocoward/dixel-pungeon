@@ -15,13 +15,13 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
-package com.watabou.pixeldungeon.windows;
+package com.poorcoding.dixelpungeon.windows;
 
-import com.watabou.noosa.Image;
-import com.watabou.noosa.ui.Component;
-import com.watabou.pixeldungeon.PixelDungeon;
-import com.watabou.pixeldungeon.ui.HighlightedText;
-import com.watabou.pixeldungeon.ui.Window;
+import com.poorcoding.noosa.Image;
+import com.poorcoding.noosa.ui.Component;
+import com.poorcoding.dixelpungeon.PixelDungeon;
+import com.poorcoding.dixelpungeon.ui.HighlightedText;
+import com.poorcoding.dixelpungeon.ui.Window;
 
 public class WndTitledMessage extends Window {
 

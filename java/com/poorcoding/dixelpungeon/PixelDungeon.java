@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
-package com.watabou.pixeldungeon;
+package com.poorcoding.dixelpungeon;
 
 import javax.microedition.khronos.opengles.GL10;
 
@@ -26,100 +26,100 @@ import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
 
-import com.watabou.noosa.Game;
-import com.watabou.noosa.audio.Music;
-import com.watabou.noosa.audio.Sample;
-import com.watabou.pixeldungeon.scenes.GameScene;
-import com.watabou.pixeldungeon.scenes.PixelScene;
-import com.watabou.pixeldungeon.scenes.TitleScene;
+import com.poorcoding.noosa.Game;
+import com.poorcoding.noosa.audio.Music;
+import com.poorcoding.noosa.audio.Sample;
+import com.poorcoding.dixelpungeon.scenes.GameScene;
+import com.poorcoding.dixelpungeon.scenes.PixelScene;
+import com.poorcoding.dixelpungeon.scenes.TitleScene;
 
 public class PixelDungeon extends Game {
 	
 	public PixelDungeon() {
 		super( TitleScene.class );
 		
-		com.watabou.utils.Bundle.addAlias( 
-			com.watabou.pixeldungeon.items.scrolls.ScrollOfUpgrade.class, 
-			"com.watabou.pixeldungeon.items.scrolls.ScrollOfEnhancement" );
-		com.watabou.utils.Bundle.addAlias( 
-			com.watabou.pixeldungeon.actors.blobs.WaterOfHealth.class, 
-			"com.watabou.pixeldungeon.actors.blobs.Light" );
-		com.watabou.utils.Bundle.addAlias( 
-			com.watabou.pixeldungeon.items.rings.RingOfMending.class, 
-			"com.watabou.pixeldungeon.items.rings.RingOfRejuvenation" );
-		com.watabou.utils.Bundle.addAlias( 
-			com.watabou.pixeldungeon.items.wands.WandOfReach.class, 
-			"com.watabou.pixeldungeon.items.wands.WandOfTelekenesis" );
-		com.watabou.utils.Bundle.addAlias( 
-			com.watabou.pixeldungeon.actors.blobs.Foliage.class, 
-			"com.watabou.pixeldungeon.actors.blobs.Blooming" );
-		com.watabou.utils.Bundle.addAlias( 
-			com.watabou.pixeldungeon.actors.buffs.Shadows.class, 
-			"com.watabou.pixeldungeon.actors.buffs.Rejuvenation" );
-		com.watabou.utils.Bundle.addAlias( 
-			com.watabou.pixeldungeon.items.scrolls.ScrollOfPsionicBlast.class, 
-			"com.watabou.pixeldungeon.items.scrolls.ScrollOfNuclearBlast" );
-		com.watabou.utils.Bundle.addAlias( 
-			com.watabou.pixeldungeon.actors.hero.Hero.class, 
-			"com.watabou.pixeldungeon.actors.Hero" );
-		com.watabou.utils.Bundle.addAlias( 
-			com.watabou.pixeldungeon.actors.mobs.npcs.Shopkeeper.class,
-			"com.watabou.pixeldungeon.actors.mobs.Shopkeeper" );
+		com.poorcoding.utils.Bundle.addAlias(
+			com.poorcoding.dixelpungeon.items.scrolls.ScrollOfUpgrade.class,
+			"com.poorcoding.pixeldungeon.items.scrolls.ScrollOfEnhancement" );
+		com.poorcoding.utils.Bundle.addAlias(
+			com.poorcoding.dixelpungeon.actors.blobs.WaterOfHealth.class,
+			"com.poorcoding.pixeldungeon.actors.blobs.Light" );
+		com.poorcoding.utils.Bundle.addAlias(
+			com.poorcoding.dixelpungeon.items.rings.RingOfMending.class,
+			"com.poorcoding.pixeldungeon.items.rings.RingOfRejuvenation" );
+		com.poorcoding.utils.Bundle.addAlias(
+			com.poorcoding.dixelpungeon.items.wands.WandOfReach.class,
+			"com.poorcoding.pixeldungeon.items.wands.WandOfTelekenesis" );
+		com.poorcoding.utils.Bundle.addAlias(
+			com.poorcoding.dixelpungeon.actors.blobs.Foliage.class,
+			"com.poorcoding.pixeldungeon.actors.blobs.Blooming" );
+		com.poorcoding.utils.Bundle.addAlias(
+			com.poorcoding.dixelpungeon.actors.buffs.Shadows.class,
+			"com.poorcoding.pixeldungeon.actors.buffs.Rejuvenation" );
+		com.poorcoding.utils.Bundle.addAlias(
+			com.poorcoding.dixelpungeon.items.scrolls.ScrollOfPsionicBlast.class,
+			"com.poorcoding.pixeldungeon.items.scrolls.ScrollOfNuclearBlast" );
+		com.poorcoding.utils.Bundle.addAlias(
+			com.poorcoding.dixelpungeon.actors.hero.Hero.class,
+			"com.poorcoding.pixeldungeon.actors.Hero" );
+		com.poorcoding.utils.Bundle.addAlias(
+			com.poorcoding.dixelpungeon.actors.mobs.npcs.Shopkeeper.class,
+			"com.poorcoding.pixeldungeon.actors.mobs.Shopkeeper" );
 		// 1.6.1
-		com.watabou.utils.Bundle.addAlias( 
-			com.watabou.pixeldungeon.items.quest.DriedRose.class,
-			"com.watabou.pixeldungeon.items.DriedRose" );
-		com.watabou.utils.Bundle.addAlias( 
-			com.watabou.pixeldungeon.actors.mobs.npcs.MirrorImage.class,
-			"com.watabou.pixeldungeon.items.scrolls.ScrollOfMirrorImage$MirrorImage" );
+		com.poorcoding.utils.Bundle.addAlias(
+			com.poorcoding.dixelpungeon.items.quest.DriedRose.class,
+			"com.poorcoding.pixeldungeon.items.DriedRose" );
+		com.poorcoding.utils.Bundle.addAlias(
+			com.poorcoding.dixelpungeon.actors.mobs.npcs.MirrorImage.class,
+			"com.poorcoding.pixeldungeon.items.scrolls.ScrollOfMirrorImage$MirrorImage" );
 		// 1.6.4
-		com.watabou.utils.Bundle.addAlias( 
-			com.watabou.pixeldungeon.items.rings.RingOfElements.class,
-			"com.watabou.pixeldungeon.items.rings.RingOfCleansing" );
-		com.watabou.utils.Bundle.addAlias( 
-			com.watabou.pixeldungeon.items.rings.RingOfElements.class,
-			"com.watabou.pixeldungeon.items.rings.RingOfResistance" );
-		com.watabou.utils.Bundle.addAlias( 
-			com.watabou.pixeldungeon.items.weapon.missiles.Boomerang.class,
-			"com.watabou.pixeldungeon.items.weapon.missiles.RangersBoomerang" );
-		com.watabou.utils.Bundle.addAlias( 
-			com.watabou.pixeldungeon.items.rings.RingOfPower.class,
-			"com.watabou.pixeldungeon.items.rings.RingOfEnergy" );
+		com.poorcoding.utils.Bundle.addAlias(
+			com.poorcoding.dixelpungeon.items.rings.RingOfElements.class,
+			"com.poorcoding.pixeldungeon.items.rings.RingOfCleansing" );
+		com.poorcoding.utils.Bundle.addAlias(
+			com.poorcoding.dixelpungeon.items.rings.RingOfElements.class,
+			"com.poorcoding.pixeldungeon.items.rings.RingOfResistance" );
+		com.poorcoding.utils.Bundle.addAlias(
+			com.poorcoding.dixelpungeon.items.weapon.missiles.Boomerang.class,
+			"com.poorcoding.pixeldungeon.items.weapon.missiles.RangersBoomerang" );
+		com.poorcoding.utils.Bundle.addAlias(
+			com.poorcoding.dixelpungeon.items.rings.RingOfPower.class,
+			"com.poorcoding.pixeldungeon.items.rings.RingOfEnergy" );
 		// 1.7.2
-		com.watabou.utils.Bundle.addAlias( 
-			com.watabou.pixeldungeon.plants.Dreamweed.class,
-			"com.watabou.pixeldungeon.plants.Blindweed" );
-		com.watabou.utils.Bundle.addAlias( 
-			com.watabou.pixeldungeon.plants.Dreamweed.Seed.class,
-			"com.watabou.pixeldungeon.plants.Blindweed$Seed" );
+		com.poorcoding.utils.Bundle.addAlias(
+			com.poorcoding.dixelpungeon.plants.Dreamweed.class,
+			"com.poorcoding.pixeldungeon.plants.Blindweed" );
+		com.poorcoding.utils.Bundle.addAlias(
+			com.poorcoding.dixelpungeon.plants.Dreamweed.Seed.class,
+			"com.poorcoding.pixeldungeon.plants.Blindweed$Seed" );
 		// 1.7.4
-		com.watabou.utils.Bundle.addAlias( 
-			com.watabou.pixeldungeon.items.weapon.enchantments.Shock.class,
-			"com.watabou.pixeldungeon.items.weapon.enchantments.Piercing" );
-		com.watabou.utils.Bundle.addAlias( 
-			com.watabou.pixeldungeon.items.weapon.enchantments.Shock.class,
-			"com.watabou.pixeldungeon.items.weapon.enchantments.Swing" );
-		com.watabou.utils.Bundle.addAlias( 
-			com.watabou.pixeldungeon.items.scrolls.ScrollOfEnchantment.class,
-			"com.watabou.pixeldungeon.items.scrolls.ScrollOfWeaponUpgrade" );
+		com.poorcoding.utils.Bundle.addAlias(
+			com.poorcoding.dixelpungeon.items.weapon.enchantments.Shock.class,
+			"com.poorcoding.pixeldungeon.items.weapon.enchantments.Piercing" );
+		com.poorcoding.utils.Bundle.addAlias(
+			com.poorcoding.dixelpungeon.items.weapon.enchantments.Shock.class,
+			"com.poorcoding.pixeldungeon.items.weapon.enchantments.Swing" );
+		com.poorcoding.utils.Bundle.addAlias(
+			com.poorcoding.dixelpungeon.items.scrolls.ScrollOfEnchantment.class,
+			"com.poorcoding.pixeldungeon.items.scrolls.ScrollOfWeaponUpgrade" );
 		// 1.7.5
-		com.watabou.utils.Bundle.addAlias( 
-			com.watabou.pixeldungeon.items.scrolls.ScrollOfEnchantment.class,
-			"com.watabou.pixeldungeon.items.Stylus" );
+		com.poorcoding.utils.Bundle.addAlias(
+			com.poorcoding.dixelpungeon.items.scrolls.ScrollOfEnchantment.class,
+			"com.poorcoding.pixeldungeon.items.Stylus" );
 		// 1.8.0
-		com.watabou.utils.Bundle.addAlias( 
-			com.watabou.pixeldungeon.actors.mobs.FetidRat.class,
-			"com.watabou.pixeldungeon.actors.mobs.npcs.Ghost$FetidRat" );
-		com.watabou.utils.Bundle.addAlias( 
-			com.watabou.pixeldungeon.plants.Rotberry.class,
-			"com.watabou.pixeldungeon.actors.mobs.npcs.Wandmaker$Rotberry" );
-		com.watabou.utils.Bundle.addAlias( 
-			com.watabou.pixeldungeon.plants.Rotberry.Seed.class,
-			"com.watabou.pixeldungeon.actors.mobs.npcs.Wandmaker$Rotberry$Seed" );
+		com.poorcoding.utils.Bundle.addAlias(
+			com.poorcoding.dixelpungeon.actors.mobs.FetidRat.class,
+			"com.poorcoding.pixeldungeon.actors.mobs.npcs.Ghost$FetidRat" );
+		com.poorcoding.utils.Bundle.addAlias(
+			com.poorcoding.dixelpungeon.plants.Rotberry.class,
+			"com.poorcoding.pixeldungeon.actors.mobs.npcs.Wandmaker$Rotberry" );
+		com.poorcoding.utils.Bundle.addAlias(
+			com.poorcoding.dixelpungeon.plants.Rotberry.Seed.class,
+			"com.poorcoding.pixeldungeon.actors.mobs.npcs.Wandmaker$Rotberry$Seed" );
 		// 1.9.0
-		com.watabou.utils.Bundle.addAlias( 
-			com.watabou.pixeldungeon.items.wands.WandOfReach.class,
-			"com.watabou.pixeldungeon.items.wands.WandOfTelekinesis" );
+		com.poorcoding.utils.Bundle.addAlias(
+			com.poorcoding.dixelpungeon.items.wands.WandOfReach.class,
+			"com.poorcoding.pixeldungeon.items.wands.WandOfTelekinesis" );
 	}
 	
 	@Override

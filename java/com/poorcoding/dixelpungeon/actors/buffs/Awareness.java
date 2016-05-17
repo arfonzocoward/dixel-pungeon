@@ -15,9 +15,9 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
-package com.watabou.pixeldungeon.actors.buffs;
+package com.poorcoding.dixelpungeon.actors.buffs;
 
-import com.watabou.pixeldungeon.Dungeon;
+import com.poorcoding.dixelpungeon.Dungeon;
 
 public class Awareness extends FlavourBuff {
 

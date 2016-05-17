@@ -15,13 +15,13 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
-package com.watabou.pixeldungeon.actors.mobs;
+package com.poorcoding.dixelpungeon.actors.mobs;
 
-import com.watabou.pixeldungeon.actors.Char;
-import com.watabou.pixeldungeon.actors.mobs.npcs.Ghost;
-import com.watabou.pixeldungeon.items.food.MysteryMeat;
-import com.watabou.pixeldungeon.sprites.CrabSprite;
-import com.watabou.utils.Random;
+import com.poorcoding.dixelpungeon.actors.Char;
+import com.poorcoding.dixelpungeon.actors.mobs.npcs.Ghost;
+import com.poorcoding.dixelpungeon.items.food.MysteryMeat;
+import com.poorcoding.dixelpungeon.sprites.CrabSprite;
+import com.poorcoding.utils.Random;
 
 public class Crab extends Mob {
 

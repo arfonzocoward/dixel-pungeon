@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
-package com.watabou.pixeldungeon;
+package com.poorcoding.dixelpungeon;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -26,27 +26,27 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 
-import com.watabou.noosa.Game;
-import com.watabou.pixeldungeon.actors.mobs.Acidic;
-import com.watabou.pixeldungeon.actors.mobs.Albino;
-import com.watabou.pixeldungeon.actors.mobs.Bandit;
-import com.watabou.pixeldungeon.actors.mobs.Mob;
-import com.watabou.pixeldungeon.actors.mobs.Senior;
-import com.watabou.pixeldungeon.actors.mobs.Shielded;
-import com.watabou.pixeldungeon.items.Item;
-import com.watabou.pixeldungeon.items.bags.ScrollHolder;
-import com.watabou.pixeldungeon.items.bags.SeedPouch;
-import com.watabou.pixeldungeon.items.bags.WandHolster;
-import com.watabou.pixeldungeon.items.potions.Potion;
-import com.watabou.pixeldungeon.items.rings.Ring;
-import com.watabou.pixeldungeon.items.rings.RingOfHaggler;
-import com.watabou.pixeldungeon.items.rings.RingOfThorns;
-import com.watabou.pixeldungeon.items.scrolls.Scroll;
-import com.watabou.pixeldungeon.items.wands.Wand;
-import com.watabou.pixeldungeon.scenes.PixelScene;
-import com.watabou.pixeldungeon.utils.GLog;
-import com.watabou.utils.Bundle;
-import com.watabou.utils.Callback;
+import com.poorcoding.noosa.Game;
+import com.poorcoding.dixelpungeon.actors.mobs.Acidic;
+import com.poorcoding.dixelpungeon.actors.mobs.Albino;
+import com.poorcoding.dixelpungeon.actors.mobs.Bandit;
+import com.poorcoding.dixelpungeon.actors.mobs.Mob;
+import com.poorcoding.dixelpungeon.actors.mobs.Senior;
+import com.poorcoding.dixelpungeon.actors.mobs.Shielded;
+import com.poorcoding.dixelpungeon.items.Item;
+import com.poorcoding.dixelpungeon.items.bags.ScrollHolder;
+import com.poorcoding.dixelpungeon.items.bags.SeedPouch;
+import com.poorcoding.dixelpungeon.items.bags.WandHolster;
+import com.poorcoding.dixelpungeon.items.potions.Potion;
+import com.poorcoding.dixelpungeon.items.rings.Ring;
+import com.poorcoding.dixelpungeon.items.rings.RingOfHaggler;
+import com.poorcoding.dixelpungeon.items.rings.RingOfThorns;
+import com.poorcoding.dixelpungeon.items.scrolls.Scroll;
+import com.poorcoding.dixelpungeon.items.wands.Wand;
+import com.poorcoding.dixelpungeon.scenes.PixelScene;
+import com.poorcoding.dixelpungeon.utils.GLog;
+import com.poorcoding.utils.Bundle;
+import com.poorcoding.utils.Callback;
 
 public class Badges {
 	

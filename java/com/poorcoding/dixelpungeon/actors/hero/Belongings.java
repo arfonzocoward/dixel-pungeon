@@ -15,23 +15,23 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
-package com.watabou.pixeldungeon.actors.hero;
+package com.poorcoding.dixelpungeon.actors.hero;
 
 import java.util.Iterator;
 
-import com.watabou.pixeldungeon.Badges;
-import com.watabou.pixeldungeon.Dungeon;
-import com.watabou.pixeldungeon.items.Item;
-import com.watabou.pixeldungeon.items.KindOfWeapon;
-import com.watabou.pixeldungeon.items.armor.Armor;
-import com.watabou.pixeldungeon.items.bags.Bag;
-import com.watabou.pixeldungeon.items.keys.IronKey;
-import com.watabou.pixeldungeon.items.keys.Key;
-import com.watabou.pixeldungeon.items.rings.Ring;
-import com.watabou.pixeldungeon.items.scrolls.ScrollOfRemoveCurse;
-import com.watabou.pixeldungeon.items.wands.Wand;
-import com.watabou.utils.Bundle;
-import com.watabou.utils.Random;
+import com.poorcoding.dixelpungeon.Badges;
+import com.poorcoding.dixelpungeon.Dungeon;
+import com.poorcoding.dixelpungeon.items.Item;
+import com.poorcoding.dixelpungeon.items.KindOfWeapon;
+import com.poorcoding.dixelpungeon.items.armor.Armor;
+import com.poorcoding.dixelpungeon.items.bags.Bag;
+import com.poorcoding.dixelpungeon.items.keys.IronKey;
+import com.poorcoding.dixelpungeon.items.keys.Key;
+import com.poorcoding.dixelpungeon.items.rings.Ring;
+import com.poorcoding.dixelpungeon.items.scrolls.ScrollOfRemoveCurse;
+import com.poorcoding.dixelpungeon.items.wands.Wand;
+import com.poorcoding.utils.Bundle;
+import com.poorcoding.utils.Random;
 
 public class Belongings implements Iterable<Item> {
 

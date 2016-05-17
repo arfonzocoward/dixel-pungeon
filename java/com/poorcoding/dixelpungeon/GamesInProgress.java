@@ -15,12 +15,12 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
-package com.watabou.pixeldungeon;
+package com.poorcoding.dixelpungeon;
 
 import java.util.HashMap;
 
-import com.watabou.pixeldungeon.actors.hero.HeroClass;
-import com.watabou.utils.Bundle;
+import com.poorcoding.dixelpungeon.actors.hero.HeroClass;
+import com.poorcoding.utils.Bundle;
 
 public class GamesInProgress {
 

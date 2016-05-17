@@ -15,14 +15,14 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
-package com.watabou.pixeldungeon.sprites;
+package com.poorcoding.dixelpungeon.sprites;
 
-import com.watabou.noosa.tweeners.PosTweener;
-import com.watabou.noosa.tweeners.Tweener;
-import com.watabou.pixeldungeon.DungeonTilemap;
-import com.watabou.pixeldungeon.items.Item;
-import com.watabou.utils.Callback;
-import com.watabou.utils.PointF;
+import com.poorcoding.noosa.tweeners.PosTweener;
+import com.poorcoding.noosa.tweeners.Tweener;
+import com.poorcoding.dixelpungeon.DungeonTilemap;
+import com.poorcoding.dixelpungeon.items.Item;
+import com.poorcoding.utils.Callback;
+import com.poorcoding.utils.PointF;
 
 public class MissileSprite extends ItemSprite implements Tweener.Listener {
 

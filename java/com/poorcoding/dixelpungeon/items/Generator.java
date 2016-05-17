@@ -15,26 +15,26 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
-package com.watabou.pixeldungeon.items;
+package com.poorcoding.dixelpungeon.items;
 
 import java.util.HashMap;
 
-import com.watabou.pixeldungeon.Dungeon;
-import com.watabou.pixeldungeon.actors.hero.Hero;
-import com.watabou.pixeldungeon.items.armor.*;
-import com.watabou.pixeldungeon.items.bags.Bag;
-import com.watabou.pixeldungeon.items.food.Food;
-import com.watabou.pixeldungeon.items.food.MysteryMeat;
-import com.watabou.pixeldungeon.items.food.Pasty;
-import com.watabou.pixeldungeon.items.potions.*;
-import com.watabou.pixeldungeon.items.rings.*;
-import com.watabou.pixeldungeon.items.scrolls.*;
-import com.watabou.pixeldungeon.items.wands.*;
-import com.watabou.pixeldungeon.items.weapon.*;
-import com.watabou.pixeldungeon.items.weapon.melee.*;
-import com.watabou.pixeldungeon.items.weapon.missiles.*;
-import com.watabou.pixeldungeon.plants.*;
-import com.watabou.utils.Random;
+import com.poorcoding.dixelpungeon.Dungeon;
+import com.poorcoding.dixelpungeon.actors.hero.Hero;
+import com.poorcoding.dixelpungeon.items.armor.*;
+import com.poorcoding.dixelpungeon.items.bags.Bag;
+import com.poorcoding.dixelpungeon.items.food.Food;
+import com.poorcoding.dixelpungeon.items.food.MysteryMeat;
+import com.poorcoding.dixelpungeon.items.food.Pasty;
+import com.poorcoding.dixelpungeon.items.potions.*;
+import com.poorcoding.dixelpungeon.items.rings.*;
+import com.poorcoding.dixelpungeon.items.scrolls.*;
+import com.poorcoding.dixelpungeon.items.wands.*;
+import com.poorcoding.dixelpungeon.items.weapon.*;
+import com.poorcoding.dixelpungeon.items.weapon.melee.*;
+import com.poorcoding.dixelpungeon.items.weapon.missiles.*;
+import com.poorcoding.dixelpungeon.plants.*;
+import com.poorcoding.utils.Random;
 
 public class Generator {
 

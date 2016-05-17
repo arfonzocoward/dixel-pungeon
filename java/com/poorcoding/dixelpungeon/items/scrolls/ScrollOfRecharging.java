@@ -15,15 +15,15 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
-package com.watabou.pixeldungeon.items.scrolls;
+package com.poorcoding.dixelpungeon.items.scrolls;
 
-import com.watabou.noosa.audio.Sample;
-import com.watabou.pixeldungeon.Assets;
-import com.watabou.pixeldungeon.actors.buffs.Invisibility;
-import com.watabou.pixeldungeon.actors.hero.Hero;
-import com.watabou.pixeldungeon.effects.SpellSprite;
-import com.watabou.pixeldungeon.effects.particles.EnergyParticle;
-import com.watabou.pixeldungeon.utils.GLog;
+import com.poorcoding.noosa.audio.Sample;
+import com.poorcoding.dixelpungeon.Assets;
+import com.poorcoding.dixelpungeon.actors.buffs.Invisibility;
+import com.poorcoding.dixelpungeon.actors.hero.Hero;
+import com.poorcoding.dixelpungeon.effects.SpellSprite;
+import com.poorcoding.dixelpungeon.effects.particles.EnergyParticle;
+import com.poorcoding.dixelpungeon.utils.GLog;
 
 public class ScrollOfRecharging extends Scroll {
 

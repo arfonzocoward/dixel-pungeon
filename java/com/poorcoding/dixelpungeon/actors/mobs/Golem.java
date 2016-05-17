@@ -15,18 +15,18 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
-package com.watabou.pixeldungeon.actors.mobs;
+package com.poorcoding.dixelpungeon.actors.mobs;
 
 import java.util.HashSet;
 
-import com.watabou.pixeldungeon.actors.Char;
-import com.watabou.pixeldungeon.actors.buffs.Amok;
-import com.watabou.pixeldungeon.actors.buffs.Sleep;
-import com.watabou.pixeldungeon.actors.buffs.Terror;
-import com.watabou.pixeldungeon.actors.mobs.npcs.Imp;
-import com.watabou.pixeldungeon.items.scrolls.ScrollOfPsionicBlast;
-import com.watabou.pixeldungeon.sprites.GolemSprite;
-import com.watabou.utils.Random;
+import com.poorcoding.dixelpungeon.actors.Char;
+import com.poorcoding.dixelpungeon.actors.buffs.Amok;
+import com.poorcoding.dixelpungeon.actors.buffs.Sleep;
+import com.poorcoding.dixelpungeon.actors.buffs.Terror;
+import com.poorcoding.dixelpungeon.actors.mobs.npcs.Imp;
+import com.poorcoding.dixelpungeon.items.scrolls.ScrollOfPsionicBlast;
+import com.poorcoding.dixelpungeon.sprites.GolemSprite;
+import com.poorcoding.utils.Random;
 
 public class Golem extends Mob {
 	

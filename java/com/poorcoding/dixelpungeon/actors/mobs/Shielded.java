@@ -15,10 +15,10 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
-package com.watabou.pixeldungeon.actors.mobs;
+package com.poorcoding.dixelpungeon.actors.mobs;
 
-import com.watabou.pixeldungeon.Badges;
-import com.watabou.pixeldungeon.sprites.ShieldedSprite;
+import com.poorcoding.dixelpungeon.Badges;
+import com.poorcoding.dixelpungeon.sprites.ShieldedSprite;
 
 public class Shielded extends Brute {
 

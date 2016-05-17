@@ -15,10 +15,10 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
-package com.watabou.pixeldungeon.mechanics;
+package com.poorcoding.dixelpungeon.mechanics;
 
-import com.watabou.pixeldungeon.actors.Actor;
-import com.watabou.pixeldungeon.levels.Level;
+import com.poorcoding.dixelpungeon.actors.Actor;
+import com.poorcoding.dixelpungeon.levels.Level;
 
 public class Ballistica {
 

@@ -15,18 +15,18 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
-package com.watabou.pixeldungeon.items.rings;
+package com.poorcoding.dixelpungeon.items.rings;
 
 import java.util.HashSet;
 
-import com.watabou.pixeldungeon.actors.blobs.ToxicGas;
-import com.watabou.pixeldungeon.actors.buffs.Burning;
-import com.watabou.pixeldungeon.actors.buffs.Poison;
-import com.watabou.pixeldungeon.actors.mobs.Eye;
-import com.watabou.pixeldungeon.actors.mobs.Warlock;
-import com.watabou.pixeldungeon.actors.mobs.Yog;
-import com.watabou.pixeldungeon.levels.traps.LightningTrap;
-import com.watabou.utils.Random;
+import com.poorcoding.dixelpungeon.actors.blobs.ToxicGas;
+import com.poorcoding.dixelpungeon.actors.buffs.Burning;
+import com.poorcoding.dixelpungeon.actors.buffs.Poison;
+import com.poorcoding.dixelpungeon.actors.mobs.Eye;
+import com.poorcoding.dixelpungeon.actors.mobs.Warlock;
+import com.poorcoding.dixelpungeon.actors.mobs.Yog;
+import com.poorcoding.dixelpungeon.levels.traps.LightningTrap;
+import com.poorcoding.utils.Random;
 
 public class RingOfElements extends Ring {
 

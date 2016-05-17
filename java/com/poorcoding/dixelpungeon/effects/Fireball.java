@@ -15,23 +15,23 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
-package com.watabou.pixeldungeon.effects;
+package com.poorcoding.dixelpungeon.effects;
 
 import javax.microedition.khronos.opengles.GL10;
 
 import android.graphics.RectF;
 import android.opengl.GLES20;
 
-import com.watabou.glwrap.Texture;
-import com.watabou.noosa.Game;
-import com.watabou.noosa.Group;
-import com.watabou.noosa.Image;
-import com.watabou.noosa.particles.Emitter;
-import com.watabou.noosa.particles.PixelParticle;
-import com.watabou.noosa.ui.Component;
-import com.watabou.pixeldungeon.Assets;
-import com.watabou.utils.ColorMath;
-import com.watabou.utils.Random;
+import com.poorcoding.glwrap.Texture;
+import com.poorcoding.noosa.Game;
+import com.poorcoding.noosa.Group;
+import com.poorcoding.noosa.Image;
+import com.poorcoding.noosa.particles.Emitter;
+import com.poorcoding.noosa.particles.PixelParticle;
+import com.poorcoding.noosa.ui.Component;
+import com.poorcoding.dixelpungeon.Assets;
+import com.poorcoding.utils.ColorMath;
+import com.poorcoding.utils.Random;
 
 public class Fireball extends Component {
 

@@ -15,12 +15,12 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
-package com.watabou.pixeldungeon.effects;
+package com.poorcoding.dixelpungeon.effects;
 
-import com.watabou.noosa.Game;
-import com.watabou.pixeldungeon.actors.Char;
-import com.watabou.pixeldungeon.items.Item;
-import com.watabou.pixeldungeon.sprites.ItemSprite;
+import com.poorcoding.noosa.Game;
+import com.poorcoding.dixelpungeon.actors.Char;
+import com.poorcoding.dixelpungeon.items.Item;
+import com.poorcoding.dixelpungeon.sprites.ItemSprite;
 
 public class Enchanting extends ItemSprite {
 	private static final int SIZE	= 16;

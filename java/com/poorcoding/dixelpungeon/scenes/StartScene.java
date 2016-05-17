@@ -15,39 +15,39 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
-package com.watabou.pixeldungeon.scenes;
+package com.poorcoding.dixelpungeon.scenes;
 
 import java.util.HashMap;
 
-import com.watabou.noosa.BitmapText;
-import com.watabou.noosa.BitmapTextMultiline;
-import com.watabou.noosa.Camera;
-import com.watabou.noosa.Game;
-import com.watabou.noosa.Group;
-import com.watabou.noosa.Image;
-import com.watabou.noosa.audio.Sample;
-import com.watabou.noosa.particles.BitmaskEmitter;
-import com.watabou.noosa.particles.Emitter;
-import com.watabou.noosa.ui.Button;
-import com.watabou.pixeldungeon.Assets;
-import com.watabou.pixeldungeon.Badges;
-import com.watabou.pixeldungeon.Dungeon;
-import com.watabou.pixeldungeon.GamesInProgress;
-import com.watabou.pixeldungeon.PixelDungeon;
-import com.watabou.pixeldungeon.actors.hero.HeroClass;
-import com.watabou.pixeldungeon.effects.BannerSprites;
-import com.watabou.pixeldungeon.effects.Speck;
-import com.watabou.pixeldungeon.effects.BannerSprites.Type;
-import com.watabou.pixeldungeon.ui.Archs;
-import com.watabou.pixeldungeon.ui.ExitButton;
-import com.watabou.pixeldungeon.ui.Icons;
-import com.watabou.pixeldungeon.ui.RedButton;
-import com.watabou.pixeldungeon.utils.Utils;
-import com.watabou.pixeldungeon.windows.WndChallenges;
-import com.watabou.pixeldungeon.windows.WndClass;
-import com.watabou.pixeldungeon.windows.WndMessage;
-import com.watabou.pixeldungeon.windows.WndOptions;
-import com.watabou.utils.Callback;
+import com.poorcoding.noosa.BitmapText;
+import com.poorcoding.noosa.BitmapTextMultiline;
+import com.poorcoding.noosa.Camera;
+import com.poorcoding.noosa.Game;
+import com.poorcoding.noosa.Group;
+import com.poorcoding.noosa.Image;
+import com.poorcoding.noosa.audio.Sample;
+import com.poorcoding.noosa.particles.BitmaskEmitter;
+import com.poorcoding.noosa.particles.Emitter;
+import com.poorcoding.noosa.ui.Button;
+import com.poorcoding.dixelpungeon.Assets;
+import com.poorcoding.dixelpungeon.Badges;
+import com.poorcoding.dixelpungeon.Dungeon;
+import com.poorcoding.dixelpungeon.GamesInProgress;
+import com.poorcoding.dixelpungeon.PixelDungeon;
+import com.poorcoding.dixelpungeon.actors.hero.HeroClass;
+import com.poorcoding.dixelpungeon.effects.BannerSprites;
+import com.poorcoding.dixelpungeon.effects.Speck;
+import com.poorcoding.dixelpungeon.effects.BannerSprites.Type;
+import com.poorcoding.dixelpungeon.ui.Archs;
+import com.poorcoding.dixelpungeon.ui.ExitButton;
+import com.poorcoding.dixelpungeon.ui.Icons;
+import com.poorcoding.dixelpungeon.ui.RedButton;
+import com.poorcoding.dixelpungeon.utils.Utils;
+import com.poorcoding.dixelpungeon.windows.WndChallenges;
+import com.poorcoding.dixelpungeon.windows.WndClass;
+import com.poorcoding.dixelpungeon.windows.WndMessage;
+import com.poorcoding.dixelpungeon.windows.WndOptions;
+import com.poorcoding.utils.Callback;
 
 public class StartScene extends PixelScene {
 

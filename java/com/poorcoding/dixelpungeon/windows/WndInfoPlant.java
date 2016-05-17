@@ -15,13 +15,13 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
-package com.watabou.pixeldungeon.windows;
+package com.poorcoding.dixelpungeon.windows;
 
-import com.watabou.noosa.BitmapTextMultiline;
-import com.watabou.pixeldungeon.plants.Plant;
-import com.watabou.pixeldungeon.scenes.PixelScene;
-import com.watabou.pixeldungeon.sprites.PlantSprite;
-import com.watabou.pixeldungeon.ui.Window;
+import com.poorcoding.noosa.BitmapTextMultiline;
+import com.poorcoding.dixelpungeon.plants.Plant;
+import com.poorcoding.dixelpungeon.scenes.PixelScene;
+import com.poorcoding.dixelpungeon.sprites.PlantSprite;
+import com.poorcoding.dixelpungeon.ui.Window;
 
 public class WndInfoPlant extends Window {
 	

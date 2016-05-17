@@ -15,42 +15,42 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
-package com.watabou.pixeldungeon.actors.mobs.npcs;
+package com.poorcoding.dixelpungeon.actors.mobs.npcs;
 
 import java.util.ArrayList;
 
-import com.watabou.pixeldungeon.Dungeon;
-import com.watabou.pixeldungeon.Journal;
-import com.watabou.pixeldungeon.actors.Actor;
-import com.watabou.pixeldungeon.actors.Char;
-import com.watabou.pixeldungeon.actors.buffs.Buff;
-import com.watabou.pixeldungeon.items.Heap;
-import com.watabou.pixeldungeon.items.Item;
-import com.watabou.pixeldungeon.items.quest.CorpseDust;
-import com.watabou.pixeldungeon.items.quest.PhantomFish;
-import com.watabou.pixeldungeon.items.wands.Wand;
-import com.watabou.pixeldungeon.items.wands.WandOfAmok;
-import com.watabou.pixeldungeon.items.wands.WandOfAvalanche;
-import com.watabou.pixeldungeon.items.wands.WandOfBlink;
-import com.watabou.pixeldungeon.items.wands.WandOfDisintegration;
-import com.watabou.pixeldungeon.items.wands.WandOfFirebolt;
-import com.watabou.pixeldungeon.items.wands.WandOfLightning;
-import com.watabou.pixeldungeon.items.wands.WandOfPoison;
-import com.watabou.pixeldungeon.items.wands.WandOfRegrowth;
-import com.watabou.pixeldungeon.items.wands.WandOfSlowness;
-import com.watabou.pixeldungeon.items.wands.WandOfReach;
-import com.watabou.pixeldungeon.levels.Level;
-import com.watabou.pixeldungeon.levels.PrisonLevel;
-import com.watabou.pixeldungeon.levels.Room;
-import com.watabou.pixeldungeon.levels.Terrain;
-import com.watabou.pixeldungeon.plants.Rotberry;
-import com.watabou.pixeldungeon.scenes.GameScene;
-import com.watabou.pixeldungeon.sprites.WandmakerSprite;
-import com.watabou.pixeldungeon.utils.Utils;
-import com.watabou.pixeldungeon.windows.WndQuest;
-import com.watabou.pixeldungeon.windows.WndWandmaker;
-import com.watabou.utils.Bundle;
-import com.watabou.utils.Random;
+import com.poorcoding.dixelpungeon.Dungeon;
+import com.poorcoding.dixelpungeon.Journal;
+import com.poorcoding.dixelpungeon.actors.Actor;
+import com.poorcoding.dixelpungeon.actors.Char;
+import com.poorcoding.dixelpungeon.actors.buffs.Buff;
+import com.poorcoding.dixelpungeon.items.Heap;
+import com.poorcoding.dixelpungeon.items.Item;
+import com.poorcoding.dixelpungeon.items.quest.CorpseDust;
+import com.poorcoding.dixelpungeon.items.quest.PhantomFish;
+import com.poorcoding.dixelpungeon.items.wands.Wand;
+import com.poorcoding.dixelpungeon.items.wands.WandOfAmok;
+import com.poorcoding.dixelpungeon.items.wands.WandOfAvalanche;
+import com.poorcoding.dixelpungeon.items.wands.WandOfBlink;
+import com.poorcoding.dixelpungeon.items.wands.WandOfDisintegration;
+import com.poorcoding.dixelpungeon.items.wands.WandOfFirebolt;
+import com.poorcoding.dixelpungeon.items.wands.WandOfLightning;
+import com.poorcoding.dixelpungeon.items.wands.WandOfPoison;
+import com.poorcoding.dixelpungeon.items.wands.WandOfRegrowth;
+import com.poorcoding.dixelpungeon.items.wands.WandOfSlowness;
+import com.poorcoding.dixelpungeon.items.wands.WandOfReach;
+import com.poorcoding.dixelpungeon.levels.Level;
+import com.poorcoding.dixelpungeon.levels.PrisonLevel;
+import com.poorcoding.dixelpungeon.levels.Room;
+import com.poorcoding.dixelpungeon.levels.Terrain;
+import com.poorcoding.dixelpungeon.plants.Rotberry;
+import com.poorcoding.dixelpungeon.scenes.GameScene;
+import com.poorcoding.dixelpungeon.sprites.WandmakerSprite;
+import com.poorcoding.dixelpungeon.utils.Utils;
+import com.poorcoding.dixelpungeon.windows.WndQuest;
+import com.poorcoding.dixelpungeon.windows.WndWandmaker;
+import com.poorcoding.utils.Bundle;
+import com.poorcoding.utils.Random;
 
 public class Wandmaker extends NPC {
 

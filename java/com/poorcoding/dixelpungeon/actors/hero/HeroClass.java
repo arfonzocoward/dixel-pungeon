@@ -15,26 +15,26 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
-package com.watabou.pixeldungeon.actors.hero;
+package com.poorcoding.dixelpungeon.actors.hero;
 
-import com.watabou.pixeldungeon.Assets;
-import com.watabou.pixeldungeon.Badges;
-import com.watabou.pixeldungeon.items.TomeOfMastery;
-import com.watabou.pixeldungeon.items.armor.ClothArmor;
-import com.watabou.pixeldungeon.items.bags.Keyring;
-import com.watabou.pixeldungeon.items.food.Food;
-import com.watabou.pixeldungeon.items.potions.PotionOfStrength;
-import com.watabou.pixeldungeon.items.rings.RingOfShadows;
-import com.watabou.pixeldungeon.items.scrolls.ScrollOfIdentify;
-import com.watabou.pixeldungeon.items.scrolls.ScrollOfMagicMapping;
-import com.watabou.pixeldungeon.items.wands.WandOfMagicMissile;
-import com.watabou.pixeldungeon.items.weapon.melee.Dagger;
-import com.watabou.pixeldungeon.items.weapon.melee.Knuckles;
-import com.watabou.pixeldungeon.items.weapon.melee.ShortSword;
-import com.watabou.pixeldungeon.items.weapon.missiles.Dart;
-import com.watabou.pixeldungeon.items.weapon.missiles.Boomerang;
-import com.watabou.pixeldungeon.ui.QuickSlot;
-import com.watabou.utils.Bundle;
+import com.poorcoding.dixelpungeon.Assets;
+import com.poorcoding.dixelpungeon.Badges;
+import com.poorcoding.dixelpungeon.items.TomeOfMastery;
+import com.poorcoding.dixelpungeon.items.armor.ClothArmor;
+import com.poorcoding.dixelpungeon.items.bags.Keyring;
+import com.poorcoding.dixelpungeon.items.food.Food;
+import com.poorcoding.dixelpungeon.items.potions.PotionOfStrength;
+import com.poorcoding.dixelpungeon.items.rings.RingOfShadows;
+import com.poorcoding.dixelpungeon.items.scrolls.ScrollOfIdentify;
+import com.poorcoding.dixelpungeon.items.scrolls.ScrollOfMagicMapping;
+import com.poorcoding.dixelpungeon.items.wands.WandOfMagicMissile;
+import com.poorcoding.dixelpungeon.items.weapon.melee.Dagger;
+import com.poorcoding.dixelpungeon.items.weapon.melee.Knuckles;
+import com.poorcoding.dixelpungeon.items.weapon.melee.ShortSword;
+import com.poorcoding.dixelpungeon.items.weapon.missiles.Dart;
+import com.poorcoding.dixelpungeon.items.weapon.missiles.Boomerang;
+import com.poorcoding.dixelpungeon.ui.QuickSlot;
+import com.poorcoding.utils.Bundle;
 
 public enum HeroClass {
 

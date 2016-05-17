@@ -15,34 +15,34 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
-package com.watabou.pixeldungeon.scenes;
+package com.poorcoding.dixelpungeon.scenes;
 
 import java.nio.FloatBuffer;
 
-import com.watabou.gltextures.Gradient;
-import com.watabou.gltextures.SmartTexture;
-import com.watabou.glwrap.Matrix;
-import com.watabou.glwrap.Quad;
-import com.watabou.input.Touchscreen.Touch;
-import com.watabou.noosa.Camera;
-import com.watabou.noosa.ColorBlock;
-import com.watabou.noosa.Game;
-import com.watabou.noosa.Group;
-import com.watabou.noosa.Image;
-import com.watabou.noosa.MovieClip;
-import com.watabou.noosa.NoosaScript;
-import com.watabou.noosa.TextureFilm;
-import com.watabou.noosa.TouchArea;
-import com.watabou.noosa.Visual;
-import com.watabou.noosa.audio.Music;
-import com.watabou.pixeldungeon.Assets;
-import com.watabou.pixeldungeon.Badges;
-import com.watabou.pixeldungeon.Dungeon;
-import com.watabou.pixeldungeon.actors.hero.HeroClass;
-import com.watabou.pixeldungeon.ui.Archs;
-import com.watabou.pixeldungeon.ui.RedButton;
-import com.watabou.utils.Point;
-import com.watabou.utils.Random;
+import com.poorcoding.gltextures.Gradient;
+import com.poorcoding.gltextures.SmartTexture;
+import com.poorcoding.glwrap.Matrix;
+import com.poorcoding.glwrap.Quad;
+import com.poorcoding.input.Touchscreen.Touch;
+import com.poorcoding.noosa.Camera;
+import com.poorcoding.noosa.ColorBlock;
+import com.poorcoding.noosa.Game;
+import com.poorcoding.noosa.Group;
+import com.poorcoding.noosa.Image;
+import com.poorcoding.noosa.MovieClip;
+import com.poorcoding.noosa.NoosaScript;
+import com.poorcoding.noosa.TextureFilm;
+import com.poorcoding.noosa.TouchArea;
+import com.poorcoding.noosa.Visual;
+import com.poorcoding.noosa.audio.Music;
+import com.poorcoding.dixelpungeon.Assets;
+import com.poorcoding.dixelpungeon.Badges;
+import com.poorcoding.dixelpungeon.Dungeon;
+import com.poorcoding.dixelpungeon.actors.hero.HeroClass;
+import com.poorcoding.dixelpungeon.ui.Archs;
+import com.poorcoding.dixelpungeon.ui.RedButton;
+import com.poorcoding.utils.Point;
+import com.poorcoding.utils.Random;
 
 public class SurfaceScene extends PixelScene {
 	

@@ -15,14 +15,14 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
-package com.watabou.pixeldungeon.items.weapon.enchantments;
+package com.poorcoding.dixelpungeon.items.weapon.enchantments;
 
-import com.watabou.pixeldungeon.actors.Char;
-import com.watabou.pixeldungeon.actors.buffs.Buff;
-import com.watabou.pixeldungeon.items.weapon.Weapon;
-import com.watabou.pixeldungeon.sprites.ItemSprite;
-import com.watabou.pixeldungeon.sprites.ItemSprite.Glowing;
-import com.watabou.utils.Random;
+import com.poorcoding.dixelpungeon.actors.Char;
+import com.poorcoding.dixelpungeon.actors.buffs.Buff;
+import com.poorcoding.dixelpungeon.items.weapon.Weapon;
+import com.poorcoding.dixelpungeon.sprites.ItemSprite;
+import com.poorcoding.dixelpungeon.sprites.ItemSprite.Glowing;
+import com.poorcoding.utils.Random;
 
 public class Poison extends Weapon.Enchantment {
 
@@ -39,8 +39,8 @@ public class Poison extends Weapon.Enchantment {
 		
 		if (Random.Int( level + 3 ) >= 2) {
 			
-			Buff.affect( defender, com.watabou.pixeldungeon.actors.buffs.Poison.class ).
-				set( com.watabou.pixeldungeon.actors.buffs.Poison.durationFactor( defender ) * (level + 1) );
+			Buff.affect( defender, com.poorcoding.dixelpungeon.actors.buffs.Poison.class ).
+				set( com.poorcoding.dixelpungeon.actors.buffs.Poison.durationFactor( defender ) * (level + 1) );
 			
 			return true;
 		} else {

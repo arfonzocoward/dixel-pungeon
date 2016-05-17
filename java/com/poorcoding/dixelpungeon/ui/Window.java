@@ -15,21 +15,21 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
-package com.watabou.pixeldungeon.ui;
+package com.poorcoding.dixelpungeon.ui;
 
 
-import com.watabou.input.Keys;
-import com.watabou.input.Keys.Key;
-import com.watabou.input.Touchscreen.Touch;
-import com.watabou.noosa.Camera;
-import com.watabou.noosa.Game;
-import com.watabou.noosa.Group;
-import com.watabou.noosa.NinePatch;
-import com.watabou.noosa.TouchArea;
-import com.watabou.pixeldungeon.Chrome;
-import com.watabou.pixeldungeon.effects.ShadowBox;
-import com.watabou.pixeldungeon.scenes.PixelScene;
-import com.watabou.utils.Signal;
+import com.poorcoding.input.Keys;
+import com.poorcoding.input.Keys.Key;
+import com.poorcoding.input.Touchscreen.Touch;
+import com.poorcoding.noosa.Camera;
+import com.poorcoding.noosa.Game;
+import com.poorcoding.noosa.Group;
+import com.poorcoding.noosa.NinePatch;
+import com.poorcoding.noosa.TouchArea;
+import com.poorcoding.dixelpungeon.Chrome;
+import com.poorcoding.dixelpungeon.effects.ShadowBox;
+import com.poorcoding.dixelpungeon.scenes.PixelScene;
+import com.poorcoding.utils.Signal;
 
 public class Window extends Group implements Signal.Listener<Key> {
 

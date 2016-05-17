@@ -15,9 +15,9 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
-package com.watabou.pixeldungeon.utils;
+package com.poorcoding.dixelpungeon.utils;
 
-import com.watabou.utils.Signal;
+import com.poorcoding.utils.Signal;
 
 import android.util.Log;
 

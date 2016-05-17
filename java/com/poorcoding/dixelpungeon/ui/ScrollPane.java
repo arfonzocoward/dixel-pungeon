@@ -15,16 +15,16 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
-package com.watabou.pixeldungeon.ui;
+package com.poorcoding.dixelpungeon.ui;
 
-import com.watabou.input.Touchscreen.Touch;
-import com.watabou.noosa.Camera;
-import com.watabou.noosa.ColorBlock;
-import com.watabou.noosa.TouchArea;
-import com.watabou.noosa.ui.Component;
-import com.watabou.pixeldungeon.scenes.PixelScene;
-import com.watabou.utils.Point;
-import com.watabou.utils.PointF;
+import com.poorcoding.input.Touchscreen.Touch;
+import com.poorcoding.noosa.Camera;
+import com.poorcoding.noosa.ColorBlock;
+import com.poorcoding.noosa.TouchArea;
+import com.poorcoding.noosa.ui.Component;
+import com.poorcoding.dixelpungeon.scenes.PixelScene;
+import com.poorcoding.utils.Point;
+import com.poorcoding.utils.PointF;
 
 public class ScrollPane extends Component {
 

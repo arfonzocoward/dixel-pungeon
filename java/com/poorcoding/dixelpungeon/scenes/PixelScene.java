@@ -15,26 +15,26 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
-package com.watabou.pixeldungeon.scenes;
+package com.poorcoding.dixelpungeon.scenes;
 
 import javax.microedition.khronos.opengles.GL10;
 
 import android.opengl.GLES20;
 
-import com.watabou.input.Touchscreen;
-import com.watabou.noosa.BitmapText;
-import com.watabou.noosa.BitmapText.Font;
-import com.watabou.noosa.BitmapTextMultiline;
-import com.watabou.noosa.Camera;
-import com.watabou.noosa.ColorBlock;
-import com.watabou.noosa.Game;
-import com.watabou.noosa.Scene;
-import com.watabou.noosa.Visual;
-import com.watabou.pixeldungeon.Assets;
-import com.watabou.pixeldungeon.Badges;
-import com.watabou.pixeldungeon.PixelDungeon;
-import com.watabou.pixeldungeon.effects.BadgeBanner;
-import com.watabou.utils.BitmapCache;
+import com.poorcoding.input.Touchscreen;
+import com.poorcoding.noosa.BitmapText;
+import com.poorcoding.noosa.BitmapText.Font;
+import com.poorcoding.noosa.BitmapTextMultiline;
+import com.poorcoding.noosa.Camera;
+import com.poorcoding.noosa.ColorBlock;
+import com.poorcoding.noosa.Game;
+import com.poorcoding.noosa.Scene;
+import com.poorcoding.noosa.Visual;
+import com.poorcoding.dixelpungeon.Assets;
+import com.poorcoding.dixelpungeon.Badges;
+import com.poorcoding.dixelpungeon.PixelDungeon;
+import com.poorcoding.dixelpungeon.effects.BadgeBanner;
+import com.poorcoding.utils.BitmapCache;
 
 public class PixelScene extends Scene {
 	

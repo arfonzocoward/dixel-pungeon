@@ -15,24 +15,24 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
-package com.watabou.pixeldungeon.effects;
+package com.poorcoding.dixelpungeon.effects;
 
-import com.watabou.noosa.Game;
-import com.watabou.noosa.Group;
-import com.watabou.noosa.particles.Emitter;
-import com.watabou.noosa.particles.PixelParticle;
-import com.watabou.noosa.particles.PixelParticle.Shrinking;
-import com.watabou.pixeldungeon.DungeonTilemap;
-import com.watabou.pixeldungeon.effects.particles.FlameParticle;
-import com.watabou.pixeldungeon.effects.particles.LeafParticle;
-import com.watabou.pixeldungeon.effects.particles.PoisonParticle;
-import com.watabou.pixeldungeon.effects.particles.PurpleParticle;
-import com.watabou.pixeldungeon.effects.particles.ShadowParticle;
-import com.watabou.pixeldungeon.effects.particles.WoolParticle;
-import com.watabou.utils.Callback;
-import com.watabou.utils.ColorMath;
-import com.watabou.utils.PointF;
-import com.watabou.utils.Random;
+import com.poorcoding.noosa.Game;
+import com.poorcoding.noosa.Group;
+import com.poorcoding.noosa.particles.Emitter;
+import com.poorcoding.noosa.particles.PixelParticle;
+import com.poorcoding.noosa.particles.PixelParticle.Shrinking;
+import com.poorcoding.dixelpungeon.DungeonTilemap;
+import com.poorcoding.dixelpungeon.effects.particles.FlameParticle;
+import com.poorcoding.dixelpungeon.effects.particles.LeafParticle;
+import com.poorcoding.dixelpungeon.effects.particles.PoisonParticle;
+import com.poorcoding.dixelpungeon.effects.particles.PurpleParticle;
+import com.poorcoding.dixelpungeon.effects.particles.ShadowParticle;
+import com.poorcoding.dixelpungeon.effects.particles.WoolParticle;
+import com.poorcoding.utils.Callback;
+import com.poorcoding.utils.ColorMath;
+import com.poorcoding.utils.PointF;
+import com.poorcoding.utils.Random;
 
 public class MagicMissile extends Emitter {
 

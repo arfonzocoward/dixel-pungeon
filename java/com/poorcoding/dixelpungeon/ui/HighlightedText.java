@@ -1,9 +1,9 @@
-package com.watabou.pixeldungeon.ui;
+package com.poorcoding.dixelpungeon.ui;
 
-import com.watabou.noosa.BitmapTextMultiline;
-import com.watabou.noosa.ui.Component;
-import com.watabou.pixeldungeon.scenes.PixelScene;
-import com.watabou.utils.Highlighter;
+import com.poorcoding.noosa.BitmapTextMultiline;
+import com.poorcoding.noosa.ui.Component;
+import com.poorcoding.dixelpungeon.scenes.PixelScene;
+import com.poorcoding.utils.Highlighter;
 
 public class HighlightedText extends Component {
 

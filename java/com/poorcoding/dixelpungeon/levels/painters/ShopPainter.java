@@ -15,36 +15,36 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
-package com.watabou.pixeldungeon.levels.painters;
+package com.poorcoding.dixelpungeon.levels.painters;
 
 import java.util.ArrayList;
 
-import com.watabou.pixeldungeon.Dungeon;
-import com.watabou.pixeldungeon.actors.mobs.Mob;
-import com.watabou.pixeldungeon.actors.mobs.npcs.ImpShopkeeper;
-import com.watabou.pixeldungeon.actors.mobs.npcs.Shopkeeper;
-import com.watabou.pixeldungeon.items.Ankh;
-import com.watabou.pixeldungeon.items.Generator;
-import com.watabou.pixeldungeon.items.Heap;
-import com.watabou.pixeldungeon.items.Item;
-import com.watabou.pixeldungeon.items.Torch;
-import com.watabou.pixeldungeon.items.Weightstone;
-import com.watabou.pixeldungeon.items.armor.*;
-import com.watabou.pixeldungeon.items.bags.ScrollHolder;
-import com.watabou.pixeldungeon.items.bags.SeedPouch;
-import com.watabou.pixeldungeon.items.bags.WandHolster;
-import com.watabou.pixeldungeon.items.food.OverpricedRation;
-import com.watabou.pixeldungeon.items.potions.PotionOfHealing;
-import com.watabou.pixeldungeon.items.scrolls.ScrollOfIdentify;
-import com.watabou.pixeldungeon.items.scrolls.ScrollOfMagicMapping;
-import com.watabou.pixeldungeon.items.scrolls.ScrollOfRemoveCurse;
-import com.watabou.pixeldungeon.items.weapon.melee.*;
-import com.watabou.pixeldungeon.levels.LastShopLevel;
-import com.watabou.pixeldungeon.levels.Level;
-import com.watabou.pixeldungeon.levels.Room;
-import com.watabou.pixeldungeon.levels.Terrain;
-import com.watabou.utils.Point;
-import com.watabou.utils.Random;
+import com.poorcoding.dixelpungeon.Dungeon;
+import com.poorcoding.dixelpungeon.actors.mobs.Mob;
+import com.poorcoding.dixelpungeon.actors.mobs.npcs.ImpShopkeeper;
+import com.poorcoding.dixelpungeon.actors.mobs.npcs.Shopkeeper;
+import com.poorcoding.dixelpungeon.items.Ankh;
+import com.poorcoding.dixelpungeon.items.Generator;
+import com.poorcoding.dixelpungeon.items.Heap;
+import com.poorcoding.dixelpungeon.items.Item;
+import com.poorcoding.dixelpungeon.items.Torch;
+import com.poorcoding.dixelpungeon.items.Weightstone;
+import com.poorcoding.dixelpungeon.items.armor.*;
+import com.poorcoding.dixelpungeon.items.bags.ScrollHolder;
+import com.poorcoding.dixelpungeon.items.bags.SeedPouch;
+import com.poorcoding.dixelpungeon.items.bags.WandHolster;
+import com.poorcoding.dixelpungeon.items.food.OverpricedRation;
+import com.poorcoding.dixelpungeon.items.potions.PotionOfHealing;
+import com.poorcoding.dixelpungeon.items.scrolls.ScrollOfIdentify;
+import com.poorcoding.dixelpungeon.items.scrolls.ScrollOfMagicMapping;
+import com.poorcoding.dixelpungeon.items.scrolls.ScrollOfRemoveCurse;
+import com.poorcoding.dixelpungeon.items.weapon.melee.*;
+import com.poorcoding.dixelpungeon.levels.LastShopLevel;
+import com.poorcoding.dixelpungeon.levels.Level;
+import com.poorcoding.dixelpungeon.levels.Room;
+import com.poorcoding.dixelpungeon.levels.Terrain;
+import com.poorcoding.utils.Point;
+import com.poorcoding.utils.Random;
 
 public class ShopPainter extends Painter {
 

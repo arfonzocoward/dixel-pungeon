@@ -15,25 +15,25 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
-package com.watabou.pixeldungeon.actors.blobs;
+package com.poorcoding.dixelpungeon.actors.blobs;
 
-import com.watabou.pixeldungeon.Journal;
-import com.watabou.pixeldungeon.Journal.Feature;
-import com.watabou.pixeldungeon.effects.BlobEmitter;
-import com.watabou.pixeldungeon.effects.Speck;
-import com.watabou.pixeldungeon.items.Generator;
-import com.watabou.pixeldungeon.items.Item;
-import com.watabou.pixeldungeon.items.Generator.Category;
-import com.watabou.pixeldungeon.items.potions.Potion;
-import com.watabou.pixeldungeon.items.potions.PotionOfMight;
-import com.watabou.pixeldungeon.items.potions.PotionOfStrength;
-import com.watabou.pixeldungeon.items.rings.Ring;
-import com.watabou.pixeldungeon.items.scrolls.Scroll;
-import com.watabou.pixeldungeon.items.scrolls.ScrollOfUpgrade;
-import com.watabou.pixeldungeon.items.scrolls.ScrollOfEnchantment;
-import com.watabou.pixeldungeon.items.wands.Wand;
-import com.watabou.pixeldungeon.items.weapon.melee.*;
-import com.watabou.pixeldungeon.plants.Plant;
+import com.poorcoding.dixelpungeon.Journal;
+import com.poorcoding.dixelpungeon.Journal.Feature;
+import com.poorcoding.dixelpungeon.effects.BlobEmitter;
+import com.poorcoding.dixelpungeon.effects.Speck;
+import com.poorcoding.dixelpungeon.items.Generator;
+import com.poorcoding.dixelpungeon.items.Item;
+import com.poorcoding.dixelpungeon.items.Generator.Category;
+import com.poorcoding.dixelpungeon.items.potions.Potion;
+import com.poorcoding.dixelpungeon.items.potions.PotionOfMight;
+import com.poorcoding.dixelpungeon.items.potions.PotionOfStrength;
+import com.poorcoding.dixelpungeon.items.rings.Ring;
+import com.poorcoding.dixelpungeon.items.scrolls.Scroll;
+import com.poorcoding.dixelpungeon.items.scrolls.ScrollOfUpgrade;
+import com.poorcoding.dixelpungeon.items.scrolls.ScrollOfEnchantment;
+import com.poorcoding.dixelpungeon.items.wands.Wand;
+import com.poorcoding.dixelpungeon.items.weapon.melee.*;
+import com.poorcoding.dixelpungeon.plants.Plant;
 
 public class WaterOfTransmutation extends WellWater {
 	

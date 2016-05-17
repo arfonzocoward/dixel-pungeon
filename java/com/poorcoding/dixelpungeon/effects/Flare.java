@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
-package com.watabou.pixeldungeon.effects;
+package com.poorcoding.dixelpungeon.effects;
 
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
@@ -26,15 +26,14 @@ import javax.microedition.khronos.opengles.GL10;
 
 import android.annotation.SuppressLint;
 import android.opengl.GLES20;
-import android.util.FloatMath;
 
-import com.watabou.gltextures.Gradient;
-import com.watabou.gltextures.SmartTexture;
-import com.watabou.noosa.Game;
-import com.watabou.noosa.Group;
-import com.watabou.noosa.NoosaScript;
-import com.watabou.noosa.Visual;
-import com.watabou.utils.PointF;
+import com.poorcoding.gltextures.Gradient;
+import com.poorcoding.gltextures.SmartTexture;
+import com.poorcoding.noosa.Game;
+import com.poorcoding.noosa.Group;
+import com.poorcoding.noosa.NoosaScript;
+import com.poorcoding.noosa.Visual;
+import com.poorcoding.utils.PointF;
 
 public class Flare extends Visual {
 	

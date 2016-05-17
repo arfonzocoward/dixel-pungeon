@@ -15,13 +15,13 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
-package com.watabou.pixeldungeon.effects;
+package com.poorcoding.dixelpungeon.effects;
 
-import com.watabou.noosa.particles.Emitter;
-import com.watabou.pixeldungeon.Dungeon;
-import com.watabou.pixeldungeon.DungeonTilemap;
-import com.watabou.pixeldungeon.actors.blobs.Blob;
-import com.watabou.utils.Random;
+import com.poorcoding.noosa.particles.Emitter;
+import com.poorcoding.dixelpungeon.Dungeon;
+import com.poorcoding.dixelpungeon.DungeonTilemap;
+import com.poorcoding.dixelpungeon.actors.blobs.Blob;
+import com.poorcoding.utils.Random;
 
 public class BlobEmitter extends Emitter {
 

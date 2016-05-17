@@ -15,9 +15,9 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
-package com.watabou.pixeldungeon.items.keys;
+package com.poorcoding.dixelpungeon.items.keys;
 
-import com.watabou.pixeldungeon.sprites.ItemSpriteSheet;
+import com.poorcoding.dixelpungeon.sprites.ItemSpriteSheet;
 
 public class GoldenKey extends Key {
 	

@@ -15,26 +15,26 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
-package com.watabou.pixeldungeon.scenes;
+package com.poorcoding.dixelpungeon.scenes;
 
-import com.watabou.noosa.BitmapText;
-import com.watabou.noosa.BitmapTextMultiline;
-import com.watabou.noosa.Camera;
-import com.watabou.noosa.Image;
-import com.watabou.noosa.audio.Music;
-import com.watabou.noosa.ui.Button;
-import com.watabou.pixeldungeon.Assets;
-import com.watabou.pixeldungeon.PixelDungeon;
-import com.watabou.pixeldungeon.Rankings;
-import com.watabou.pixeldungeon.effects.Flare;
-import com.watabou.pixeldungeon.sprites.ItemSprite;
-import com.watabou.pixeldungeon.sprites.ItemSpriteSheet;
-import com.watabou.pixeldungeon.ui.Archs;
-import com.watabou.pixeldungeon.ui.ExitButton;
-import com.watabou.pixeldungeon.ui.Icons;
-import com.watabou.pixeldungeon.ui.Window;
-import com.watabou.pixeldungeon.windows.WndError;
-import com.watabou.pixeldungeon.windows.WndRanking;
+import com.poorcoding.noosa.BitmapText;
+import com.poorcoding.noosa.BitmapTextMultiline;
+import com.poorcoding.noosa.Camera;
+import com.poorcoding.noosa.Image;
+import com.poorcoding.noosa.audio.Music;
+import com.poorcoding.noosa.ui.Button;
+import com.poorcoding.dixelpungeon.Assets;
+import com.poorcoding.dixelpungeon.PixelDungeon;
+import com.poorcoding.dixelpungeon.Rankings;
+import com.poorcoding.dixelpungeon.effects.Flare;
+import com.poorcoding.dixelpungeon.sprites.ItemSprite;
+import com.poorcoding.dixelpungeon.sprites.ItemSpriteSheet;
+import com.poorcoding.dixelpungeon.ui.Archs;
+import com.poorcoding.dixelpungeon.ui.ExitButton;
+import com.poorcoding.dixelpungeon.ui.Icons;
+import com.poorcoding.dixelpungeon.ui.Window;
+import com.poorcoding.dixelpungeon.windows.WndError;
+import com.poorcoding.dixelpungeon.windows.WndRanking;
 
 public class RankingsScene extends PixelScene {
 	

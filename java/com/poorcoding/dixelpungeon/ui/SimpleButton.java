@@ -15,12 +15,12 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
-package com.watabou.pixeldungeon.ui;
+package com.poorcoding.dixelpungeon.ui;
 
-import com.watabou.input.Touchscreen.Touch;
-import com.watabou.noosa.Image;
-import com.watabou.noosa.TouchArea;
-import com.watabou.noosa.ui.Component;
+import com.poorcoding.input.Touchscreen.Touch;
+import com.poorcoding.noosa.Image;
+import com.poorcoding.noosa.TouchArea;
+import com.poorcoding.noosa.ui.Component;
 
 public class SimpleButton extends Component {
 			

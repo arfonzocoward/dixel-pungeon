@@ -15,15 +15,15 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
-package com.watabou.pixeldungeon;
+package com.poorcoding.dixelpungeon;
 
-import com.watabou.noosa.Image;
-import com.watabou.noosa.TextureFilm;
-import com.watabou.noosa.Tilemap;
-import com.watabou.noosa.tweeners.AlphaTweener;
-import com.watabou.pixeldungeon.levels.Level;
-import com.watabou.utils.Point;
-import com.watabou.utils.PointF;
+import com.poorcoding.noosa.Image;
+import com.poorcoding.noosa.TextureFilm;
+import com.poorcoding.noosa.Tilemap;
+import com.poorcoding.noosa.tweeners.AlphaTweener;
+import com.poorcoding.dixelpungeon.levels.Level;
+import com.poorcoding.utils.Point;
+import com.poorcoding.utils.PointF;
 
 public class DungeonTilemap extends Tilemap {
 

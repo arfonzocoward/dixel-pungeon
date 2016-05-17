@@ -15,10 +15,10 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
-package com.watabou.pixeldungeon.items.food;
+package com.poorcoding.dixelpungeon.items.food;
 
-import com.watabou.pixeldungeon.actors.buffs.Hunger;
-import com.watabou.pixeldungeon.sprites.ItemSpriteSheet;
+import com.poorcoding.dixelpungeon.actors.buffs.Hunger;
+import com.poorcoding.dixelpungeon.sprites.ItemSpriteSheet;
 
 public class ChargrilledMeat extends Food {
 

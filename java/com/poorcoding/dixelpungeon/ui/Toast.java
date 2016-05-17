@@ -15,13 +15,13 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
-package com.watabou.pixeldungeon.ui;
+package com.poorcoding.dixelpungeon.ui;
 
-import com.watabou.noosa.BitmapText;
-import com.watabou.noosa.NinePatch;
-import com.watabou.noosa.ui.Component;
-import com.watabou.pixeldungeon.Chrome;
-import com.watabou.pixeldungeon.scenes.PixelScene;
+import com.poorcoding.noosa.BitmapText;
+import com.poorcoding.noosa.NinePatch;
+import com.poorcoding.noosa.ui.Component;
+import com.poorcoding.dixelpungeon.Chrome;
+import com.poorcoding.dixelpungeon.scenes.PixelScene;
 
 public class Toast extends Component {
 
