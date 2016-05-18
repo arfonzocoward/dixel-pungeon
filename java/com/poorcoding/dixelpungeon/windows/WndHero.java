@@ -40,19 +40,23 @@ public class WndHero extends WndTabbed {
 	
 	private static final String TXT_STATS	= "Stats";
 	private static final String TXT_BUFFS	= "Buffs";
+	private static final String TXT_DIXEL	= "Dixel";
 	
 	private static final String TXT_EXP		= "Experience";
 	private static final String TXT_STR		= "Strength";
 	private static final String TXT_HEALTH	= "Health";
 	private static final String TXT_GOLD	= "Gold Collected";
-	private static final String TXT_SOULS	= "Souls Collected";
 	private static final String TXT_DEPTH	= "Maximum Depth";
+
+	private static final String TXT_SOULS	= "Souls Collected";
+	private static final String TXT_CAMPS	= "Camp Rests";
 	
 	private static final int WIDTH		= 100;
-	private static final int TAB_WIDTH	= 40;
+	private static final int TAB_WIDTH	= 32;
 	
 	private StatsTab stats;
 	private BuffsTab buffs;
+	private DixelTab dixel;
 	
 	private SmartTexture icons;
 	private TextureFilm film;
@@ -69,6 +73,10 @@ public class WndHero extends WndTabbed {
 		
 		buffs = new BuffsTab();
 		add( buffs );
+
+		// Add tab for Dixel
+		dixel = new DixelTab();
+		add( dixel );
 		
 		add( new LabeledTab( TXT_STATS ) {
 			protected void select( boolean value ) {
@@ -82,11 +90,17 @@ public class WndHero extends WndTabbed {
 				buffs.visible = buffs.active = selected;
 			};
 		} );
+		add( new LabeledTab( TXT_DIXEL ) {
+			protected void select( boolean value ) {
+				super.select( value );
+				dixel.visible = dixel.active = selected;
+			};
+		} );
 		for (Tab tab : tabs) {
 			tab.setSize( TAB_WIDTH, tabHeight() );
 		}
 		
-		resize( WIDTH, (int)Math.max( stats.height(), buffs.height() ) );
+		resize( WIDTH, (int)Math.max( stats.height(), dixel.height() ) );
 		
 		select( 0 );
 	}
@@ -96,6 +110,7 @@ public class WndHero extends WndTabbed {
 		private static final String TXT_TITLE		= "Level %d %s";
 		private static final String TXT_CATALOGUS	= "Catalogus";
 		private static final String TXT_JOURNAL		= "Journal";
+		//private static final String TXT_DIXEL		= "Dixel";
 		
 		private static final int GAP = 5;
 		
@@ -132,6 +147,22 @@ public class WndHero extends WndTabbed {
 				btnCatalogus.right() + 1, btnCatalogus.top(), 
 				btnJournal.reqWidth() + 2, btnJournal.reqHeight() + 2 );
 			add( btnJournal );
+
+			/* Dixel specific Stats button */
+			/*
+			RedButton btnDixel = new RedButton( TXT_DIXEL) {
+				@Override
+				protected void onClick() {
+					//hide();
+					//GameScene.show( new WndJournal() );
+					GameScene.show( new WndError("TODO."));
+				}
+			};
+			btnDixel.setRect(
+					btnJournal.right() + 1, btnCatalogus.top(),
+					btnDixel.reqWidth() + 2, btnDixel.reqHeight() + 2 );
+			add( btnDixel );
+			*/
 			
 			pos = btnCatalogus.bottom() + GAP;
 			
@@ -146,9 +177,13 @@ public class WndHero extends WndTabbed {
 			
 			pos += GAP;
 
+			/*
 			statSlot( TXT_SOULS, Statistics.soulsCollected );
-
 			pos += GAP;
+
+			statSlot( TXT_CAMPS, Statistics.campfiresRested );
+			pos += GAP;
+			*/
 		}
 		
 		private void statSlot( String label, String value ) {
@@ -207,6 +242,57 @@ public class WndHero extends WndTabbed {
 			}
 		}
 		
+		public float height() {
+			return pos;
+		}
+	}
+
+	private class DixelTab extends Group {
+
+		private static final String TXT_TITLE		= "Dixel Pungeon Stuff";
+
+		private static final int GAP = 2;
+
+		private float pos;
+
+		public DixelTab() {
+			Hero hero = Dungeon.hero;
+
+			BitmapText title = PixelScene.createText(
+					Utils.format( TXT_TITLE, hero.lvl, hero.className() ).toUpperCase( Locale.ENGLISH ), 9 );
+			//title.hardlight( TITLE_COLOR );
+			title.hardlight( 0xFF44FF);
+			title.measure();
+			add( title );
+
+			pos = title.baseLine() + GAP + GAP;
+
+			dixelSlot( TXT_SOULS, Statistics.soulsCollected );
+			pos += GAP;
+
+			dixelSlot( TXT_CAMPS, Statistics.campfiresRested );
+			pos += GAP;
+		}
+
+		private void dixelSlot( String label, String value ) {
+
+			BitmapText txt = PixelScene.createText( label, 8 );
+			txt.y = pos;
+			add( txt );
+
+			txt = PixelScene.createText( value, 8 );
+			txt.measure();
+			txt.x = PixelScene.align( WIDTH * 0.65f );
+			txt.y = pos;
+			add( txt );
+
+			pos += GAP + txt.baseLine();
+		}
+
+		private void dixelSlot( String label, int value ) {
+			dixelSlot( label, Integer.toString( value ) );
+		}
+
 		public float height() {
 			return pos;
 		}
