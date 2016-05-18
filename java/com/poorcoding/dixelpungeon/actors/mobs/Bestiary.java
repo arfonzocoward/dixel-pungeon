@@ -70,16 +70,16 @@ public class Bestiary {
 			classes = new Class<?>[]{ Rat.class };
 			break;
 		case 2:
-			chances = new float[]{ 1, 1 };
-			classes = new Class<?>[]{ Rat.class, Gnoll.class };
+			chances = new float[]{ 1, 1, 1 };
+			classes = new Class<?>[]{ Rat.class, Goblin.class, Gnoll.class };
 			break;
 		case 3:
-			chances = new float[]{ 1, 2, 1,   0.02f };
-			classes = new Class<?>[]{ Rat.class, Gnoll.class, Crab.class,   Swarm.class };
+			chances = new float[]{ 1, 2, 1, 2,   0.02f };
+			classes = new Class<?>[]{ Rat.class, Gnoll.class, Crab.class, Goblin.class,   Swarm.class };
 			break;
 		case 4:
-			chances = new float[]{ 1, 2, 3,   0.02f, 0.01f, 0.01f };
-			classes = new Class<?>[]{ Rat.class, Gnoll.class, Crab.class,   Swarm.class, Skeleton.class, Thief.class };
+			chances = new float[]{ 1, 2, 3, 3,   0.02f, 0.01f, 0.01f };
+			classes = new Class<?>[]{ Rat.class, Gnoll.class, Crab.class, Goblin.class,   Swarm.class, Skeleton.class, Thief.class };
 			break;
 			
 		case 5:
