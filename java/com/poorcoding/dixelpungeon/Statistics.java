@@ -62,6 +62,7 @@ public class Statistics {
 	
 	private static final String GOLD		= "score";
 	private static final String SOULS		= "souls";
+	private static final String SOULSCOLLECTED		= "soulsCollected";
 	private static final String CAMPS		= "campfiresRested";
 	private static final String DEEPEST		= "maxDepth";
 	private static final String SLAIN		= "enemiesSlain";
@@ -75,7 +76,8 @@ public class Statistics {
 	
 	public static void storeInBundle( Bundle bundle ) {
 		bundle.put( GOLD,		goldCollected );
-		bundle.put( SOULS,		soulsCollected );
+		bundle.put( SOULS,		Dungeon.souls );
+		bundle.put( SOULSCOLLECTED,		soulsCollected );
 		bundle.put( CAMPS,		campfiresRested );
 		bundle.put( DEEPEST,	deepestFloor );
 		bundle.put( SLAIN,		enemiesSlain );
@@ -90,7 +92,8 @@ public class Statistics {
 	
 	public static void restoreFromBundle( Bundle bundle ) {
 		goldCollected	= bundle.getInt( GOLD );
-		soulsCollected	= bundle.getInt( SOULS);
+		Dungeon.souls	= bundle.getInt( SOULS);
+		soulsCollected	= bundle.getInt( SOULSCOLLECTED);
 		campfiresRested = bundle.getInt( CAMPS );
 		deepestFloor	= bundle.getInt( DEEPEST );
 		enemiesSlain	= bundle.getInt( SLAIN );

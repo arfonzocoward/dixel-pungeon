@@ -528,7 +528,7 @@ public class Dungeon {
 		depth = bundle.getInt( DEPTH );
 
 		// Dix: restore souls.
-		souls = bundle.getInt( SOULS );
+		//souls = bundle.getInt( SOULS );
 		
 		Statistics.restoreFromBundle( bundle );
 		Journal.restoreFromBundle( bundle );

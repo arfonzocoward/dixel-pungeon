@@ -270,6 +270,9 @@ public class WndHero extends WndTabbed {
 			dixelSlot( TXT_SOULS, Statistics.soulsCollected );
 			pos += GAP;
 
+			dixelSlot( "Souls", Dungeon.souls);
+			pos += GAP;
+
 			dixelSlot( TXT_CAMPS, Statistics.campfiresRested );
 			pos += GAP;
 		}
