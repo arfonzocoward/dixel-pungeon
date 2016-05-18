@@ -42,6 +42,7 @@ import com.poorcoding.dixelpungeon.items.Item;
 import com.poorcoding.dixelpungeon.items.potions.Potion;
 import com.poorcoding.dixelpungeon.items.rings.Ring;
 import com.poorcoding.dixelpungeon.items.scrolls.Scroll;
+import com.poorcoding.dixelpungeon.items.Soul;
 import com.poorcoding.dixelpungeon.items.wands.Wand;
 import com.poorcoding.dixelpungeon.levels.CavesBossLevel;
 import com.poorcoding.dixelpungeon.levels.CavesLevel;
@@ -336,6 +337,8 @@ public class Dungeon {
 	private static final String CHAPTERS	= "chapters";
 	private static final String QUESTS		= "quests";
 	private static final String BADGES		= "badges";
+
+	private static final String SOULS		= "souls";
 	
 	public static String gameFile( HeroClass cl ) {
 		switch (cl) {
@@ -400,7 +403,7 @@ public class Dungeon {
 			
 			Statistics.storeInBundle( bundle );
 			Journal.storeInBundle( bundle );
-			
+
 			QuickSlot.save( bundle );
 			
 			Scroll.save( bundle );
@@ -523,6 +526,9 @@ public class Dungeon {
 		
 		gold = bundle.getInt( GOLD );
 		depth = bundle.getInt( DEPTH );
+
+		// Dix: restore souls.
+		souls = bundle.getInt( SOULS );
 		
 		Statistics.restoreFromBundle( bundle );
 		Journal.restoreFromBundle( bundle );
