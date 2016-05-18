@@ -43,7 +43,7 @@ public class TitleScene extends PixelScene {
 	private static final String TXT_BADGES		= "Badges";
 	private static final String TXT_ABOUT		= "About";
 
-	public static String version_dixel = "44";
+	public static String version_dixel = "45";
 
 	@Override
 	public void create() {

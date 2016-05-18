@@ -110,10 +110,11 @@ public class WndGame extends Window {
 				GameScene.show( new WndDixel(
 						"ABOUT DIXEL PUNGEON\n\n" +
 								"Key codebase changes from Pixel Dungeon:\n\n" +
-								"- Souls: collect to upgrade character and items.\n"+
+								"- Souls: collect souls for upgrade things in Soulforges.\n"+
 								"- All classes start with 10 food rations.\n" +
 								"- New MOBs: Goblin Scout.\n"+
 								"- Chance to drop food when MOBs die.\n" +
+								"- Campfires to rest and use Soulforge.\n" +
 								"\n\n\n\n(scroll 2 of 2)"
 
 				) );
