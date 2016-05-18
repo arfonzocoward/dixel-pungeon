@@ -71,7 +71,7 @@ public class WndSpendSouls extends Window {
 
 	private static final String TXT_LOOKS_BETTER	= "your %s certainly looks better now";
 
-	private static final Integer SOUL_FACTOR = 1 + Dungeon.depth;
+	private static final Integer SOUL_FACTOR = 5 + Dungeon.depth;
 
 	//public WndSpendSouls(Blacksmith troll, Hero hero ) {
 	public WndSpendSouls(Hero hero ) {
