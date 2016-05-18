@@ -20,6 +20,7 @@ package com.poorcoding.dixelpungeon.scenes;
 import android.content.Intent;
 import android.net.Uri;
 
+import com.poorcoding.dixelpungeon.effects.Fireball;
 import com.poorcoding.input.Touchscreen.Touch;
 import com.poorcoding.noosa.BitmapTextMultiline;
 import com.poorcoding.noosa.Camera;
@@ -35,7 +36,11 @@ import com.poorcoding.dixelpungeon.ui.Window;
 
 public class AboutScene extends PixelScene {
 
-	private static final String TXT = 
+	private static final String TXT =
+		"DIXEL PUNGEON:\n" +
+		"About: a fork of Pixel Dungeon.\n" +
+		"Code: Arfonzo J. Coward <arfonzo@gmail.com>\n" +
+		"\n\n\nPIXEL DUNGEON:\n" +
 		"Code & graphics: Watabou\n" +
 		"Music: Cube_Code\n\n" + 
 		"This game is inspired by Brian Walker's Brogue. " +
@@ -73,13 +78,23 @@ public class AboutScene extends PixelScene {
 			}
 		};
 		add( hotArea );
-		
+
+		// PixelOungeon original icon.
 		Image wata = Icons.WATA.get();
 		wata.x = align( (Camera.main.width - wata.width) / 2 );
-		wata.y = text.y - wata.height - 8;
+		wata.y = text.y - wata.height + 52;
 		add( wata );
-		
+
 		new Flare( 7, 64 ).color( 0x112233, true ).show( wata, 0 ).angularSpeed = +20;
+
+		// DixelPungeon icon.
+
+		Image iconDp= Icons.SEED_POUCH.get();
+		iconDp.x = align( (Camera.main.width - iconDp.width) / 2 );
+		iconDp.y = text.y - iconDp.height - 8;
+		add( iconDp );
+
+		new Flare( 7, 64 ).color( 0x117733, true ).show( iconDp, 0 ).angularSpeed = +40;
 		
 		Archs archs = new Archs();
 		archs.setSize( Camera.main.width, Camera.main.height );
