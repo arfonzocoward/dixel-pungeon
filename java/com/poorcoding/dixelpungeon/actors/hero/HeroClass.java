@@ -112,6 +112,16 @@ public enum HeroClass {
 	
 	private static void initCommon( Hero hero ) {
 		(hero.belongings.armor = new ClothArmor()).identify();
+		// Add 10 units of food to start.
+		new Food().identify().collect();
+		new Food().identify().collect();
+		new Food().identify().collect();
+		new Food().identify().collect();
+		new Food().identify().collect();
+		new Food().identify().collect();
+		new Food().identify().collect();
+		new Food().identify().collect();
+		new Food().identify().collect();
 		new Food().identify().collect();
 		new Keyring().collect();
 	}
