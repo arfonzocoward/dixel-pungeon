@@ -34,7 +34,9 @@ import com.poorcoding.dixelpungeon.actors.hero.HeroSubClass;
 import com.poorcoding.dixelpungeon.effects.Flare;
 import com.poorcoding.dixelpungeon.effects.Wound;
 import com.poorcoding.dixelpungeon.items.Generator;
+import com.poorcoding.dixelpungeon.items.Gold;
 import com.poorcoding.dixelpungeon.items.Item;
+import com.poorcoding.dixelpungeon.items.Soul;
 import com.poorcoding.dixelpungeon.items.food.Food;
 import com.poorcoding.dixelpungeon.levels.Level;
 import com.poorcoding.dixelpungeon.sprites.CharSprite;
@@ -391,6 +393,10 @@ public abstract class Mob extends Char {
 			}
 			Dungeon.level.drop( item, pos ).sprite.drop();
 		}
+
+		// Always drop souls
+		Dungeon.level.drop( new Soul(HT), pos ).sprite.drop();
+
 		// Sometimes drop food.
 		if (Random.Int(0,9) == 0) {
 			Dungeon.level.drop(new Food(), pos).sprite.drop();

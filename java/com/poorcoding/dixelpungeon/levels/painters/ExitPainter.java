@@ -20,6 +20,7 @@ package com.poorcoding.dixelpungeon.levels.painters;
 import com.poorcoding.dixelpungeon.levels.Level;
 import com.poorcoding.dixelpungeon.levels.Room;
 import com.poorcoding.dixelpungeon.levels.Terrain;
+import com.poorcoding.dixelpungeon.items.Soul;
 
 public class ExitPainter extends Painter {
 
@@ -32,6 +33,8 @@ public class ExitPainter extends Painter {
 			door.set( Room.Door.Type.REGULAR );
 		}
 		
+		//level.drop(new Soul(77), room.random());
+
 		level.exit = room.random( 1 );
 		set( level, level.exit, Terrain.EXIT );
 	}

@@ -22,6 +22,7 @@ import com.poorcoding.utils.Bundle;
 public class Statistics {
 	
 	public static int goldCollected;
+	public static int soulsCollected;
 	public static int deepestFloor;
 	public static int enemiesSlain;
 	public static int foodEaten;
@@ -36,10 +37,11 @@ public class Statistics {
 	public static boolean completedWithNoKilling = false;
 	
 	public static boolean amuletObtained = false;
-	
+
 	public static void reset() {
 		
 		goldCollected	= 0;
+		soulsCollected = 0;
 		deepestFloor	= 0;
 		enemiesSlain	= 0;
 		foodEaten		= 0;
@@ -57,6 +59,7 @@ public class Statistics {
 	}
 	
 	private static final String GOLD		= "score";
+	private static final String SOULS		= "souls";
 	private static final String DEEPEST		= "maxDepth";
 	private static final String SLAIN		= "enemiesSlain";
 	private static final String FOOD		= "foodEaten";
@@ -69,6 +72,7 @@ public class Statistics {
 	
 	public static void storeInBundle( Bundle bundle ) {
 		bundle.put( GOLD,		goldCollected );
+		bundle.put( SOULS,		soulsCollected );
 		bundle.put( DEEPEST,	deepestFloor );
 		bundle.put( SLAIN,		enemiesSlain );
 		bundle.put( FOOD,		foodEaten );
@@ -82,6 +86,7 @@ public class Statistics {
 	
 	public static void restoreFromBundle( Bundle bundle ) {
 		goldCollected	= bundle.getInt( GOLD );
+		soulsCollected	= bundle.getInt( SOULS) ;
 		deepestFloor	= bundle.getInt( DEEPEST );
 		enemiesSlain	= bundle.getInt( SLAIN );
 		foodEaten		= bundle.getInt( FOOD );

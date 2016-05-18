@@ -45,6 +45,7 @@ public class WndHero extends WndTabbed {
 	private static final String TXT_STR		= "Strength";
 	private static final String TXT_HEALTH	= "Health";
 	private static final String TXT_GOLD	= "Gold Collected";
+	private static final String TXT_SOULS	= "Souls Collected";
 	private static final String TXT_DEPTH	= "Maximum Depth";
 	
 	private static final int WIDTH		= 100;
@@ -143,6 +144,10 @@ public class WndHero extends WndTabbed {
 			statSlot( TXT_GOLD, Statistics.goldCollected );
 			statSlot( TXT_DEPTH, Statistics.deepestFloor );
 			
+			pos += GAP;
+
+			statSlot( TXT_SOULS, Statistics.soulsCollected );
+
 			pos += GAP;
 		}
 		

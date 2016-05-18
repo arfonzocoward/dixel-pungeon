@@ -84,6 +84,8 @@ public class Dungeon {
 	
 	public static int depth;
 	public static int gold;
+	public static int souls;
+
 	// Reason of death
 	public static String resultDescription;
 	
@@ -114,6 +116,7 @@ public class Dungeon {
 		
 		depth = 0;
 		gold = 0;
+		souls = 0;
 		
 		droppedItems = new SparseArray<ArrayList<Item>>();
 		
