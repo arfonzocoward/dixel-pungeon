@@ -44,7 +44,7 @@ import com.poorcoding.utils.Random;
 
 public abstract class Mob extends Char {
 	
-	private static final String	TXT_DIED	= "You hear something died in the distance";
+	private static final String	TXT_DIED	= "You hear a deathcry in the distance";
 	
 	protected static final String	TXT_ECHO	= "echo of ";
 	

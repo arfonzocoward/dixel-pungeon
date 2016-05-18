@@ -30,7 +30,7 @@ public class Chrome {
 		SCROLL,
 		TAB_SET,
 		TAB_SELECTED,
-		TAB_UNSELECTED
+		TAB_UNSELECTED;
 	};
 	
 	public static NinePatch get( Type type ) {
