@@ -136,6 +136,8 @@ public class SewerLevel extends RegularLevel {
 	@Override
 	public String tileName( int tile ) {
 		switch (tile) {
+		case Terrain.CAMPFIRE:
+			return "Campfire";
 		case Terrain.WATER:
 			return "Murky water";
 		default:
