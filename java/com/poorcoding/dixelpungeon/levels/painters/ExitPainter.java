@@ -21,6 +21,7 @@ import com.poorcoding.dixelpungeon.levels.Level;
 import com.poorcoding.dixelpungeon.levels.Room;
 import com.poorcoding.dixelpungeon.levels.Terrain;
 import com.poorcoding.dixelpungeon.items.Soul;
+import com.poorcoding.utils.Point;
 
 public class ExitPainter extends Painter {
 
@@ -32,7 +33,12 @@ public class ExitPainter extends Painter {
 		for (Room.Door door : room.connected.values()) {
 			door.set( Room.Door.Type.REGULAR );
 		}
-		
+
+		//Point c = room.center();
+		int c = room.random();
+		//fill( level, c.x, c.y, 3, 3, Terrain.GRASS );
+		set( level, c, Terrain.CAMPFIRE);
+
 		//level.drop(new Soul(77), room.random());
 
 		level.exit = room.random( 1 );

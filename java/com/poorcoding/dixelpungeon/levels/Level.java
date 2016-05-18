@@ -23,6 +23,9 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
 
+import com.poorcoding.dixelpungeon.actors.buffs.Hunger;
+import com.poorcoding.dixelpungeon.effects.Speck;
+import com.poorcoding.dixelpungeon.windows.WndDixel;
 import com.poorcoding.noosa.Scene;
 import com.poorcoding.noosa.audio.Sample;
 import com.poorcoding.dixelpungeon.Assets;
@@ -33,6 +36,7 @@ import com.poorcoding.dixelpungeon.actors.Actor;
 import com.poorcoding.dixelpungeon.actors.Char;
 import com.poorcoding.dixelpungeon.actors.blobs.Alchemy;
 import com.poorcoding.dixelpungeon.actors.blobs.Blob;
+import com.poorcoding.dixelpungeon.actors.blobs.Campfire;
 import com.poorcoding.dixelpungeon.actors.blobs.WellWater;
 import com.poorcoding.dixelpungeon.actors.buffs.Awareness;
 import com.poorcoding.dixelpungeon.actors.buffs.Blindness;
@@ -142,6 +146,8 @@ public abstract class Level implements Bundlable {
 	private static final String PLANTS		= "plants";
 	private static final String MOBS		= "mobs";
 	private static final String BLOBS		= "blobs";
+
+	public static int campfireCounter = 0;
 	
 	public void create() {
 		
@@ -703,7 +709,41 @@ public abstract class Level implements Bundlable {
 		case Terrain.DOOR:
 			Door.enter( cell );
 			break;
+
+		case Terrain.CAMPFIRE:
+			float energy = Hunger.HUNGRY;
+			String message = "You cook and rest by the campfire.";
+			Hero hero = Dungeon.hero;
+
+			GLog.i( message );
+
+			/* First time we use a campfire in a session gives full restore. Less on subsequent visits. */
+			if (campfireCounter < 1) {
+				if (hero.HP < hero.HT) {
+					hero.sprite.emitter().burst(Speck.factory(Speck.HEALING), 3);
+					hero.HP = hero.HT;
+				}
+			} else {
+				if (hero.HP < hero.HT) {
+					hero.sprite.emitter().burst(Speck.factory(Speck.HEALING), 1);
+					hero.HP = Math.min( hero.HP + 5, hero.HT );
+				}
+			}
+
+			// Satisfy Hunger.
+			hero.sprite.emitter().burst( Speck.factory( Speck.BUBBLE), 3 );
+			((Hunger) hero.buff(Hunger.class)).satisfy(energy);
+
+			campfireCounter++;
+
+			//GameScene.show(new WndDixel("Campfire used " + campfireCounter + " time(s)."));
+			//GameScene.show(new WndDixel("TODO: spend souls to upgrade stats."));
+
+			break;
 		}
+
+
+
 		
 		if (trap) {
 			Sample.INSTANCE.play( Assets.SND_TRAP );
@@ -895,6 +935,8 @@ public abstract class Level implements Bundlable {
 		}
 		
 		switch (tile) {
+		case Terrain.CAMPFIRE:
+			return "Campfire";
 		case Terrain.CHASM:
 			return "Chasm";
 		case Terrain.EMPTY:
@@ -1015,6 +1057,8 @@ public abstract class Level implements Bundlable {
 			return "Drop some seeds here to cook a potion.";
 		case Terrain.EMPTY_WELL:
 			return "The well has run dry.";
+		case Terrain.CAMPFIRE:
+			return "Rest here to heal and spend souls.";
 		default:
 			if (tile >= Terrain.WATER_TILES) {
 				return tileDesc( Terrain.WATER );

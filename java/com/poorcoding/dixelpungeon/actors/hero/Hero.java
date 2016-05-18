@@ -1006,6 +1006,10 @@ public class Hero extends Char {
 			
 			curAction = new HeroAction.Ascend( cell );
 			
+		} else if (Dungeon.level.map[cell] == Terrain.CAMPFIRE && cell != pos) {
+			// Rest at campfire.
+			curAction = new HeroAction.Move( cell );
+			lastAction = null;
 		} else  {
 			
 			curAction = new HeroAction.Move( cell );

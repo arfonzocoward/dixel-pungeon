@@ -25,6 +25,7 @@ import com.poorcoding.utils.Bundle;
 public class Journal {
 
 	public static enum Feature {
+		CAMPFIRE				( "Campfire"),
 		WELL_OF_HEALTH			( "Well of Health" ),
 		WELL_OF_AWARENESS		( "Well of Awareness" ),
 		WELL_OF_TRANSMUTATION	( "Well of Transmutation" ),
