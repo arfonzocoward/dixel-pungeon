@@ -43,8 +43,6 @@ public class TitleScene extends PixelScene {
 	private static final String TXT_BADGES		= "Badges";
 	private static final String TXT_ABOUT		= "About";
 
-	public static String version_dixel = "45";
-
 	@Override
 	public void create() {
 		
@@ -137,7 +135,7 @@ public class TitleScene extends PixelScene {
 			btnHighscores.setPos( w / 2, btnPlay.top() );
 		}
 		
-		BitmapText version = new BitmapText( "Dix r" + version_dixel + " (based on PD v " + Game.version + ")", font1x );
+		BitmapText version = new BitmapText( "Dix r" + DixelPungeon.version_dixel + " (based on PD v " + Game.version + ")", font1x );
 		version.measure();
 		version.hardlight( 0x888888 );
 		version.x = w - version.width();
