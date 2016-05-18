@@ -44,7 +44,7 @@ import com.poorcoding.noosa.NinePatch;
 import com.poorcoding.noosa.audio.Sample;
 import com.poorcoding.noosa.ui.Component;
 
-public class WndSpendSouls extends Window {
+public class WndSoulforge extends Window {
 
 	private static final int BTN_SIZE	= 36;
 	private static final float GAP		= 2;
@@ -73,14 +73,15 @@ public class WndSpendSouls extends Window {
 
 	private static final Integer SOUL_FACTOR = 5 + Dungeon.depth;
 
-	//public WndSpendSouls(Blacksmith troll, Hero hero ) {
-	public WndSpendSouls(Hero hero ) {
+	//public WndSoulforge(Blacksmith troll, Hero hero ) {
+	public WndSoulforge(Hero hero ) {
 		
 		super();
 		
 		IconTitle titlebar = new IconTitle();
 		//titlebar.icon(new ItemSprite( new Item().image(), null ));
 		titlebar.icon(new ItemSprite( new Soul().image(), null ));
+		titlebar.color(0xFF44FF);
 		titlebar.label("The Soulforge" );
 		titlebar.setRect( 0, 0, WIDTH, 0 );
 		add( titlebar );
@@ -88,7 +89,7 @@ public class WndSpendSouls extends Window {
 		//BitmapTextMultiline message = PixelScene.createMultiline( TXT_PROMPT, 6 );
 		BitmapTextMultiline message = PixelScene.createMultiline(
 				//"You have " + Statistics.soulsCollected + " Souls to spend.\n" +
-				"You have " + Dungeon.souls + " Souls to spend.",
+				"You have " + Dungeon.souls + " Souls to consume at the Soulforge.\n\nSelect an item to upgrade:",
 				6 );
 		message.maxWidth = WIDTH;
 		message.measure();
@@ -102,7 +103,8 @@ public class WndSpendSouls extends Window {
 				GameScene.selectItem( itemSelector, WndBag.Mode.UPGRADEABLE, TXT_SELECT );
 			}
 		};
-		btnItem1.setRect( (WIDTH - BTN_GAP) / 2 - BTN_SIZE, message.y + message.height() + BTN_GAP, BTN_SIZE, BTN_SIZE );
+		//btnItem1.setRect( (WIDTH - BTN_GAP) / 2 - BTN_SIZE, message.y + message.height() + BTN_GAP, BTN_SIZE, BTN_SIZE );
+		btnItem1.setRect( WIDTH - BTN_SIZE*2 - BTN_GAP/2, message.y + message.height() + BTN_GAP, BTN_SIZE, BTN_SIZE );
 		add( btnItem1 );
 
 		/*

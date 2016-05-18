@@ -56,13 +56,15 @@ public class WndGame extends Window {
 
 		// Display Soulforge button only at Campfires.
 		if (Dungeon.level.map[Dungeon.hero.pos] == Terrain.CAMPFIRE) {
-			addButton(new RedButton(TXT_SOULFORGE) {
+			RedButton btnSoulforge = new RedButton(TXT_SOULFORGE) {
 				@Override
 				protected void onClick() {
 					hide();
-					GameScene.show(new WndSpendSouls(Dungeon.hero));
+					GameScene.show(new WndSoulforge(Dungeon.hero));
 				}
-			});
+			};
+			btnSoulforge.textColor(0xFF44FF);
+			addButton(btnSoulforge);
 		}
 
 		addButton( new RedButton( TXT_SETTINGS ) {
