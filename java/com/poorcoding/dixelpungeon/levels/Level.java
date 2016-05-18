@@ -36,7 +36,6 @@ import com.poorcoding.dixelpungeon.actors.Actor;
 import com.poorcoding.dixelpungeon.actors.Char;
 import com.poorcoding.dixelpungeon.actors.blobs.Alchemy;
 import com.poorcoding.dixelpungeon.actors.blobs.Blob;
-import com.poorcoding.dixelpungeon.actors.blobs.Campfire;
 import com.poorcoding.dixelpungeon.actors.blobs.WellWater;
 import com.poorcoding.dixelpungeon.actors.buffs.Awareness;
 import com.poorcoding.dixelpungeon.actors.buffs.Blindness;
@@ -77,7 +76,8 @@ import com.poorcoding.utils.Random;
 import com.poorcoding.utils.SparseArray;
 
 public abstract class Level implements Bundlable {
-	
+
+
 	public static enum Feeling {
 		NONE,
 		CHASM,
@@ -146,6 +146,7 @@ public abstract class Level implements Bundlable {
 	private static final String PLANTS		= "plants";
 	private static final String MOBS		= "mobs";
 	private static final String BLOBS		= "blobs";
+	private static final String CAMPFIREVISITED		= "campfireCounter";
 
 	public static int campfireCounter = 0;
 	
@@ -238,6 +239,8 @@ public abstract class Level implements Bundlable {
 		
 		entrance	= bundle.getInt( ENTRANCE );
 		exit		= bundle.getInt( EXIT );
+
+		campfireCounter	= bundle.getInt( CAMPFIREVISITED );
 		
 		weakFloorCreated = false;
 		
@@ -293,6 +296,7 @@ public abstract class Level implements Bundlable {
 		bundle.put( PLANTS, plants.values() );
 		bundle.put( MOBS, mobs );
 		bundle.put( BLOBS, blobs.values() );
+		bundle.put( CAMPFIREVISITED, campfireCounter);
 	}
 	
 	public int tunnelTile() {
@@ -711,18 +715,22 @@ public abstract class Level implements Bundlable {
 			break;
 
 		case Terrain.CAMPFIRE:
-			float energy = Hunger.HUNGRY;
-			String message = "You cook and rest by the campfire.";
 			Hero hero = Dungeon.hero;
+			float energy = Hunger.HUNGRY;
+			String message = "You cook and rest by the campfire " +
+					"(hunger: " + ((Hunger) hero.buff(Hunger.class)).getHunger() + ")." ;
 
 			GLog.i( message );
 
-			/* First time we use a campfire in a session gives full restore. Less on subsequent visits. */
+			//GameScene.show(new WndDixel("Hunger: " + ((Hunger) hero.buff(Hunger.class)).getHunger()));
+
+			/* First time we use a campfire gives full restore. Less on subsequent visits. */
 			if (campfireCounter < 1) {
 				if (hero.HP < hero.HT) {
 					hero.sprite.emitter().burst(Speck.factory(Speck.HEALING), 3);
 					hero.HP = hero.HT;
 				}
+
 			} else {
 				if (hero.HP < hero.HT) {
 					hero.sprite.emitter().burst(Speck.factory(Speck.HEALING), 1);
@@ -731,10 +739,13 @@ public abstract class Level implements Bundlable {
 			}
 
 			// Satisfy Hunger.
-			hero.sprite.emitter().burst( Speck.factory( Speck.BUBBLE), 3 );
-			((Hunger) hero.buff(Hunger.class)).satisfy(energy);
+			if (((Hunger) hero.buff(Hunger.class)).getHunger() > 0) {
+				hero.sprite.emitter().burst(Speck.factory(Speck.BUBBLE), 3);
+				((Hunger) hero.buff(Hunger.class)).satisfy(energy);
+			}
 
 			campfireCounter++;
+			Statistics.campfiresRested++;
 
 			//GameScene.show(new WndDixel("Campfire used " + campfireCounter + " time(s)."));
 			//GameScene.show(new WndDixel("TODO: spend souls to upgrade stats."));
