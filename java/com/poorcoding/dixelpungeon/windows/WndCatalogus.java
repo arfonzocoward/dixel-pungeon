@@ -21,7 +21,7 @@ import java.util.ArrayList;
 
 import com.poorcoding.noosa.BitmapText;
 import com.poorcoding.noosa.ui.Component;
-import com.poorcoding.dixelpungeon.PixelDungeon;
+import com.poorcoding.dixelpungeon.DixelPungeon;
 import com.poorcoding.dixelpungeon.items.Item;
 import com.poorcoding.dixelpungeon.items.potions.Potion;
 import com.poorcoding.dixelpungeon.items.scrolls.Scroll;
@@ -59,7 +59,7 @@ public class WndCatalogus extends WndTabbed {
 		
 		super();
 		
-		if (PixelDungeon.landscape()) {
+		if (DixelPungeon.landscape()) {
 			resize( WIDTH_L, HEIGHT_L );
 		} else {
 			resize( WIDTH_P, HEIGHT_P );

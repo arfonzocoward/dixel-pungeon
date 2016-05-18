@@ -26,7 +26,7 @@ import com.poorcoding.noosa.Image;
 import com.poorcoding.noosa.audio.Sample;
 import com.poorcoding.dixelpungeon.Assets;
 import com.poorcoding.dixelpungeon.Dungeon;
-import com.poorcoding.dixelpungeon.PixelDungeon;
+import com.poorcoding.dixelpungeon.DixelPungeon;
 import com.poorcoding.dixelpungeon.actors.hero.Belongings;
 import com.poorcoding.dixelpungeon.actors.hero.Hero;
 import com.poorcoding.dixelpungeon.items.Gold;
@@ -100,7 +100,7 @@ public class WndBag extends WndTabbed {
 		lastMode = mode;
 		lastBag = bag;
 		
-		nCols = PixelDungeon.landscape() ? COLS_L : COLS_P;
+		nCols = DixelPungeon.landscape() ? COLS_L : COLS_P;
 		nRows = (Belongings.BACKPACK_SIZE + 4 + 1) / nCols + ((Belongings.BACKPACK_SIZE + 4 + 1) % nCols > 0 ? 1 : 0);
 		
 		int slotsWidth = SLOT_SIZE * nCols + SLOT_MARGIN * (nCols - 1);

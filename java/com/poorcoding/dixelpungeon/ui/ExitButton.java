@@ -22,7 +22,7 @@ import com.poorcoding.noosa.Image;
 import com.poorcoding.noosa.audio.Sample;
 import com.poorcoding.noosa.ui.Button;
 import com.poorcoding.dixelpungeon.Assets;
-import com.poorcoding.dixelpungeon.PixelDungeon;
+import com.poorcoding.dixelpungeon.DixelPungeon;
 import com.poorcoding.dixelpungeon.scenes.TitleScene;
 
 public class ExitButton extends Button {
@@ -68,7 +68,7 @@ public class ExitButton extends Button {
 		if (Game.scene() instanceof TitleScene) {
 			Game.instance.finish();
 		} else {
-			PixelDungeon.switchNoFade( TitleScene.class );
+			DixelPungeon.switchNoFade( TitleScene.class );
 		}
 	}
 }

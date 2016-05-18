@@ -21,7 +21,7 @@ import java.util.ArrayList;
 
 import com.poorcoding.dixelpungeon.Badges;
 import com.poorcoding.dixelpungeon.Dungeon;
-import com.poorcoding.dixelpungeon.PixelDungeon;
+import com.poorcoding.dixelpungeon.DixelPungeon;
 import com.poorcoding.dixelpungeon.actors.Char;
 import com.poorcoding.dixelpungeon.actors.buffs.Buff;
 import com.poorcoding.dixelpungeon.actors.hero.Hero;
@@ -127,7 +127,7 @@ public class Ring extends EquipableItem {
 			final Ring r1 = hero.belongings.ring1;
 			final Ring r2 = hero.belongings.ring2;
 			
-			PixelDungeon.scene().add( 
+			DixelPungeon.scene().add(
 				new WndOptions( TXT_UNEQUIP_TITLE, TXT_UNEQUIP_MESSAGE, 
 					Utils.capitalize( r1.toString() ), 
 					Utils.capitalize( r2.toString() ) ) {

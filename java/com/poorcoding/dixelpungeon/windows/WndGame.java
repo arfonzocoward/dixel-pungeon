@@ -21,7 +21,7 @@ import java.io.IOException;
 
 import com.poorcoding.noosa.Game;
 import com.poorcoding.dixelpungeon.Dungeon;
-import com.poorcoding.dixelpungeon.PixelDungeon;
+import com.poorcoding.dixelpungeon.DixelPungeon;
 import com.poorcoding.dixelpungeon.scenes.GameScene;
 import com.poorcoding.dixelpungeon.scenes.InterlevelScene;
 import com.poorcoding.dixelpungeon.scenes.RankingsScene;
@@ -75,7 +75,7 @@ public class WndGame extends Window {
 				@Override
 				protected void onClick() {
 					Dungeon.hero = null;
-					PixelDungeon.challenges( Dungeon.challenges );
+					DixelPungeon.challenges( Dungeon.challenges );
 					InterlevelScene.mode = InterlevelScene.Mode.DESCEND;
 					InterlevelScene.noStory = true;
 					Game.switchScene( InterlevelScene.class );

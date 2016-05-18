@@ -33,7 +33,7 @@ import com.poorcoding.dixelpungeon.Assets;
 import com.poorcoding.dixelpungeon.Badges;
 import com.poorcoding.dixelpungeon.Dungeon;
 import com.poorcoding.dixelpungeon.GamesInProgress;
-import com.poorcoding.dixelpungeon.PixelDungeon;
+import com.poorcoding.dixelpungeon.DixelPungeon;
 import com.poorcoding.dixelpungeon.actors.hero.HeroClass;
 import com.poorcoding.dixelpungeon.effects.BannerSprites;
 import com.poorcoding.dixelpungeon.effects.Speck;
@@ -102,7 +102,7 @@ public class StartScene extends PixelScene {
 		int h = Camera.main.height;
 		
 		float width, height;
-		if (PixelDungeon.landscape()) {
+		if (DixelPungeon.landscape()) {
 			width = WIDTH_L;
 			height = HEIGHT_L;
 		} else {
@@ -165,7 +165,7 @@ public class StartScene extends PixelScene {
 			shields.put( cl, shield );
 			add( shield );
 		}
-		if (PixelDungeon.landscape()) {
+		if (DixelPungeon.landscape()) {
 			float shieldW = width / 4;
 			float shieldH = Math.min( centralHeight, shieldW );
 			top = title.y + title.height + (centralHeight - shieldH) / 2;
@@ -225,7 +225,7 @@ public class StartScene extends PixelScene {
 		add( btnExit );
 		
 		curClass = null;
-		updateClass( HeroClass.values()[PixelDungeon.lastClass()] );
+		updateClass( HeroClass.values()[DixelPungeon.lastClass()] );
 		
 		fadeIn();
 		
@@ -233,7 +233,7 @@ public class StartScene extends PixelScene {
 			@Override
 			public void call() {
 				if (Game.scene() == StartScene.this) {
-					PixelDungeon.switchNoFade( StartScene.class );
+					DixelPungeon.switchNoFade( StartScene.class );
 				}
 			}
 		};
@@ -302,8 +302,8 @@ public class StartScene extends PixelScene {
 		Dungeon.hero = null;
 		InterlevelScene.mode = InterlevelScene.Mode.DESCEND;
 		
-		if (PixelDungeon.intro()) {
-			PixelDungeon.intro( false );
+		if (DixelPungeon.intro()) {
+			DixelPungeon.intro( false );
 			Game.switchScene( IntroScene.class );
 		} else {
 			Game.switchScene( InterlevelScene.class );
@@ -312,7 +312,7 @@ public class StartScene extends PixelScene {
 	
 	@Override
 	protected void onBackPressed() {
-		PixelDungeon.switchNoFade( TitleScene.class );
+		DixelPungeon.switchNoFade( TitleScene.class );
 	}
 	
 	private static class GameButton extends RedButton {
@@ -491,7 +491,7 @@ public class StartScene extends PixelScene {
 			
 			super.createChildren();
 			
-			image = Icons.get( PixelDungeon.challenges() > 0 ? Icons.CHALLENGE_ON :Icons.CHALLENGE_OFF );
+			image = Icons.get( DixelPungeon.challenges() > 0 ? Icons.CHALLENGE_ON :Icons.CHALLENGE_OFF );
 			add( image );
 		}
 		
@@ -507,10 +507,10 @@ public class StartScene extends PixelScene {
 		@Override
 		protected void onClick() {
 			if (Badges.isUnlocked( Badges.Badge.VICTORY )) {
-				StartScene.this.add( new WndChallenges( PixelDungeon.challenges(), true ) {
+				StartScene.this.add( new WndChallenges( DixelPungeon.challenges(), true ) {
 					public void onBackPressed() {
 						super.onBackPressed();
-						image.copy( Icons.get( PixelDungeon.challenges() > 0 ? 
+						image.copy( Icons.get( DixelPungeon.challenges() > 0 ?
 							Icons.CHALLENGE_ON :Icons.CHALLENGE_OFF ) );
 					};
 				} );

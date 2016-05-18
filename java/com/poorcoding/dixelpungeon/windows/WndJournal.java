@@ -24,7 +24,7 @@ import com.poorcoding.noosa.Image;
 import com.poorcoding.noosa.ui.Component;
 import com.poorcoding.dixelpungeon.Dungeon;
 import com.poorcoding.dixelpungeon.Journal;
-import com.poorcoding.dixelpungeon.PixelDungeon;
+import com.poorcoding.dixelpungeon.DixelPungeon;
 import com.poorcoding.dixelpungeon.scenes.PixelScene;
 import com.poorcoding.dixelpungeon.ui.Icons;
 import com.poorcoding.dixelpungeon.ui.ScrollPane;
@@ -46,7 +46,7 @@ public class WndJournal extends Window {
 	public WndJournal() {
 		
 		super();
-		resize( WIDTH, PixelDungeon.landscape() ? HEIGHT_L : HEIGHT_P );
+		resize( WIDTH, DixelPungeon.landscape() ? HEIGHT_L : HEIGHT_P );
 		
 		txtTitle = PixelScene.createText( TXT_TITLE, 9 );
 		txtTitle.hardlight( Window.TITLE_COLOR );

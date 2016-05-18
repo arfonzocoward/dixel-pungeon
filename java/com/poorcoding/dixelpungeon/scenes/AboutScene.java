@@ -26,7 +26,7 @@ import com.poorcoding.noosa.Camera;
 import com.poorcoding.noosa.Game;
 import com.poorcoding.noosa.Image;
 import com.poorcoding.noosa.TouchArea;
-import com.poorcoding.dixelpungeon.PixelDungeon;
+import com.poorcoding.dixelpungeon.DixelPungeon;
 import com.poorcoding.dixelpungeon.effects.Flare;
 import com.poorcoding.dixelpungeon.ui.Archs;
 import com.poorcoding.dixelpungeon.ui.ExitButton;
@@ -94,6 +94,6 @@ public class AboutScene extends PixelScene {
 	
 	@Override
 	protected void onBackPressed() {
-		PixelDungeon.switchNoFade( TitleScene.class );
+		DixelPungeon.switchNoFade( TitleScene.class );
 	}
 }

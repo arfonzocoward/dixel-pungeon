@@ -33,7 +33,7 @@ import com.poorcoding.dixelpungeon.Badges;
 import com.poorcoding.dixelpungeon.Dungeon;
 import com.poorcoding.dixelpungeon.DungeonTilemap;
 import com.poorcoding.dixelpungeon.FogOfWar;
-import com.poorcoding.dixelpungeon.PixelDungeon;
+import com.poorcoding.dixelpungeon.DixelPungeon;
 import com.poorcoding.dixelpungeon.Statistics;
 import com.poorcoding.dixelpungeon.actors.Actor;
 import com.poorcoding.dixelpungeon.actors.blobs.Blob;
@@ -119,10 +119,10 @@ public class GameScene extends PixelScene {
 		Music.INSTANCE.play( Assets.TUNE, true );
 		Music.INSTANCE.volume( 1f );
 		
-		PixelDungeon.lastClass( Dungeon.hero.heroClass.ordinal() );
+		DixelPungeon.lastClass( Dungeon.hero.heroClass.ordinal() );
 		
 		super.create();
-		Camera.main.zoom( defaultZoom + PixelDungeon.zoom() );
+		Camera.main.zoom( defaultZoom + DixelPungeon.zoom() );
 		
 		scene = this;
 
@@ -188,7 +188,7 @@ public class GameScene extends PixelScene {
 		fog.updateVisibility( Dungeon.visible, Dungeon.level.visited, Dungeon.level.mapped );
 		add( fog );
 		
-		brightness( PixelDungeon.brightness() );
+		brightness( DixelPungeon.brightness() );
 		
 		spells = new Group();
 		add( spells );

@@ -29,7 +29,7 @@ import com.poorcoding.noosa.audio.Music;
 import com.poorcoding.noosa.audio.Sample;
 import com.poorcoding.noosa.ui.Button;
 import com.poorcoding.dixelpungeon.Assets;
-import com.poorcoding.dixelpungeon.PixelDungeon;
+import com.poorcoding.dixelpungeon.DixelPungeon;
 import com.poorcoding.dixelpungeon.effects.BannerSprites;
 import com.poorcoding.dixelpungeon.effects.Fireball;
 import com.poorcoding.dixelpungeon.ui.Archs;
@@ -64,7 +64,7 @@ public class TitleScene extends PixelScene {
 		add( title );
 		
 		float height = title.height + 
-			(PixelDungeon.landscape() ? DashboardItem.SIZE : DashboardItem.SIZE * 2);
+			(DixelPungeon.landscape() ? DashboardItem.SIZE : DashboardItem.SIZE * 2);
 		
 		title.x = (w - title.width()) / 2;
 		title.y = (h - height) / 2;
@@ -93,7 +93,7 @@ public class TitleScene extends PixelScene {
 		DashboardItem btnBadges = new DashboardItem( TXT_BADGES, 3 ) {
 			@Override
 			protected void onClick() {
-				PixelDungeon.switchNoFade( BadgesScene.class );
+				DixelPungeon.switchNoFade( BadgesScene.class );
 			}
 		};
 		add( btnBadges );
@@ -101,7 +101,7 @@ public class TitleScene extends PixelScene {
 		DashboardItem btnAbout = new DashboardItem( TXT_ABOUT, 1 ) {
 			@Override
 			protected void onClick() {
-				PixelDungeon.switchNoFade( AboutScene.class );
+				DixelPungeon.switchNoFade( AboutScene.class );
 			}
 		};
 		add( btnAbout );
@@ -109,7 +109,7 @@ public class TitleScene extends PixelScene {
 		DashboardItem btnPlay = new DashboardItem( TXT_PLAY, 0 ) {
 			@Override
 			protected void onClick() {
-				PixelDungeon.switchNoFade( StartScene.class );
+				DixelPungeon.switchNoFade( StartScene.class );
 			}
 		};
 		add( btnPlay );
@@ -117,12 +117,12 @@ public class TitleScene extends PixelScene {
 		DashboardItem btnHighscores = new DashboardItem( TXT_HIGHSCORES, 2 ) {
 			@Override
 			protected void onClick() {
-				PixelDungeon.switchNoFade( RankingsScene.class );
+				DixelPungeon.switchNoFade( RankingsScene.class );
 			}
 		};
 		add( btnHighscores );
 		
-		if (PixelDungeon.landscape()) {
+		if (DixelPungeon.landscape()) {
 			float y = (h + height) / 2 - DashboardItem.SIZE;
 			btnHighscores	.setPos( w / 2 - btnHighscores.width(), y );
 			btnBadges		.setPos( w / 2, y );

@@ -21,7 +21,7 @@ import java.util.ArrayList;
 
 import com.poorcoding.noosa.BitmapText;
 import com.poorcoding.dixelpungeon.Challenges;
-import com.poorcoding.dixelpungeon.PixelDungeon;
+import com.poorcoding.dixelpungeon.DixelPungeon;
 import com.poorcoding.dixelpungeon.scenes.PixelScene;
 import com.poorcoding.dixelpungeon.ui.CheckBox;
 import com.poorcoding.dixelpungeon.ui.Window;
@@ -83,7 +83,7 @@ public class WndChallenges extends Window {
 					value |= Challenges.MASKS[i];
 				}
 			}	
-			PixelDungeon.challenges( value );
+			DixelPungeon.challenges( value );
 		}
 		
 		super.onBackPressed();

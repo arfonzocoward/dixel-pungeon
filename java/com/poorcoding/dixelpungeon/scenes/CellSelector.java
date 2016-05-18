@@ -20,7 +20,7 @@ package com.poorcoding.dixelpungeon.scenes;
 import com.poorcoding.input.Touchscreen.Touch;
 import com.poorcoding.noosa.TouchArea;
 import com.poorcoding.dixelpungeon.DungeonTilemap;
-import com.poorcoding.dixelpungeon.PixelDungeon;
+import com.poorcoding.dixelpungeon.DixelPungeon;
 import com.poorcoding.utils.GameMath;
 import com.poorcoding.utils.PointF;
 
@@ -100,7 +100,7 @@ public class CellSelector extends TouchArea {
 			
 			int zoom = Math.round( camera.zoom );
 			camera.zoom( zoom );
-			PixelDungeon.zoom( (int)(zoom - PixelScene.defaultZoom) );
+			DixelPungeon.zoom( (int)(zoom - PixelScene.defaultZoom) );
 
 			dragging = true;
 			if (t == touch) {

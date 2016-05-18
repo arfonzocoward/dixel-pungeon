@@ -24,7 +24,7 @@ import com.poorcoding.noosa.Image;
 import com.poorcoding.noosa.audio.Music;
 import com.poorcoding.noosa.ui.Button;
 import com.poorcoding.dixelpungeon.Assets;
-import com.poorcoding.dixelpungeon.PixelDungeon;
+import com.poorcoding.dixelpungeon.DixelPungeon;
 import com.poorcoding.dixelpungeon.Rankings;
 import com.poorcoding.dixelpungeon.effects.Flare;
 import com.poorcoding.dixelpungeon.sprites.ItemSprite;
@@ -76,7 +76,7 @@ public class RankingsScene extends PixelScene {
 		
 		if (Rankings.INSTANCE.records.size() > 0) {
 			
-			float rowHeight = PixelDungeon.landscape() ? ROW_HEIGHT_L : ROW_HEIGHT_P;
+			float rowHeight = DixelPungeon.landscape() ? ROW_HEIGHT_L : ROW_HEIGHT_P;
 			
 			float left = (w - Math.min( MAX_ROW_WIDTH, w )) / 2 + GAP;
 			float top = align( (h - rowHeight  * Rankings.INSTANCE.records.size()) / 2 );
@@ -143,7 +143,7 @@ public class RankingsScene extends PixelScene {
 	
 	@Override
 	protected void onBackPressed() {
-		PixelDungeon.switchNoFade( TitleScene.class );
+		DixelPungeon.switchNoFade( TitleScene.class );
 	}
 	
 	public static class Record extends Button {

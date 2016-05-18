@@ -28,7 +28,7 @@ import com.poorcoding.noosa.audio.Sample;
 import com.poorcoding.noosa.ui.Button;
 import com.poorcoding.dixelpungeon.Assets;
 import com.poorcoding.dixelpungeon.Badges;
-import com.poorcoding.dixelpungeon.PixelDungeon;
+import com.poorcoding.dixelpungeon.DixelPungeon;
 import com.poorcoding.dixelpungeon.effects.BadgeBanner;
 import com.poorcoding.dixelpungeon.ui.Archs;
 import com.poorcoding.dixelpungeon.ui.ExitButton;
@@ -58,8 +58,8 @@ public class BadgesScene extends PixelScene {
 		archs.setSize( w, h );
 		add( archs );
 		
-		int pw = (int)Math.min( w, (PixelDungeon.landscape() ? MIN_WIDTH_L : MIN_WIDTH_P) * 3 ) - 16;
-		int ph = (int)Math.min( h, (PixelDungeon.landscape() ? MIN_HEIGHT_L : MIN_HEIGHT_P) * 3 ) - 32;
+		int pw = (int)Math.min( w, (DixelPungeon.landscape() ? MIN_WIDTH_L : MIN_WIDTH_P) * 3 ) - 16;
+		int ph = (int)Math.min( h, (DixelPungeon.landscape() ? MIN_HEIGHT_L : MIN_HEIGHT_P) * 3 ) - 32;
 		
 		float size = (float)Math.sqrt( pw * ph / 27f );
 		int nCols = (int)Math.ceil( pw / size );
@@ -101,7 +101,7 @@ public class BadgesScene extends PixelScene {
 			@Override
 			public void call() {
 				if (Game.scene() == BadgesScene.this) {
-					PixelDungeon.switchNoFade( BadgesScene.class );
+					DixelPungeon.switchNoFade( BadgesScene.class );
 				}
 			}
 		};
@@ -118,7 +118,7 @@ public class BadgesScene extends PixelScene {
 	
 	@Override
 	protected void onBackPressed() {
-		PixelDungeon.switchNoFade( TitleScene.class );
+		DixelPungeon.switchNoFade( TitleScene.class );
 	}
 	
 	private static class BadgeButton extends Button {

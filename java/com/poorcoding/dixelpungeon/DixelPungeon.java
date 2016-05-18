@@ -33,9 +33,9 @@ import com.poorcoding.dixelpungeon.scenes.GameScene;
 import com.poorcoding.dixelpungeon.scenes.PixelScene;
 import com.poorcoding.dixelpungeon.scenes.TitleScene;
 
-public class PixelDungeon extends Game {
+public class DixelPungeon extends Game {
 	
-	public PixelDungeon() {
+	public DixelPungeon() {
 		super( TitleScene.class );
 		
 		com.poorcoding.utils.Bundle.addAlias(

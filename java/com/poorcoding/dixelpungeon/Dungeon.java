@@ -95,10 +95,10 @@ public class Dungeon {
 	public static boolean nightMode;
 	
 	public static SparseArray<ArrayList<Item>> droppedItems;
-	
+
 	public static void init() {
 
-		challenges = PixelDungeon.challenges();
+		challenges = DixelPungeon.challenges();
 		
 		Actor.clear();
 		

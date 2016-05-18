@@ -32,7 +32,7 @@ import com.poorcoding.noosa.Scene;
 import com.poorcoding.noosa.Visual;
 import com.poorcoding.dixelpungeon.Assets;
 import com.poorcoding.dixelpungeon.Badges;
-import com.poorcoding.dixelpungeon.PixelDungeon;
+import com.poorcoding.dixelpungeon.DixelPungeon;
 import com.poorcoding.dixelpungeon.effects.BadgeBanner;
 import com.poorcoding.utils.BitmapCache;
 
@@ -66,7 +66,7 @@ public class PixelScene extends Scene {
 		GameScene.scene = null;
 		
 		float minWidth, minHeight;
-		if (PixelDungeon.landscape()) {
+		if (DixelPungeon.landscape()) {
 			minWidth = MIN_WIDTH_L;
 			minHeight = MIN_HEIGHT_L;
 		} else {
@@ -83,7 +83,7 @@ public class PixelScene extends Scene {
 			defaultZoom--;
 		}
 			
-		if (PixelDungeon.scaleUp()) {
+		if (DixelPungeon.scaleUp()) {
 			while (
 				Game.width / (defaultZoom + 1) >= minWidth && 
 				Game.height / (defaultZoom + 1) >= minHeight) {

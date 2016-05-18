@@ -17,7 +17,7 @@
  */
 package com.poorcoding.dixelpungeon.windows;
 
-import com.poorcoding.dixelpungeon.PixelDungeon;
+import com.poorcoding.dixelpungeon.DixelPungeon;
 import com.poorcoding.dixelpungeon.actors.mobs.npcs.NPC;
 import com.poorcoding.dixelpungeon.ui.HighlightedText;
 import com.poorcoding.dixelpungeon.ui.RedButton;
@@ -36,7 +36,7 @@ public class WndQuest extends Window {
 		
 		super();
 		
-		int width = PixelDungeon.landscape() ? WIDTH_L : WIDTH_P;
+		int width = DixelPungeon.landscape() ? WIDTH_L : WIDTH_P;
 		
 		IconTitle titlebar = new IconTitle( questgiver.sprite(), Utils.capitalize( questgiver.name ) );
 		titlebar.setRect( 0, 0, width, 0 );

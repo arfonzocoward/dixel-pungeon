@@ -19,7 +19,7 @@ package com.poorcoding.dixelpungeon.windows;
 
 import com.poorcoding.noosa.Image;
 import com.poorcoding.noosa.ui.Component;
-import com.poorcoding.dixelpungeon.PixelDungeon;
+import com.poorcoding.dixelpungeon.DixelPungeon;
 import com.poorcoding.dixelpungeon.ui.HighlightedText;
 import com.poorcoding.dixelpungeon.ui.Window;
 
@@ -40,7 +40,7 @@ public class WndTitledMessage extends Window {
 		
 		super();
 		
-		int width = PixelDungeon.landscape() ? WIDTH_L : WIDTH_P;
+		int width = DixelPungeon.landscape() ? WIDTH_L : WIDTH_P;
 		
 		titlebar.setRect( 0, 0, width, 0 );
 		add( titlebar );

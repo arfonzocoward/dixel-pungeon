@@ -20,7 +20,7 @@ package com.poorcoding.dixelpungeon.actors.blobs;
 import java.util.Arrays;
 
 import com.poorcoding.dixelpungeon.Dungeon;
-import com.poorcoding.dixelpungeon.PixelDungeon;
+import com.poorcoding.dixelpungeon.DixelPungeon;
 import com.poorcoding.dixelpungeon.actors.Actor;
 import com.poorcoding.dixelpungeon.effects.BlobEmitter;
 import com.poorcoding.dixelpungeon.levels.Level;
@@ -205,7 +205,7 @@ public class Blob extends Actor {
 			return gas;
 			
 		} catch (Exception e) {
-			PixelDungeon.reportException( e );
+			DixelPungeon.reportException( e );
 			return null;
 		}
 	}
