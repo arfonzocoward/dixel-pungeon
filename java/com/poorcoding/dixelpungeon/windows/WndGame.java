@@ -39,6 +39,8 @@ public class WndGame extends Window {
 	private static final String TXT_MENU		= "Main Menu";
 	private static final String TXT_EXIT		= "Exit Game";
 	private static final String TXT_RETURN		= "Return to Game";
+	// Dixel specifics
+	private static final String TXT_DIXEL		= "About Dixel Pungeon";
 	
 	private static final int WIDTH		= 120;
 	private static final int BTN_HEIGHT	= 20;
@@ -91,6 +93,41 @@ public class WndGame extends Window {
 				}
 			} );
 		}
+
+		addButton(new RedButton( TXT_DIXEL ) {
+			@Override
+			protected void onClick() {
+				hide();
+				//GameScene.show( new WndSettings( true ) );
+
+				GameScene.show( new WndDixel(
+						"Remember: keep smile lads, keep smile!\n:D :D :D\n" +
+								"\n\nDarkest condolences,\n" +
+								"Arfonzo J. Coward\n" +
+								"<arfonzo@gmail.com>"
+				) );
+
+				GameScene.show( new WndDixel(
+						"ABOUT DIXEL PUNGEON\n\n" +
+								"Key codebase changes from Pixel Dungeon:\n\n" +
+								"- Souls: collect to upgrade character and items.\n"+
+								"- All classes start with 10 food rations.\n" +
+								"- New MOBs: Goblin Scout.\n"+
+								"- Chance to drop food when MOBs die.\n" +
+								"\n\n\n\n(scroll 2 of 2)"
+
+				) );
+
+				GameScene.show( new WndDixel(
+						"ABOUT DIXEL PUNGEON\n\n" +
+						"Dixel Pungeon is a fork of Pixel Dungeon.\n\n" +
+								"It contains some changes and additions to the codebase which will alter your experience if you have played Pixel Dungeon in the past.\n\n" +
+								"Dixel is about exploration. It also makes starting off slightly easier." +
+								"\n\n\n\n(scroll 1 of 2)"
+				) );
+
+			}
+		} );
 				
 		addButtons( 
 			new RedButton( TXT_MENU ) {
