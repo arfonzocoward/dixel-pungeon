@@ -25,7 +25,6 @@ import java.util.HashSet;
 
 import com.poorcoding.dixelpungeon.actors.buffs.Hunger;
 import com.poorcoding.dixelpungeon.effects.Speck;
-import com.poorcoding.dixelpungeon.windows.WndSpendSouls;
 import com.poorcoding.noosa.Scene;
 import com.poorcoding.noosa.audio.Sample;
 import com.poorcoding.dixelpungeon.Assets;
@@ -749,12 +748,6 @@ public abstract class Level implements Bundlable {
 
 			campfireCounter++;
 			Statistics.campfiresRested++;
-
-			//GameScene.show(new WndDixel("Campfire used " + campfireCounter + " time(s)."));
-			//GameScene.show(new WndDixel("TODO: spend souls to upgrade stats."));
-
-			// TODO: Spend Souls
-			GameScene.show(new WndSpendSouls(hero));
 
 			break;
 		}

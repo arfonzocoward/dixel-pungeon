@@ -19,6 +19,7 @@ package com.poorcoding.dixelpungeon.windows;
 
 import java.io.IOException;
 
+import com.poorcoding.dixelpungeon.levels.Terrain;
 import com.poorcoding.noosa.Game;
 import com.poorcoding.dixelpungeon.Dungeon;
 import com.poorcoding.dixelpungeon.DixelPungeon;
@@ -41,6 +42,7 @@ public class WndGame extends Window {
 	private static final String TXT_RETURN		= "Return to Game";
 	// Dixel specifics
 	private static final String TXT_DIXEL		= "About Dixel Pungeon";
+	private static final String TXT_SOULFORGE		= "Soulforge";
 	
 	private static final int WIDTH		= 120;
 	private static final int BTN_HEIGHT	= 20;
@@ -51,7 +53,18 @@ public class WndGame extends Window {
 	public WndGame() {
 		
 		super();
-		
+
+		// Display Soulforge button only at Campfires.
+		if (Dungeon.level.map[Dungeon.hero.pos] == Terrain.CAMPFIRE) {
+			addButton(new RedButton(TXT_SOULFORGE) {
+				@Override
+				protected void onClick() {
+					hide();
+					GameScene.show(new WndSpendSouls(Dungeon.hero));
+				}
+			});
+		}
+
 		addButton( new RedButton( TXT_SETTINGS ) {
 			@Override
 			protected void onClick() {
