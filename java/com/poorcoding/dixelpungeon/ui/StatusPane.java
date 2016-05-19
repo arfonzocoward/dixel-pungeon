@@ -56,6 +56,13 @@ public class StatusPane extends Component {
 	private BitmapText level;
 	private BitmapText depth;
 	private BitmapText keys;
+
+	// Dixel specific
+	private int layoutGap = 2;
+	private BitmapText souls;
+	private BitmapText gold;
+	private int lastGold = -1;
+	private int lastSouls = -1;
 	
 	private DangerIndicator danger;
 	private LootIndicator loot;
@@ -116,6 +123,18 @@ public class StatusPane extends Component {
 		keys = new BitmapText( PixelScene.font1x );
 		keys.hardlight( 0xCACFC2 );
 		add( keys );
+
+		// Gold
+		gold = new BitmapText( Integer.toString( Dungeon.gold ), PixelScene.font1x );
+		gold.hardlight( 0xDDAA33 );
+		gold.measure();
+		add( gold );
+
+		// Souls
+		souls = new BitmapText( Integer.toString( Dungeon.souls ), PixelScene.font1x );
+		souls.hardlight( 0x44AACC );
+		souls.measure();
+		add( souls );
 		
 		danger = new DangerIndicator();
 		add( danger );
@@ -150,6 +169,15 @@ public class StatusPane extends Component {
 		depth.y = 6;
 		
 		keys.y = 6;
+
+		// Gold display location
+		//gold.x = width - 24 - gold.width()    - 18;
+		gold.x = width - 8 - gold.width()    - 18;
+		gold.y = depth.y + layoutGap + depth.height;
+
+		// Souls display location
+		souls.x = width - 8 - souls.width()    - 18;
+		souls.y = gold.y + layoutGap + gold.height;
 		
 		layoutTags();
 		
@@ -238,6 +266,22 @@ public class StatusPane extends Component {
 		if (tier != lastTier) {
 			lastTier = tier;
 			avatar.copy( HeroSprite.avatar( Dungeon.hero.heroClass, tier ) );
+		}
+
+		int g = Dungeon.gold;
+		if (g != lastGold) {
+			lastGold = g;
+			gold.text( Integer.toString( lastGold ) );
+			gold.measure();
+			gold.x = width - 8 - gold.width()    - 18;
+		}
+
+		int s = Dungeon.souls;
+		if (s != lastSouls) {
+			lastSouls = s;
+			souls.text( Integer.toString( lastSouls ) );
+			souls.measure();
+			souls.x = width - 8 - souls.width()    - 18;
 		}
 	}
 	
