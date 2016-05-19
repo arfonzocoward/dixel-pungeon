@@ -743,7 +743,7 @@ public abstract class Level implements Bundlable {
 			if (((Hunger) hero.buff(Hunger.class)).getHunger() > 0) {
 				hero.sprite.emitter().burst(Speck.factory(Speck.BUBBLE), 3);
 				((Hunger) hero.buff(Hunger.class)).satisfy(energy);
-				GLog.i( "You eat." );
+				GLog.i( "You eat (" + energy + ")." );
 			}
 
 			campfireCounter++;

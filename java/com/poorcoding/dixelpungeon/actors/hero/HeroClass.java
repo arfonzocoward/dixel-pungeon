@@ -55,6 +55,7 @@ public enum HeroClass {
 	};
 	
 	public static final String[] MAG_PERKS = {
+			"Arfonzo J. Coward, Royal Mage and Part-time Bard to the King and CEO of Niregia.",
 		"Mages start with a unique Wand of Magic Missile. This wand can be later \"disenchanted\" to upgrade another wand.",
 		"Mages recharge their wands faster.",
 		"When eaten, any piece of food restores 1 charge for all wands in the inventory.",
@@ -72,6 +73,7 @@ public enum HeroClass {
 	};
 	
 	public static final String[] HUN_PERKS = {
+			"Jengolia Roundstone, Huntress of the Betrayers.",
 		"Huntresses start with 15 points of Health.",
 		"Huntresses start with a unique upgradeable boomerang.",
 		"Huntresses are proficient with missile weapons and get a damage bonus for excessive strength when using them.",

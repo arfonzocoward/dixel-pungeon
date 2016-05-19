@@ -21,6 +21,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
 
+import com.poorcoding.dixelpungeon.items.Soul;
 import com.poorcoding.noosa.Camera;
 import com.poorcoding.noosa.Game;
 import com.poorcoding.noosa.audio.Sample;
@@ -576,6 +577,26 @@ public class Hero extends Char {
 					
 					if (item instanceof Dewdrop) {
 						// Do nothing
+					} else if (item instanceof Soul) {
+						String s;
+						switch(Random.Int(0,4)) {
+							case 0:
+								s = "You gobble the soulz.";
+								break;
+							case 1:
+								s = "You snatch the defeated souls.";
+								break;
+							case 2:
+								s = "Souls... need more souls...";
+								break;
+							case 3:
+								s = "You grab the loser's souls.";
+								break;
+							default:
+								s = "You take the vanquished souls.";
+								break;
+						}
+						GLog.i( s );
 					} else {
 						boolean important = 
 							((item instanceof ScrollOfUpgrade || item instanceof ScrollOfEnchantment) && ((Scroll)item).isKnown()) ||

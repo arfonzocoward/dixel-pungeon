@@ -108,7 +108,7 @@ public class MeleeWeapon extends Weapon {
 				"Its typical average damage is " + (min + (max - min) / 2) + " points per hit " +
 				"and usually it requires " + typicalSTR() + " points of strength. " );
 			if (typicalSTR() > Dungeon.hero.STR()) {
-				info.append( "Probably this weapon is too heavy for you. " );
+				info.append( "This weapon is probably too heavy for you. " );
 			}
 		}
 		

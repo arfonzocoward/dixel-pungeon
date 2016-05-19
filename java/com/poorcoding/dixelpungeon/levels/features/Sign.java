@@ -34,11 +34,11 @@ public class Sign {
 		"What are you doing here?!";
 	
 	private static final String[] TIPS = {
-		"Don't overestimate your strength, use weapons and armor you can handle.",
-		"Not all doors in the dungeon are visible at first sight. If you are stuck, search for hidden doors.",
+		"Don't overestimate your strength, use weapons and armor you can handle.\n\nRest at the _campfires_. Access the _Soulforge_ there from the game menu.",
+		"Not all doors in the dungeon are visible at first sight. If you are stuck, _search_ for hidden doors.",
 		"Remember, that raising your strength is not the only way to access better equipment. You can go " +
-			"the other way, lowering its strength requirement with Scrolls of Upgrade.",
-		"You can spend your gold in shops on deeper levels of the dungeon. The first one is on the 6th level.",
+			"the other way, _lowering_ its strength requirement with Scrolls of Upgrade. You can also spend souls to upgrade at _Soulforges_.",
+		"You can spend your gold in _shops_ on deeper levels of the dungeon. The first one is on the 6th level.",
 			
 		"Beware of Goo!",
 		
