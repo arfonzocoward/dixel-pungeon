@@ -237,9 +237,9 @@ public class WndSoulforge extends Window {
 		ScrollOfUpgrade.upgrade( Dungeon.hero );
 		Item.evoke( Dungeon.hero );
 
-		if (item1.isEquipped( Dungeon.hero )) {
+		/*if (item1.isEquipped( Dungeon.hero )) {
 			((EquipableItem)item1).doUnequip( Dungeon.hero, true );
-		}
+		}*/
 		item1.upgrade();
 
 		Dungeon.souls -= cost;
