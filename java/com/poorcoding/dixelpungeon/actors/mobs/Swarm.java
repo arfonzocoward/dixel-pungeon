@@ -131,6 +131,7 @@ public class Swarm extends Mob {
 	
 	@Override
 	protected void dropLoot() {
+		super.dropLoot();
 		if (Random.Int( 5 * (generation + 1) ) == 0) {
 			Dungeon.level.drop( new PotionOfHealing(), pos ).sprite.drop();
 		}
