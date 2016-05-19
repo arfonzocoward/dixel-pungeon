@@ -342,6 +342,13 @@ public class Item implements Bundlable {
 			durability++;
 		}
 	}
+
+	public void  setDurability(int d) {
+		durability += d;
+
+		if ( maxDurability() < durability) durability = maxDurability();
+
+	}
 	
 	public int durability() {
 		return durability;

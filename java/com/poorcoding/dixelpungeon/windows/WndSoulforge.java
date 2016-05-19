@@ -46,37 +46,48 @@ import com.poorcoding.noosa.ui.Component;
 
 public class WndSoulforge extends Window {
 
+	private float pos;
+
+	private static final int BTN_HEIGHT	= 20;
 	private static final int BTN_SIZE	= 36;
 	private static final float GAP		= 2;
-	private static final float BTN_GAP	= 10;
-	private static final int WIDTH		= 116;
+	private static final float BTN_GAP	= 4;
+	//private static final int WIDTH		= 116;
+	private static final int WIDTH		= 128;
 
 	private ItemButton btnPressed;
 
 	private ItemButton btnItem1;
 	private ItemButton btnItem2;
+	private RedButton btnRepair;
 	private RedButton btnReforge;
 	private RedButton btnExit;
+	private RedButton btnMinus;
+	private RedButton btnPlus;
 
-	private static final String TXT_PROMPT =
-		"Ok, a deal is a deal, dat's what I can do for you: I can reforge " +
-		"2 items and turn them into one of a better quality.";
 	private static final String TXT_SELECT =
-		"Select an item to reforge";
+		"Select an item to upgrade or repair:";
+	private static final String TXT_REPAIR =
+			"Repair: ??? Souls";
 	private static final String TXT_REFORGE =
 		"Soulforge: ??? Souls";
 
 	private static final String TXT_EXIT =
 			"Leave Soulforge";
 
-	private static final String TXT_LOOKS_BETTER	= "your %s certainly looks better now";
+	private static final String TXT_LOOKS_BETTER	= "your %s looks much better now";
+
+	private static final String TXT_REPAIRED	= "you repair the %s for %d point(s)";
 
 	private static final Integer SOUL_FACTOR = 5 + Dungeon.depth;
 
+	private static Integer repairAmount = 0;
+
 	//public WndSoulforge(Blacksmith troll, Hero hero ) {
 	public WndSoulforge(Hero hero ) {
-		
 		super();
+
+		repairAmount = 0;
 		
 		IconTitle titlebar = new IconTitle();
 		//titlebar.icon(new ItemSprite( new Item().image(), null ));
@@ -101,23 +112,56 @@ public class WndSoulforge extends Window {
 			protected void onClick() {
 				btnPressed = btnItem1;
 				GameScene.selectItem( itemSelector, WndBag.Mode.UPGRADEABLE, TXT_SELECT );
+
+				if (btnItem1.item != null) {
+					//repairAmount = 0;
+					//calc_repairs_affordable(btnItem1.item);
+					calc_repairs(btnItem1.item, btnRepair, btnMinus, btnPlus);
+				}
 			}
 		};
-		//btnItem1.setRect( (WIDTH - BTN_GAP) / 2 - BTN_SIZE, message.y + message.height() + BTN_GAP, BTN_SIZE, BTN_SIZE );
-		btnItem1.setRect( WIDTH - BTN_SIZE*2 - BTN_GAP/2, message.y + message.height() + BTN_GAP, BTN_SIZE, BTN_SIZE );
+		btnItem1.setRect( (WIDTH - BTN_SIZE)/2, message.y + message.height() + BTN_GAP, BTN_SIZE, BTN_SIZE );
 		add( btnItem1 );
 
-		/*
-		btnItem2 = new ItemButton() {
+		pos = btnItem1.bottom();
+
+		btnMinus = new RedButton("-") {
 			@Override
 			protected void onClick() {
-				btnPressed = btnItem2;
-				GameScene.selectItem( itemSelector, WndBag.Mode.UPGRADEABLE, TXT_SELECT );
+				//hide();
+				if (repairAmount >= 1) {
+					repairAmount--;
+					calc_repairs(btnItem1.item, btnRepair, btnMinus, btnPlus);
+				}
 			}
 		};
-		btnItem2.setRect( btnItem1.right() + BTN_GAP, btnItem1.top(), BTN_SIZE, BTN_SIZE );
-		add( btnItem2 );
-		*/
+		btnMinus.enable(false);
+
+		btnPlus = new RedButton("+") {
+			@Override
+			protected void onClick() {
+				//hide();
+				if ((btnItem1.item.durability() + repairAmount) < btnItem1.item.maxDurability()) {
+					repairAmount++;
+					calc_repairs(btnItem1.item, btnRepair, btnMinus, btnPlus);
+				}
+			}
+		};
+		btnPlus.enable(false);
+
+		addButtons( btnMinus, btnPlus);
+
+		btnRepair = new RedButton( TXT_REPAIR  ) {
+			@Override
+			protected void onClick() {
+				//Blacksmith.upgrade( btnItem1.item, btnItem2.item );
+				soul_repair(btnItem1.item);
+				hide();
+			}
+		};
+		btnRepair.enable( false );
+		btnRepair.setRect( 0, btnPlus.bottom() + BTN_GAP, WIDTH, 20 );
+		add( btnRepair );
 
 		btnReforge = new RedButton( TXT_REFORGE ) {
 			@Override
@@ -128,7 +172,7 @@ public class WndSoulforge extends Window {
 			}
 		};
 		btnReforge.enable( false );
-		btnReforge.setRect( 0, btnItem1.bottom() + BTN_GAP, WIDTH, 20 );
+		btnReforge.setRect( 0, btnRepair.bottom() + BTN_GAP, WIDTH, 20 );
 		add( btnReforge );
 
 		btnExit = new RedButton( TXT_EXIT ) {
@@ -149,23 +193,14 @@ public class WndSoulforge extends Window {
 		public void onSelect( Item item ) {
 			if (item != null) {
 				btnPressed.item( item );
-				
-				/*if (btnItem1.item != null && btnItem2.item != null) {
-					String result = Blacksmith.verify( btnItem1.item, btnItem2.item );
-					if (result != null) {
-						GameScene.show( new WndMessage( result ) );
-						btnReforge.enable( false );
-					} else {
-						btnReforge.enable( true );
-					}
-				}*/
 
-				/* TODO: Validate item1 and worth to upgrade */
+				/* item1 cost to repair */
+				calc_repairs_affordable(btnItem1.item);
+				calc_repairs( item, btnRepair, btnMinus, btnPlus);
+
+				/* item1 cost to upgrade */
 				int cost = item.price() * SOUL_FACTOR;
-				//String result = "It'll cost " + cost + " Souls.";
-				//GameScene.show( new WndMessage( result ) );
-
-				btnReforge.text("Soulforge: " + cost + " Souls");
+				btnReforge.text("Upgrade: " + cost + " Souls");
 
 				if (Dungeon.souls >= cost) {
 					btnReforge.enable( true );
@@ -249,4 +284,60 @@ public class WndSoulforge extends Window {
 		Badges.validateItemLevelAquired( item1 );
 	}
 
+	/* Dixel: repair a single item */
+	public static void soul_repair( Item item1 ) {
+		Sample.INSTANCE.play( Assets.SND_EVOKE );
+		Dungeon.souls -= repairAmount * SOUL_FACTOR;
+		item1.setDurability(repairAmount);
+		GLog.p( TXT_REPAIRED, item1.name(), repairAmount );
+		Dungeon.hero.spendAndNext( 9f );
+	}
+
+	private void addButtons( RedButton btn1, RedButton btn2 ) {
+		add( btn1 );
+		btn1.setRect( 0, pos > 0 ? pos += GAP : 0, (WIDTH - GAP) / 2, BTN_HEIGHT );
+		add( btn2 );
+		btn2.setRect( btn1.right() + GAP, btn1.top(), WIDTH - btn1.right() - GAP, BTN_HEIGHT );
+		pos += BTN_HEIGHT;
+	}
+
+	/*private static void calc_repairs( Item item, RedButton btnRepair, RedButton btnMinus, RedButton btnPlus ) {
+		calc_repairs(item, item.maxDurability() - item.durability(), btnRepair,btnMinus,btnPlus);
+	}*/
+
+	private static void calc_repairs_affordable (Item item) {
+		// TODO: work out automatically the max affordable
+		int repairMax = item.maxDurability() - item.durability();
+		int repairMaxCost = repairMax * SOUL_FACTOR;
+
+		if (repairMaxCost > Dungeon.souls) {
+			// Work downwards.
+			int r = repairMax;
+			int c = repairMaxCost;
+
+			while (c > Dungeon.souls){
+				r--;
+				c = r * SOUL_FACTOR;
+			}
+
+			repairAmount = r;
+		}
+	}
+
+	private static void calc_repairs( Item item, RedButton btnRepair, RedButton btnMinus, RedButton btnPlus ) {
+		int repairCost = repairAmount * SOUL_FACTOR;
+		btnRepair.text("Repair " + repairAmount + " (" + (item.durability() + repairAmount) + "/" + item.maxDurability() + "): " + repairCost + " Souls");
+
+		btnMinus.enable(true);
+		btnPlus.enable(true);
+
+		// If repairAmount > 0, and can afford, enable button.
+		if ((repairAmount > 0) && (repairCost < Dungeon.souls) ) {
+			btnRepair.enable( true );
+		} else {
+			btnRepair.enable( false );
+		}
+
+
+	}
 }
