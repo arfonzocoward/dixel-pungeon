@@ -115,7 +115,7 @@ public class WndSoulforge extends Window {
 
 				if (btnItem1.item != null) {
 					//repairAmount = 0;
-					//calc_repairs_affordable(btnItem1.item);
+					calc_repairs_affordable(btnItem1.item);
 					calc_repairs(btnItem1.item, btnRepair, btnMinus, btnPlus);
 				}
 			}
@@ -306,7 +306,7 @@ public class WndSoulforge extends Window {
 	}*/
 
 	private static void calc_repairs_affordable (Item item) {
-		// TODO: work out automatically the max affordable
+		// work out automatically the max affordable
 		int repairMax = item.maxDurability() - item.durability();
 		int repairMaxCost = repairMax * SOUL_FACTOR;
 
@@ -325,6 +325,11 @@ public class WndSoulforge extends Window {
 	}
 
 	private static void calc_repairs( Item item, RedButton btnRepair, RedButton btnMinus, RedButton btnPlus ) {
+
+		if (item.durability() == item.maxDurability()) {
+			repairAmount = 0;
+		}
+
 		int repairCost = repairAmount * SOUL_FACTOR;
 		btnRepair.text("Repair " + repairAmount + " (" + (item.durability() + repairAmount) + "/" + item.maxDurability() + "): " + repairCost + " Souls");
 
