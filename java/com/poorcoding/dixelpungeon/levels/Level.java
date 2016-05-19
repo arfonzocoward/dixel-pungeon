@@ -716,26 +716,21 @@ public abstract class Level implements Bundlable {
 		case Terrain.CAMPFIRE:
 			Hero hero = Dungeon.hero;
 			float energy = Hunger.HUNGRY;
-			String message = "You cook and rest by the campfire " +
-					"(hunger: " + ((Hunger) hero.buff(Hunger.class)).getHunger() + ")." ;
-
-			//GLog.i( message );
-
-			//GameScene.show(new WndDixel("Hunger: " + ((Hunger) hero.buff(Hunger.class)).getHunger()));
 
 			/* First time we use a campfire gives full restore. Less on subsequent visits. */
-			if (campfireCounter < 1) {
+			//if (campfireCounter < 1) {
+			if (true) {
 				if (hero.HP < hero.HT) {
 					hero.sprite.emitter().burst(Speck.factory(Speck.HEALING), 3);
 					hero.HP = hero.HT;
-					GLog.i( "You rest at the campfire." );
+					GLog.i( "You rest at the campfire. " );
 				}
 
 			} else {
 				if (hero.HP < hero.HT) {
 					hero.sprite.emitter().burst(Speck.factory(Speck.HEALING), 1);
-					hero.HP = Math.min( hero.HP + 5, hero.HT );
-					GLog.i( "You idle at the campfire." );
+					hero.HP = Math.min( hero.HP + 1, hero.HT );
+					GLog.i( "You pause at the campfire. " );
 				}
 			}
 
