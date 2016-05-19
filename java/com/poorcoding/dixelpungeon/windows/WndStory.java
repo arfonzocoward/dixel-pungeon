@@ -50,11 +50,12 @@ public class WndStory extends Window {
 		"The city dwellers lurk above, whilst the scum of the underworld fester below. At least at this depth, they can't be that bad...\n\n" +
 		"... Welcome to Dixel Pungeon.");
 		
-		CHAPTERS.put( ID_PRISON, 
-		"Many years ago an underground prison was built here for the most dangerous criminals. At the time it seemed " +
-		"like a very clever idea, because this place indeed was very hard to escape. But soon dark miasma started to permeate " +
-		"from below, driving prisoners and guards insane. In the end the prison was abandoned, though some convicts " +
-		"were left locked up here." );
+		CHAPTERS.put( ID_PRISON,
+				"The ancient ruins were originally built to hold the most dangerous criminals and beasts.\n\n" +
+						"Like any foolproof plan, LelDorado's citizens reckoned they could simply lock undesirables away as it was impossible to escape. " +
+						"With the Third Revolutionary Floggings, the prison's dungeons were forgotten, and those within were left to their own devices. " +
+						"Rumours flowed of beasts and men alike, succumbing to a dark miasma permeating from within the ruins.\n\n" +
+						"These days, turned beasts and other undesirables lie in wait to scavenge upon the unsuspecting adventurer." );
 		
 		CHAPTERS.put( ID_CAVES, 
 		"The caves, which stretch down under the abandoned prison, are sparcely populated. They lie too deep to be exploited " +
