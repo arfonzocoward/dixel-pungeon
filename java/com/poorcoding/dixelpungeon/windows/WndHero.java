@@ -48,7 +48,8 @@ public class WndHero extends WndTabbed {
 	private static final String TXT_GOLD	= "Gold Collected";
 	private static final String TXT_DEPTH	= "Maximum Depth";
 
-	private static final String TXT_SOULS	= "Souls Collected";
+	private static final String TXT_SOULS	= "Souls";
+	private static final String TXT_SOULSCOLLECTED	= "Souls Collected";
 	private static final String TXT_CAMPS	= "Camp Rests";
 	
 	private static final int WIDTH		= 100;
@@ -177,13 +178,8 @@ public class WndHero extends WndTabbed {
 			
 			pos += GAP;
 
-			/*
-			statSlot( TXT_SOULS, Statistics.soulsCollected );
+			statSlot( TXT_SOULS, Dungeon.souls );
 			pos += GAP;
-
-			statSlot( TXT_CAMPS, Statistics.campfiresRested );
-			pos += GAP;
-			*/
 		}
 		
 		private void statSlot( String label, String value ) {
@@ -267,10 +263,7 @@ public class WndHero extends WndTabbed {
 
 			pos = title.baseLine() + GAP + GAP;
 
-			dixelSlot( TXT_SOULS, Statistics.soulsCollected );
-			pos += GAP;
-
-			dixelSlot( "Souls", Dungeon.souls);
+			dixelSlot( TXT_SOULSCOLLECTED, Statistics.soulsCollected );
 			pos += GAP;
 
 			dixelSlot( TXT_CAMPS, Statistics.campfiresRested );
