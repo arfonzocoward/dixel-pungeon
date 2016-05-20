@@ -27,6 +27,7 @@ import com.poorcoding.dixelpungeon.actors.hero.HeroSubClass;
 import com.poorcoding.dixelpungeon.effects.CellEmitter;
 import com.poorcoding.dixelpungeon.effects.particles.LeafParticle;
 import com.poorcoding.dixelpungeon.items.Dewdrop;
+import com.poorcoding.dixelpungeon.items.Drug;
 import com.poorcoding.dixelpungeon.items.Generator;
 import com.poorcoding.dixelpungeon.items.rings.RingOfHerbalism.Herbalism;
 import com.poorcoding.dixelpungeon.levels.Level;
@@ -57,6 +58,12 @@ public class HighGrass {
 			// Dew
 			if (herbalismLevel >= 0 && Random.Int( 6 ) <= Random.Int( herbalismLevel + 1 )) {
 				level.drop( new Dewdrop(), pos ).sprite.drop();
+			}
+
+			// Drug
+			// Dew
+			if (herbalismLevel >= 0 && Random.Int( 6 ) <= Random.Int( herbalismLevel + 1 )) {
+				level.drop( new Drug(), pos ).sprite.drop();
 			}
 		}
 		

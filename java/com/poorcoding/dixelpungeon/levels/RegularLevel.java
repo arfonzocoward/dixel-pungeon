@@ -27,6 +27,7 @@ import com.poorcoding.dixelpungeon.Dungeon;
 import com.poorcoding.dixelpungeon.actors.Actor;
 import com.poorcoding.dixelpungeon.actors.mobs.Bestiary;
 import com.poorcoding.dixelpungeon.actors.mobs.Mob;
+import com.poorcoding.dixelpungeon.items.DrugStash;
 import com.poorcoding.dixelpungeon.items.Generator;
 import com.poorcoding.dixelpungeon.items.Heap;
 import com.poorcoding.dixelpungeon.items.Item;
@@ -622,6 +623,12 @@ public abstract class RegularLevel extends Level {
 		Item item = Bones.get();
 		if (item != null) {
 			drop( item, randomDropCell() ).type = Heap.Type.SKELETON;
+		}
+
+		// Add drug stash
+		if (Dungeon.drugStash && Random.Int( 4 - Dungeon.depth ) == 0) {
+			addItemToSpawn( new DrugStash() );
+			Dungeon.drugStash = false;
 		}
 	}
 	

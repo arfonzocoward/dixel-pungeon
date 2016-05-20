@@ -21,6 +21,7 @@ import com.poorcoding.dixelpungeon.Dungeon;
 import com.poorcoding.dixelpungeon.actors.Char;
 import com.poorcoding.dixelpungeon.actors.buffs.Terror;
 import com.poorcoding.dixelpungeon.actors.hero.Hero;
+import com.poorcoding.dixelpungeon.items.Drug;
 import com.poorcoding.dixelpungeon.items.Gold;
 import com.poorcoding.dixelpungeon.items.Item;
 import com.poorcoding.dixelpungeon.items.rings.RingOfHaggler;
@@ -86,6 +87,8 @@ public class Thief extends Mob {
 		if (item != null) {
 			Dungeon.level.drop( item, pos ).sprite.drop();
 		}
+
+		Dungeon.level.drop( new Drug(), pos ).sprite.drop();
 	}
 	
 	@Override

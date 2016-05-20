@@ -77,6 +77,7 @@ public class Dungeon {
 	public static int scrollsOfUpgrade;
 	public static int scrollsOfEnchantment;
 	public static boolean dewVial;		// true if the dew vial can be spawned
+	public static boolean drugStash;		// true if the drug stash can be spawned
 	
 	public static int challenges;
 	
@@ -125,6 +126,7 @@ public class Dungeon {
 		scrollsOfUpgrade = 0;
 		scrollsOfEnchantment = 0;
 		dewVial = true;
+		drugStash = true;
 		
 		chapters = new HashSet<Integer>();
 		
@@ -339,6 +341,7 @@ public class Dungeon {
 	private static final String BADGES		= "badges";
 
 	private static final String SOULS		= "souls";
+	private static final String STASH		= "drugStash";
 	
 	public static String gameFile( HeroClass cl ) {
 		switch (cl) {
@@ -384,6 +387,8 @@ public class Dungeon {
 			bundle.put( SOU, scrollsOfUpgrade );
 			bundle.put( SOE, scrollsOfEnchantment );
 			bundle.put( DV, dewVial );
+
+			bundle.put( STASH, drugStash);
 			
 			int count = 0;
 			int ids[] = new int[chapters.size()];
@@ -481,6 +486,8 @@ public class Dungeon {
 		scrollsOfUpgrade = bundle.getInt( SOU );
 		scrollsOfEnchantment = bundle.getInt( SOE );
 		dewVial = bundle.getBoolean( DV );
+
+		drugStash = bundle.getBoolean( STASH );
 		
 		if (fullLoad) {
 			chapters = new HashSet<Integer>();

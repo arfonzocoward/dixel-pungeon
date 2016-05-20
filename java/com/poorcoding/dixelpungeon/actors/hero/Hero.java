@@ -21,6 +21,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
 
+import com.poorcoding.dixelpungeon.items.Drug;
 import com.poorcoding.dixelpungeon.items.Soul;
 import com.poorcoding.dixelpungeon.windows.WndSoulforge;
 import com.poorcoding.noosa.Camera;
@@ -576,7 +577,7 @@ public class Hero extends Char {
 				Item item = heap.pickUp();
 				if (item.doPickUp( this )) {
 					
-					if (item instanceof Dewdrop) {
+					if ((item instanceof Dewdrop) || (item instanceof Drug)) {
 						// Do nothing
 					} else if (item instanceof Soul) {
 						String s;

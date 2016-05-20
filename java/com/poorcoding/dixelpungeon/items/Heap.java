@@ -185,6 +185,12 @@ public class Heap implements Bundlable {
 		} else {
 			items.addFirst( item );
 		}
+
+		if (item instanceof Drug) {
+			items.add( item );
+		} else {
+			items.addFirst( item );
+		}
 		
 		if (sprite != null) {
 			sprite.view( image(), glowing() );
@@ -223,6 +229,9 @@ public class Heap implements Bundlable {
 			} else if (item instanceof Dewdrop) {
 				items.remove( item );
 				evaporated = true;
+			} else if (item instanceof Drug) {
+				items.remove( item );
+				burnt = true;
 			} else if (item instanceof MysteryMeat) {
 				replace( item, ChargrilledMeat.cook( (MysteryMeat)item ) );
 				burnt = true;

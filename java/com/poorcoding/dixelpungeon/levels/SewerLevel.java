@@ -26,6 +26,7 @@ import com.poorcoding.dixelpungeon.Dungeon;
 import com.poorcoding.dixelpungeon.DungeonTilemap;
 import com.poorcoding.dixelpungeon.actors.mobs.npcs.Ghost;
 import com.poorcoding.dixelpungeon.items.DewVial;
+import com.poorcoding.dixelpungeon.items.DrugStash;
 import com.poorcoding.dixelpungeon.scenes.GameScene;
 import com.poorcoding.utils.ColorMath;
 import com.poorcoding.utils.PointF;
