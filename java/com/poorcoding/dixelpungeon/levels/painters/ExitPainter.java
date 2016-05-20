@@ -34,12 +34,8 @@ public class ExitPainter extends Painter {
 			door.set( Room.Door.Type.REGULAR );
 		}
 
-		//Point c = room.center();
 		int c = room.random();
-		//fill( level, c.x, c.y, 3, 3, Terrain.GRASS );
 		set( level, c, Terrain.CAMPFIRE);
-
-		//level.drop(new Soul(77), room.random());
 
 		level.exit = room.random( 1 );
 		set( level, level.exit, Terrain.EXIT );
