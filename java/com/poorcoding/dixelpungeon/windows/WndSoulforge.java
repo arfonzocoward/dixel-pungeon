@@ -52,7 +52,6 @@ public class WndSoulforge extends Window {
 	private static final int BTN_SIZE	= 36;
 	private static final float GAP		= 2;
 	private static final float BTN_GAP	= 4;
-	//private static final int WIDTH		= 116;
 	private static final int WIDTH		= 128;
 
 	private ItemButton btnPressed;
@@ -68,9 +67,9 @@ public class WndSoulforge extends Window {
 	private static final String TXT_SELECT =
 		"Select an item to upgrade or repair:";
 	private static final String TXT_REPAIR =
-			"Repair: ??? Souls";
+			"Choose item to repair";
 	private static final String TXT_REFORGE =
-		"Soulforge: ??? Souls";
+		"Choose item to upgrade";
 
 	private static final String TXT_EXIT =
 			"Leave Soulforge";
@@ -100,7 +99,7 @@ public class WndSoulforge extends Window {
 		//BitmapTextMultiline message = PixelScene.createMultiline( TXT_PROMPT, 6 );
 		BitmapTextMultiline message = PixelScene.createMultiline(
 				//"You have " + Statistics.soulsCollected + " Souls to spend.\n" +
-				"You have " + Dungeon.souls + " Souls to consume at the Soulforge.\n\nSelect an item to upgrade:",
+				"You have " + Dungeon.souls + " Souls to consume at the Soulforge." + " Factor " + SOUL_FACTOR + "\n\nSelect an item to upgrade:",
 				6 );
 		message.maxWidth = WIDTH;
 		message.measure();
