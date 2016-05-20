@@ -37,7 +37,12 @@ import com.poorcoding.dixelpungeon.items.Generator;
 import com.poorcoding.dixelpungeon.items.Gold;
 import com.poorcoding.dixelpungeon.items.Item;
 import com.poorcoding.dixelpungeon.items.Soul;
+import com.poorcoding.dixelpungeon.items.food.ChargrilledMeat;
 import com.poorcoding.dixelpungeon.items.food.Food;
+import com.poorcoding.dixelpungeon.items.food.FrozenCarpaccio;
+import com.poorcoding.dixelpungeon.items.food.MysteryMeat;
+import com.poorcoding.dixelpungeon.items.food.OverpricedRation;
+import com.poorcoding.dixelpungeon.items.food.Pasty;
 import com.poorcoding.dixelpungeon.levels.Level;
 import com.poorcoding.dixelpungeon.sprites.CharSprite;
 import com.poorcoding.dixelpungeon.utils.GLog;
@@ -399,7 +404,32 @@ public abstract class Mob extends Char {
 
 		// Sometimes drop food.
 		if (Random.Int(0,9) == 0) {
-			Dungeon.level.drop(new Food(), pos).sprite.drop();
+
+			Food eatz;
+
+			// Pick a random edible object.
+			switch (Random.Int(0,5)) {
+				case 0:
+					eatz = new Pasty();
+					break;
+				case 1:
+					eatz = new OverpricedRation();
+					break;
+				case 2:
+					eatz = new ChargrilledMeat();
+					break;
+				case 3:
+					eatz = new FrozenCarpaccio();
+					break;
+				case 4:
+					eatz = new MysteryMeat();
+					break;
+				case 5:
+				default:
+					eatz = new Food();
+					break;
+			}
+			Dungeon.level.drop(eatz, pos).sprite.drop();
 		}
 
 	}
