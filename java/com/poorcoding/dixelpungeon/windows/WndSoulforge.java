@@ -21,24 +21,17 @@ import com.poorcoding.dixelpungeon.Assets;
 import com.poorcoding.dixelpungeon.Badges;
 import com.poorcoding.dixelpungeon.Chrome;
 import com.poorcoding.dixelpungeon.Dungeon;
-import com.poorcoding.dixelpungeon.Statistics;
 import com.poorcoding.dixelpungeon.actors.hero.Hero;
-import com.poorcoding.dixelpungeon.actors.mobs.npcs.Blacksmith;
-import com.poorcoding.dixelpungeon.items.EquipableItem;
 import com.poorcoding.dixelpungeon.items.Item;
 import com.poorcoding.dixelpungeon.items.Soul;
 import com.poorcoding.dixelpungeon.items.scrolls.ScrollOfUpgrade;
-import com.poorcoding.dixelpungeon.plants.Plant;
 import com.poorcoding.dixelpungeon.scenes.GameScene;
 import com.poorcoding.dixelpungeon.scenes.PixelScene;
-import com.poorcoding.dixelpungeon.sprites.HeroSprite;
 import com.poorcoding.dixelpungeon.sprites.ItemSprite;
-import com.poorcoding.dixelpungeon.ui.Icons;
 import com.poorcoding.dixelpungeon.ui.ItemSlot;
 import com.poorcoding.dixelpungeon.ui.RedButton;
 import com.poorcoding.dixelpungeon.ui.Window;
 import com.poorcoding.dixelpungeon.utils.GLog;
-import com.poorcoding.dixelpungeon.utils.Utils;
 import com.poorcoding.noosa.BitmapTextMultiline;
 import com.poorcoding.noosa.NinePatch;
 import com.poorcoding.noosa.audio.Sample;
@@ -78,7 +71,8 @@ public class WndSoulforge extends Window {
 
 	private static final String TXT_REPAIRED	= "you repair the %s for %d point(s)";
 
-	private static Integer SOUL_FACTOR = 5 + Dungeon.hero.lvl;
+	private static Integer SOUL_UPGRADE_FACTOR = 5 + Dungeon.hero.lvl;
+	private static Integer SOUL_REPAIR_FACTOR = 2 + (Math.round(Math.max(1,Dungeon.hero.lvl)/2));
 
 	private static Integer repairAmount = 0;
 
@@ -86,7 +80,7 @@ public class WndSoulforge extends Window {
 	public WndSoulforge(Hero hero ) {
 		super();
 
-		repairAmount = 0;
+		//repairAmount = 0;
 		
 		IconTitle titlebar = new IconTitle();
 		//titlebar.icon(new ItemSprite( new Item().image(), null ));
@@ -99,7 +93,7 @@ public class WndSoulforge extends Window {
 		//BitmapTextMultiline message = PixelScene.createMultiline( TXT_PROMPT, 6 );
 		BitmapTextMultiline message = PixelScene.createMultiline(
 				//"You have " + Statistics.soulsCollected + " Souls to spend.\n" +
-				"You have " + Dungeon.souls + " Souls to consume at the Soulforge." + " Factor " + SOUL_FACTOR + "\n\nSelect an item to upgrade:",
+				"You have " + Dungeon.souls + " Souls to consume at the Soulforge." + " Factor " + SOUL_UPGRADE_FACTOR + "\n\nSelect an item to upgrade:",
 				6 );
 		message.maxWidth = WIDTH;
 		message.measure();
@@ -112,11 +106,13 @@ public class WndSoulforge extends Window {
 				btnPressed = btnItem1;
 				GameScene.selectItem( itemSelector, WndBag.Mode.UPGRADEABLE, TXT_SELECT );
 
+				/*
 				if (btnItem1.item != null) {
 					//repairAmount = 0;
 					calc_repairs_affordable(btnItem1.item);
 					calc_repairs(btnItem1.item, btnRepair, btnMinus, btnPlus);
 				}
+				*/
 			}
 		};
 		btnItem1.setRect( (WIDTH - BTN_SIZE)/2, message.y + message.height() + BTN_GAP, BTN_SIZE, BTN_SIZE );
@@ -198,7 +194,7 @@ public class WndSoulforge extends Window {
 				calc_repairs( item, btnRepair, btnMinus, btnPlus);
 
 				/* item1 cost to upgrade */
-				int cost = item.price() * SOUL_FACTOR;
+				int cost = item.price() * SOUL_UPGRADE_FACTOR;
 				btnReforge.text("Upgrade: " + cost + " Souls");
 
 				if (Dungeon.souls >= cost) {
@@ -265,7 +261,7 @@ public class WndSoulforge extends Window {
 
 		/* Upgrade item1 */
 
-		int cost = item1.price() * SOUL_FACTOR;
+		int cost = item1.price() * SOUL_UPGRADE_FACTOR;
 
 		Sample.INSTANCE.play( Assets.SND_EVOKE );
 		ScrollOfUpgrade.upgrade( Dungeon.hero );
@@ -286,7 +282,7 @@ public class WndSoulforge extends Window {
 	/* Dixel: repair a single item */
 	public static void soul_repair( Item item1 ) {
 		Sample.INSTANCE.play( Assets.SND_EVOKE );
-		Dungeon.souls -= repairAmount * SOUL_FACTOR;
+		Dungeon.souls -= repairAmount * SOUL_REPAIR_FACTOR;
 		item1.setDurability(repairAmount);
 		GLog.p( TXT_REPAIRED, item1.name(), repairAmount );
 		Dungeon.hero.spendAndNext( 9f );
@@ -305,9 +301,19 @@ public class WndSoulforge extends Window {
 	}*/
 
 	private static void calc_repairs_affordable (Item item) {
+		Item curItem = item;
+
+		/*
+		if ((repairAmount + curItem.durability()) > curItem.maxDurability()) {
+			//GameScene.show(new WndDixel(repairAmount + "+" + curItem.durability() + " vs " + curItem.maxDurability()));
+			repairAmount =  curItem.maxDurability() - curItem.durability();
+		}
+		*/
+		repairAmount =  curItem.maxDurability() - curItem.durability();
+
 		// work out automatically the max affordable
-		int repairMax = item.maxDurability() - item.durability();
-		int repairMaxCost = repairMax * SOUL_FACTOR;
+		int repairMax = curItem.maxDurability() - curItem.durability();
+		int repairMaxCost = repairMax * SOUL_REPAIR_FACTOR;
 
 		if (repairMaxCost > Dungeon.souls) {
 			// Work downwards.
@@ -316,20 +322,23 @@ public class WndSoulforge extends Window {
 
 			while (c > Dungeon.souls){
 				r--;
-				c = r * SOUL_FACTOR;
+				c = r * SOUL_REPAIR_FACTOR;
 			}
 
 			repairAmount = r;
 		}
+
+		//GameScene.show(new WndDixel("Repair Amount: " + repairAmount));
 	}
 
 	private static void calc_repairs( Item item, RedButton btnRepair, RedButton btnMinus, RedButton btnPlus ) {
 
 		if (item.durability() == item.maxDurability()) {
+			//GameScene.show(new WndDixel("Repair Amount set to zero"));
 			repairAmount = 0;
 		}
 
-		int repairCost = repairAmount * SOUL_FACTOR;
+		int repairCost = repairAmount * SOUL_REPAIR_FACTOR;
 		btnRepair.text("Repair " + repairAmount + " (" + (item.durability() + repairAmount) + "/" + item.maxDurability() + "): " + repairCost + " Souls");
 
 		btnMinus.enable(true);
@@ -346,6 +355,6 @@ public class WndSoulforge extends Window {
 	}
 
 	public static void updateSoulFactor() {
-		SOUL_FACTOR = 5 + Dungeon.hero.lvl;
+		SOUL_UPGRADE_FACTOR = 5 + Dungeon.hero.lvl;
 	}
 }
