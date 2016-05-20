@@ -180,5 +180,8 @@ public class ItemSpriteSheet {
 	public static final int WEIGHT	= 123;
 	public static final int BOMB	= 124;
 	public static final int HONEYPOT= 125;
+
+	// Dixel
 	public static final int SOULS	= 128;
+	public static final int WANNABLISS	= 129;
 }

@@ -179,14 +179,9 @@ public class Heap implements Bundlable {
 			items.remove( item );
 			
 		}
-		
-		if (item instanceof Dewdrop) {
-			items.add( item );
-		} else {
-			items.addFirst( item );
-		}
 
-		if (item instanceof Drug) {
+		if (item instanceof Dewdrop ) {
+		//if ( (item instanceof Dewdrop) || (item instanceof  Drug) ) {
 			items.add( item );
 		} else {
 			items.addFirst( item );
