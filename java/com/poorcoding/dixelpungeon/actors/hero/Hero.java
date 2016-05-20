@@ -22,6 +22,7 @@ import java.util.Collections;
 import java.util.HashSet;
 
 import com.poorcoding.dixelpungeon.items.Soul;
+import com.poorcoding.dixelpungeon.windows.WndSoulforge;
 import com.poorcoding.noosa.Camera;
 import com.poorcoding.noosa.Game;
 import com.poorcoding.noosa.audio.Sample;
@@ -1067,8 +1068,11 @@ public class Hero extends Char {
 			GLog.p( TXT_NEW_LEVEL, lvl );
 			sprite.showStatus( CharSprite.POSITIVE, TXT_LEVEL_UP );
 			Sample.INSTANCE.play( Assets.SND_LEVELUP );
-			
+
 			Badges.validateLevelReached();
+
+			// Dixel: update Souls pricing at Soulforge.
+			WndSoulforge.updateSoulFactor();
 		}
 		
 		if (subClass == HeroSubClass.WARLOCK) {

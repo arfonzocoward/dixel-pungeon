@@ -79,7 +79,7 @@ public class WndSoulforge extends Window {
 
 	private static final String TXT_REPAIRED	= "you repair the %s for %d point(s)";
 
-	private static final Integer SOUL_FACTOR = 5 + Dungeon.depth;
+	private static Integer SOUL_FACTOR = 5 + Dungeon.hero.lvl;
 
 	private static Integer repairAmount = 0;
 
@@ -344,5 +344,9 @@ public class WndSoulforge extends Window {
 		}
 
 
+	}
+
+	public static void updateSoulFactor() {
+		SOUL_FACTOR = 5 + Dungeon.hero.lvl;
 	}
 }
