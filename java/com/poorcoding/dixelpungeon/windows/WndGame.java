@@ -43,6 +43,7 @@ public class WndGame extends Window {
 	// Dixel specifics
 	private static final String TXT_DIXEL		= "About Dixel Pungeon";
 	private static final String TXT_SOULFORGE		= "Soulforge";
+	private static final String TXT_DEBUG		= "Debug";
 	
 	private static final int WIDTH		= 120;
 	private static final int BTN_HEIGHT	= 20;
@@ -53,6 +54,16 @@ public class WndGame extends Window {
 	public WndGame() {
 		
 		super();
+
+		// TODO: Display debug button.
+		if (DixelPungeon.DIXEL_DEBUG ) {
+			addButton( new RedButton( TXT_DEBUG ) {
+				@Override
+				protected void onClick() {
+					hide();
+				}
+			} );
+		}
 
 		// Display Soulforge button only at Campfires.
 		if (Dungeon.hero.isAlive() && Dungeon.level.map[Dungeon.hero.pos] == Terrain.CAMPFIRE) {

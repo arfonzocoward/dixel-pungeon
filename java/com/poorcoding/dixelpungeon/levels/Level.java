@@ -23,8 +23,10 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
 
+import com.poorcoding.dixelpungeon.DixelPungeon;
 import com.poorcoding.dixelpungeon.actors.buffs.Hunger;
 import com.poorcoding.dixelpungeon.effects.Speck;
+import com.poorcoding.dixelpungeon.items.Drug;
 import com.poorcoding.noosa.Scene;
 import com.poorcoding.noosa.audio.Sample;
 import com.poorcoding.dixelpungeon.Assets;
@@ -178,7 +180,16 @@ public abstract class Level implements Bundlable {
 				addItemToSpawn( new ScrollOfEnchantment() );
 				Dungeon.scrollsOfEnchantment++;
 			}
-			
+
+			// Add drugs randomly.
+			if (DixelPungeon.DIXEL_DEBUG) {
+				int i = 0;
+				while (i < Random.Int(1,10)) {
+					addItemToSpawn(new Drug());
+					i++;
+				}
+			}
+
 			if (Dungeon.depth > 1) {
 				switch (Random.Int( 10 )) {
 				case 0:
