@@ -137,6 +137,23 @@ public abstract class RegularLevel extends Level {
 			specials.remove( Room.Type.WEAK_FLOOR );
 		}
 		assignRoomType();
+
+		// Add soulforge camp on every level, connected to exit.
+		{
+			Room soulcamp = null;
+			for (Room r : roomExit.connected.keySet()) {
+				if (r.connected.size() == 1 && r.width() >= 5 && r.height() >= 5) {
+					soulcamp = r;
+					break;
+				}
+			}
+
+			if (soulcamp == null) {
+				return false;
+			} else {
+				soulcamp.type = Room.Type.SOULFORGE;
+			}
+		}
 		
 		paint();
 		paintWater();

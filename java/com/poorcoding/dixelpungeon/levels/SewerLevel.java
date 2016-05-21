@@ -139,8 +139,10 @@ public class SewerLevel extends RegularLevel {
 		switch (tile) {
 		case Terrain.CAMPFIRE:
 			return "Campfire";
+		case Terrain.SOULFORGE:
+			return "Soulforge";
 		case Terrain.WATER:
-			return "Murky water";
+			return "Sewage water";
 		default:
 			return super.tileName( tile );
 		}

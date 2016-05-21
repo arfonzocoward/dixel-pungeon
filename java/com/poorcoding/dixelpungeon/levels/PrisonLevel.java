@@ -129,6 +129,10 @@ public class PrisonLevel extends RegularLevel {
 	@Override
 	public String tileName( int tile ) {
 		switch (tile) {
+		case Terrain.CAMPFIRE:
+			return "Campfire";
+		case Terrain.SOULFORGE:
+			return "Soulforge";
 		case Terrain.WATER:
 			return "Dark cold water.";
 		default:

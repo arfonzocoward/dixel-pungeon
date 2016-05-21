@@ -17,28 +17,48 @@
  */
 package com.poorcoding.dixelpungeon.levels.painters;
 
+import com.poorcoding.dixelpungeon.actors.blobs.Soulforge;
+import com.poorcoding.dixelpungeon.actors.blobs.SoulforgeForce;
+//import com.poorcoding.dixelpungeon.actors.blobs.WellWater;
 import com.poorcoding.dixelpungeon.levels.Level;
 import com.poorcoding.dixelpungeon.levels.Room;
 import com.poorcoding.dixelpungeon.levels.Terrain;
-import com.poorcoding.dixelpungeon.items.Soul;
 import com.poorcoding.utils.Point;
+import com.poorcoding.utils.Random;
 
-public class ExitPainter extends Painter {
+public class SoulforgeCampPainter extends Painter {
 
+	private static final Class<?>[] WATERS = 
+		{Soulforge.class};
+	
 	public static void paint( Level level, Room room ) {
 
 		fill( level, room, Terrain.WALL );
 		fill( level, room, 1, Terrain.EMPTY );
-		
-		for (Room.Door door : room.connected.values()) {
-			door.set( Room.Door.Type.REGULAR );
+
+		// Add campfire.
+		Point c = room.center();
+		set( level, c.x, c.y, Terrain.CAMPFIRE);
+
+		// TODO: Add forge.
+		set( level, c.x + Random.Int(1,2), c.y + Random.Int(1,3), Terrain.SOULFORGE);
+
+		@SuppressWarnings("unchecked")
+		Class<? extends SoulforgeForce> waterClass =
+			(Class<? extends SoulforgeForce>)Random.element( WATERS );
+
+		SoulforgeForce water = (SoulforgeForce)level.blobs.get( waterClass );
+		if (water == null) {
+			try {
+				water = waterClass.newInstance();
+			} catch (Exception e) {
+				water = null;
+			}
 		}
-
-		//int c = room.random();
-		//set( level, c, Terrain.CAMPFIRE);
-
-		level.exit = room.random( 1 );
-		set( level, level.exit, Terrain.EXIT );
+		water.seed( c.x + Level.WIDTH * c.y, 1 );
+		level.blobs.put( waterClass, water );
+		
+		room.entrance().set( Room.Door.Type.REGULAR );
+		
 	}
-	
 }

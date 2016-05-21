@@ -35,7 +35,7 @@ import com.poorcoding.dixelpungeon.scenes.TitleScene;
 
 public class DixelPungeon extends Game {
 
-	public static String version_dixel = "52";
+	public static String version_dixel = "53";
 	public static final boolean DIXEL_DEBUG = true;
 	
 	public DixelPungeon() {
@@ -123,6 +123,10 @@ public class DixelPungeon extends Game {
 		com.poorcoding.utils.Bundle.addAlias(
 			com.poorcoding.dixelpungeon.items.wands.WandOfReach.class,
 			"com.poorcoding.pixeldungeon.items.wands.WandOfTelekinesis" );
+		// Dixel
+		com.poorcoding.utils.Bundle.addAlias(
+				com.poorcoding.dixelpungeon.actors.blobs.Soulforge.class,
+				"com.poorcoding.pixeldungeon.actors.blobs.Light" );
 	}
 	
 	@Override

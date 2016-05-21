@@ -67,7 +67,8 @@ public class Room extends Rect implements Graph.Node, Bundlable {
 		WEAK_FLOOR	( WeakFloorPainter.class ),
 		PIT			( PitPainter.class ),
 		ALTAR		( AltarPainter.class ),
-		CAMPFIRE	( CampfirePainter.class );
+		CAMPFIRE	( CampfirePainter.class ),
+		SOULFORGE	( SoulforgeCampPainter.class );
 		
 		private Method paint;
 		
@@ -90,7 +91,7 @@ public class Room extends Rect implements Graph.Node, Bundlable {
 	
 	public static final ArrayList<Type> SPECIALS = new ArrayList<Type>( Arrays.asList(
 		Type.ARMORY, Type.WEAK_FLOOR, Type.MAGIC_WELL, Type.CRYPT, Type.POOL, Type.GARDEN, Type.LIBRARY,
-		Type.TREASURY, Type.TRAPS, Type.STORAGE, Type.STATUE, Type.LABORATORY, Type.VAULT, Type.ALTAR, Type.CAMPFIRE
+		Type.TREASURY, Type.TRAPS, Type.STORAGE, Type.STATUE, Type.LABORATORY, Type.VAULT, Type.ALTAR, Type.SOULFORGE
 	) );
 	
 	public Type type = Type.NULL;

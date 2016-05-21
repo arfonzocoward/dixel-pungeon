@@ -49,6 +49,7 @@ public class Terrain {
 	public static final int CHASM_WALL		= 45;
 	public static final int CHASM_WATER		= 46;
 	public static final int CAMPFIRE		= 64;
+	public static final int SOULFORGE 		= 65;
 
 	public static final int SECRET_DOOR				= 16;
 	public static final int TOXIC_TRAP				= 17;
@@ -111,7 +112,9 @@ public class Terrain {
 		flags[STATUE_SP]	= flags[STATUE] 								| UNSTITCHABLE;
 		flags[BOOKSHELF]	= flags[BARRICADE]								| UNSTITCHABLE;
 		flags[ALCHEMY]		= PASSABLE;
+
 		flags[CAMPFIRE]		= PASSABLE;
+		flags[SOULFORGE]		= PASSABLE;
 		
 		flags[CHASM_WALL]		= flags[CHASM];
 		flags[CHASM_FLOOR]		= flags[CHASM];

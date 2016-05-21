@@ -93,7 +93,7 @@ public class WndSoulforge extends Window {
 		//BitmapTextMultiline message = PixelScene.createMultiline( TXT_PROMPT, 6 );
 		BitmapTextMultiline message = PixelScene.createMultiline(
 				//"You have " + Statistics.soulsCollected + " Souls to spend.\n" +
-				"You have " + Dungeon.souls + " Souls to consume at the Soulforge." + " Factor " + SOUL_UPGRADE_FACTOR + "\n\nSelect an item to upgrade:",
+				"You have " + Dungeon.souls + " Souls to consume at the Soulforge." + "\n\nSelect an item to upgrade:",
 				6 );
 		message.maxWidth = WIDTH;
 		message.measure();

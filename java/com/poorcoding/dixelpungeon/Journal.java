@@ -33,6 +33,9 @@ public class Journal {
 		ALCHEMY					( "Alchemy pot" ),
 		GARDEN					( "Garden" ),
 		STATUE					( "Animated statue" ),
+
+		// Dixel related
+		SOULFORGE				( "Soulforge camp" ),
 		
 		GHOST					( "Sad ghost" ),
 		WANDMAKER				( "Old wandmaker" ),

@@ -38,6 +38,7 @@ import com.poorcoding.dixelpungeon.actors.Char;
 import com.poorcoding.dixelpungeon.actors.blobs.Alchemy;
 import com.poorcoding.dixelpungeon.actors.blobs.Blob;
 import com.poorcoding.dixelpungeon.actors.blobs.WellWater;
+import com.poorcoding.dixelpungeon.actors.blobs.SoulforgeForce;
 import com.poorcoding.dixelpungeon.actors.buffs.Awareness;
 import com.poorcoding.dixelpungeon.actors.buffs.Blindness;
 import com.poorcoding.dixelpungeon.actors.buffs.Buff;
@@ -724,7 +725,11 @@ public abstract class Level implements Bundlable {
 			Door.enter( cell );
 			break;
 
+
 		case Terrain.CAMPFIRE:
+
+			//SoulforgeForce.affectCell( cell );
+
 			Hero hero = Dungeon.hero;
 			float energy = Hunger.HUNGRY;
 
@@ -948,6 +953,8 @@ public abstract class Level implements Bundlable {
 		}
 		
 		switch (tile) {
+		case Terrain.SOULFORGE:
+			return "Soulforge";
 		case Terrain.CAMPFIRE:
 			return "Campfire";
 		case Terrain.CHASM:
@@ -1071,7 +1078,9 @@ public abstract class Level implements Bundlable {
 		case Terrain.EMPTY_WELL:
 			return "The well has run dry.";
 		case Terrain.CAMPFIRE:
-			return "Rest here to heal and spend souls.";
+			return "Rest here to heal and eat.";
+		case Terrain.SOULFORGE:
+			return "Spend souls on upgrades at the Soulforge.\n\nAccess via the in-game menu when standing at Soulforge.";
 		default:
 			if (tile >= Terrain.WATER_TILES) {
 				return tileDesc( Terrain.WATER );
