@@ -72,9 +72,12 @@ public class Drug extends Item {
 
 			GameScene.pickUp( this );
 			hero.sprite.emitter().burst( Speck.factory( Speck.STAR ), 3 );
-			Sample.INSTANCE.play( Assets.SND_PUFF );
+			Sample.INSTANCE.play( Assets.SND_ITEM);
 			//Sample.INSTANCE.play( Assets.SND_ITEM );
 			hero.spendAndNext( TIME_TO_PICK_UP );
+
+			GLog.i( "You pick up the wannabliss.");
+
 			return true;
 
 		} else {
@@ -94,12 +97,15 @@ public class Drug extends Item {
 
 			detach( hero.belongings.backpack );
 
+			// AUDIO EFFECTS
+			Sample.INSTANCE.play( Assets.SND_PUFF );
+
 			// VISUAL EFFECTS
 			//Emitter emitter = hero.sprite.centerEmitter();
 			//emitter.start( FlameParticle.FACTORY, 0.2f, 3 );
 			Emitter emitter = hero.sprite.emitter();
-			emitter.start(SmokeParticle.FACTORY, 0.1f, 50);
-			hero.sprite.emitter().burst( Speck.factory( Speck.STAR ), 10 );
+			emitter.start(SmokeParticle.FACTORY, 0.5f, 35);
+			hero.sprite.emitter().burst( Speck.factory( Speck.STAR ), 50 );
 
 			//GLog.i( "You smoke some " + this.name + ". ");
 
@@ -141,7 +147,7 @@ public class Drug extends Item {
 
 	@Override
 	public boolean isIdentified() {
-		return false;
+		return true;
 	}
 
 	@Override
