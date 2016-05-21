@@ -243,9 +243,19 @@ public class Dungeon {
 		level.reset();
 		switchLevel( level, level.entrance );
 	}
-	
+
+	/*
 	public static boolean shopOnLevel() {
 		return depth == 6 || depth == 11 || depth == 16;
+	}
+	*/
+	public static boolean shopOnLevel() {
+		// In Dixel, all even-numbered non-boss depths have shops.
+		if (depth % 2 == 0 && !Dungeon.bossLevel(depth)) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 	
 	public static boolean bossLevel() {
