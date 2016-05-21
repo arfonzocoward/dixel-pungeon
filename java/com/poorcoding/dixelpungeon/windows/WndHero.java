@@ -19,6 +19,8 @@ package com.poorcoding.dixelpungeon.windows;
 
 import java.util.Locale;
 
+import com.poorcoding.dixelpungeon.items.rings.RingOfHaggler;
+import com.poorcoding.dixelpungeon.items.rings.RingOfHerbalism;
 import com.poorcoding.gltextures.SmartTexture;
 import com.poorcoding.gltextures.TextureCache;
 import com.poorcoding.noosa.BitmapText;
@@ -268,6 +270,21 @@ public class WndHero extends WndTabbed {
 
 			dixelSlot( TXT_CAMPS, Statistics.campfiresRested );
 			pos += GAP;
+
+			if (hero.buff(RingOfHaggler.Haggling.class) != null) {
+				dixelSlot("Haggling", hero.buff(RingOfHaggler.Haggling.class).level);
+			} else {
+				dixelSlot("Haggling", 0);
+			}
+			pos += GAP;
+
+			if (hero.buff(RingOfHerbalism.Herbalism.class) != null) {
+				dixelSlot( "Herbalism", hero.buff(RingOfHerbalism.Herbalism.class ).level );
+			} else {
+				dixelSlot("Herbalism", 0);
+			}
+			pos += GAP;
+
 		}
 
 		private void dixelSlot( String label, String value ) {
