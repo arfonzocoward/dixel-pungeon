@@ -183,12 +183,15 @@ public abstract class Level implements Bundlable {
 			}
 
 			// Add drugs randomly.
+			int i = 0;
+			while (i < Random.Int(0,3)) {
+				addItemToSpawn(new Drug());
+				i++;
+			}
+
+
+
 			if (DixelPungeon.DIXEL_DEBUG) {
-				int i = 0;
-				while (i < Random.Int(1,10)) {
-					addItemToSpawn(new Drug());
-					i++;
-				}
 			}
 
 			if (Dungeon.depth > 1) {
