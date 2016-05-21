@@ -116,7 +116,8 @@ public class GameScene extends PixelScene {
 	
 	@Override
 	public void create() {
-		Music.INSTANCE.play( Assets.TUNE, true );
+		//Music.INSTANCE.play( Assets.TUNE, true );
+		Music.INSTANCE.play( Assets.DIXEL_TUNE, true );
 		Music.INSTANCE.volume( 1f );
 		
 		DixelPungeon.lastClass( Dungeon.hero.heroClass.ordinal() );

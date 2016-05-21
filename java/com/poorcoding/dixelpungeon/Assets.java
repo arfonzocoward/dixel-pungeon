@@ -117,6 +117,8 @@ public class Assets {
 	public static final String THEME	= "theme.mp3";
 	public static final String TUNE		= "game.mp3";
 	public static final String HAPPY	= "surface.mp3";
+
+	public static final String DIXEL_TUNE	= "game-gerudo-1.mp3";
 	
 	public static final String SND_CLICK	= "snd_click.mp3";
 	public static final String SND_BADGE	= "snd_badge.mp3";
