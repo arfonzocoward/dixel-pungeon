@@ -9,6 +9,9 @@ Dixel Pungeon is based on Pixel Dungeon (see below). All credit and thanks to th
 Download: for now, get the latest binary (Android APK) here:
 - http://arfonzo.org/pub/dix
 
+Source code:
+- https://github.com/arfonzocoward/dixel-pungeon
+
 Key changes:
 
 It's easier when starting out and for casual playing:
