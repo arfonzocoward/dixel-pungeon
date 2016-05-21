@@ -47,7 +47,7 @@ public class WndStory extends Window {
 	static {
 		CHAPTERS.put( ID_SEWERS,
 		"Under the fine city of LelDorado, the sewers lead into the ancient dungeon ruins. Typical.\n\n" +
-		"The city dwellers lurk above, whilst the scum of the underworld fester below. At least at this depth, they can't be that bad...\n\n" +
+		"The city dwellers lurk above, while the scum of the underworld fester below. At least at this depth, they can't be that bad...\n\n" +
 		"... Welcome to Dixel Pungeon.");
 		
 		CHAPTERS.put( ID_PRISON,
