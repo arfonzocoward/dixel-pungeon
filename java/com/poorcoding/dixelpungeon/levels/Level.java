@@ -38,7 +38,6 @@ import com.poorcoding.dixelpungeon.actors.Char;
 import com.poorcoding.dixelpungeon.actors.blobs.Alchemy;
 import com.poorcoding.dixelpungeon.actors.blobs.Blob;
 import com.poorcoding.dixelpungeon.actors.blobs.WellWater;
-import com.poorcoding.dixelpungeon.actors.blobs.SoulforgeForce;
 import com.poorcoding.dixelpungeon.actors.buffs.Awareness;
 import com.poorcoding.dixelpungeon.actors.buffs.Blindness;
 import com.poorcoding.dixelpungeon.actors.buffs.Buff;
@@ -87,9 +86,12 @@ public abstract class Level implements Bundlable {
 		GRASS
 	};
 	
-	public static final int WIDTH = 32;
-	public static final int HEIGHT = 32;
+	//public static final int WIDTH = 32;
+	//public static final int HEIGHT = 32;
+	public static final int WIDTH = 128;
+	public static final int HEIGHT = 128;
 	public static final int LENGTH = WIDTH * HEIGHT;
+	public static final int DIXEL_MAP_FACTOR  = 16;		// (WIDTH*HEIGHT)/(32*32)
 	
 	public static final int[] NEIGHBOURS4 = {-WIDTH, +1, +WIDTH, -1}; 
 	public static final int[] NEIGHBOURS8 = {+1, -1, +WIDTH, -WIDTH, +1+WIDTH, +1-WIDTH, -1+WIDTH, -1-WIDTH};

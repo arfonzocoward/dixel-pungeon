@@ -538,7 +538,10 @@ public abstract class RegularLevel extends Level {
 	
 	@Override
 	public int nMobs() {
-		return 2 + Dungeon.depth % 5 + Random.Int( 3 );
+		// Scale up based on Level size.
+		int numberMobs = (2 + Dungeon.depth % 5 + Random.Int( 3 )) * DIXEL_MAP_FACTOR;
+		return numberMobs;
+		//return 2 + Dungeon.depth % 5 + Random.Int( 3 );
 	}
 	
 	@Override
@@ -605,6 +608,9 @@ public abstract class RegularLevel extends Level {
 		while (Random.Float() < 0.4f) {
 			nItems++;
 		}
+
+		// Scale based on map size.
+		nItems *= DIXEL_MAP_FACTOR;
 		
 		for (int i=0; i < nItems; i++) {
 			Heap.Type type = null;
