@@ -370,9 +370,11 @@ public abstract class Mob extends Char {
 		
 		super.die( cause );
 
-		if (Dungeon.hero.lvl <= maxLvl + 2) {
+		/*if (Dungeon.hero.lvl <= maxLvl + 2) {
 			dropLoot();
-		}
+		}*/
+		// Dixel: always drop loot.
+		dropLoot();
 
 		if (Dungeon.hero.isAlive() && !Dungeon.visible[pos]) {	
 			GLog.i( TXT_DIED );
