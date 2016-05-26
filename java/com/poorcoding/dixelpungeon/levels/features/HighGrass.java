@@ -61,7 +61,7 @@ public class HighGrass {
 			}
 
 			// Drug
-			if (herbalismLevel >= 0 && Random.Int( 12 ) <= Random.Int( herbalismLevel + 1 )) {
+			if (herbalismLevel >= 0 && Random.Int( 36 ) <= Random.Int( herbalismLevel + 1 )) {
 				level.drop( new Drug(), pos ).sprite.drop();
 			}
 
