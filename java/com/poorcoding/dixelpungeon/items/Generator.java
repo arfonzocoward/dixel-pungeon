@@ -48,7 +48,7 @@ public class Generator {
 		POTION	( 50,	Potion.class ),
 		SCROLL	( 40,	Scroll.class ),
 		WAND	( 4,	Wand.class ),
-		FIREARM ( 1000,	Firearm.class),
+		FIREARM ( 50,	Firearm.class),
 		RING	( 2,	Ring.class ),
 		SEED	( 5,	Plant.Seed.class ),
 		FOOD	( 0,	Food.class ),
