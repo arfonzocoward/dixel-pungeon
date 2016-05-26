@@ -147,7 +147,7 @@ public class InterlevelScene extends PixelScene {
 					
 				} catch (Exception e ) {
 					
-					error = ERR_GENERIC;
+					error = ERR_GENERIC + "\n\n" + e.getMessage();
 					
 				}
 				

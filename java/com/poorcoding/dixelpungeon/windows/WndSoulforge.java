@@ -58,7 +58,7 @@ public class WndSoulforge extends Window {
 	private RedButton btnPlus;
 
 	private static final String TXT_SELECT =
-		"Select an item to upgrade or repair:";
+		"Select an item:";
 	private static final String TXT_REPAIR =
 			"Choose item to repair";
 	private static final String TXT_REFORGE =
@@ -93,7 +93,7 @@ public class WndSoulforge extends Window {
 		//BitmapTextMultiline message = PixelScene.createMultiline( TXT_PROMPT, 6 );
 		BitmapTextMultiline message = PixelScene.createMultiline(
 				//"You have " + Statistics.soulsCollected + " Souls to spend.\n" +
-				"You have " + Dungeon.souls + " Souls to consume at the Soulforge." + "\n\nSelect an item to upgrade:",
+				"You have " + Dungeon.souls + " Souls to consume at the Soulforge." + "\n\nSelect an item to soulforge:",
 				6 );
 		message.maxWidth = WIDTH;
 		message.measure();

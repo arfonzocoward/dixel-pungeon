@@ -23,6 +23,7 @@ import java.util.HashSet;
 
 import com.poorcoding.dixelpungeon.items.Drug;
 import com.poorcoding.dixelpungeon.items.Soul;
+import com.poorcoding.dixelpungeon.items.dixel.Firearm;
 import com.poorcoding.dixelpungeon.windows.WndSoulforge;
 import com.poorcoding.noosa.Camera;
 import com.poorcoding.noosa.Game;
@@ -121,7 +122,8 @@ public class Hero extends Char {
 		"Welcome to level %d! Now you are healthier and more focused. " +
 		"It's easier for you to hit enemies and dodge their attacks.";
 	
-	public static final String TXT_YOU_NOW_HAVE	= "You now have %s";
+	//public static final String TXT_YOU_NOW_HAVE	= "You now have %s";
+	public static final String TXT_YOU_NOW_HAVE	= "Taken: %s";
 	
 	private static final String TXT_SOMETHING_ELSE	= "There is something else here";
 	private static final String TXT_LOCKED_CHEST	= "This chest is locked and you don't have matching key";
@@ -247,11 +249,11 @@ public class Hero extends Char {
 	}
 	
 	public boolean shoot( Char enemy, MissileWeapon wep ) {
-		
+
 		rangedWeapon = wep;
 		boolean result = attack( enemy );
 		rangedWeapon = null;
-		
+
 		return result;
 	}
 	
