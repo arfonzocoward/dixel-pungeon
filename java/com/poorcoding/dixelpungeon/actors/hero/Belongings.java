@@ -36,7 +36,9 @@ import com.poorcoding.utils.Random;
 
 public class Belongings implements Iterable<Item> {
 
-	public static final int BACKPACK_SIZE	= 19;
+	//public static final int BACKPACK_SIZE	= 19;
+	//public static final int BACKPACK_SIZE	= 43;
+	public static final int BACKPACK_SIZE	= 49;
 	
 	private Hero owner;
 	
