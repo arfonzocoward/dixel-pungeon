@@ -35,7 +35,7 @@ import com.poorcoding.dixelpungeon.scenes.TitleScene;
 
 public class DixelPungeon extends Game {
 
-	public static String version_dixel = "55";
+	public static String version_dixel = "56";
 	public static final boolean DIXEL_DEBUG = true;
 	
 	public DixelPungeon() {
@@ -142,7 +142,7 @@ public class DixelPungeon extends Game {
 		if (Preferences.INSTANCE.getBoolean( Preferences.KEY_LANDSCAPE, false ) != landscape) {
 			landscape( !landscape );
 		}
-		
+
 		Music.INSTANCE.enable( music() );
 		Sample.INSTANCE.enable( soundFx() );
 		
