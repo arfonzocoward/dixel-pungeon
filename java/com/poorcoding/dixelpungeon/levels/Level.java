@@ -87,11 +87,13 @@ public abstract class Level implements Bundlable {
 	};
 	
 	//public static final int WIDTH = 32;
-	//public static final int HEIGHT = 32;
-	public static final int WIDTH = 128;
-	public static final int HEIGHT = 128;
+	//public static final int HEIGHT = 32; // 1x
+	//public static final int WIDTH = 96; // 9x
+	//public static final int HEIGHT = 96;
+	public static final int WIDTH = 64; // 4x
+	public static final int HEIGHT = 64;
 	public static final int LENGTH = WIDTH * HEIGHT;
-	public static final int DIXEL_MAP_FACTOR  = 16;		// (WIDTH*HEIGHT)/(32*32)
+	public static final int DIXEL_MAP_FACTOR  = 4;		// (WIDTH*HEIGHT)/(32*32)
 	
 	public static final int[] NEIGHBOURS4 = {-WIDTH, +1, +WIDTH, -1}; 
 	public static final int[] NEIGHBOURS8 = {+1, -1, +WIDTH, -WIDTH, +1+WIDTH, +1-WIDTH, -1+WIDTH, -1-WIDTH};
