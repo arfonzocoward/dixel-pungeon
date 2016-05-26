@@ -37,12 +37,15 @@ import com.poorcoding.dixelpungeon.items.Generator;
 import com.poorcoding.dixelpungeon.items.Gold;
 import com.poorcoding.dixelpungeon.items.Item;
 import com.poorcoding.dixelpungeon.items.Soul;
+import com.poorcoding.dixelpungeon.items.food.Apple;
 import com.poorcoding.dixelpungeon.items.food.ChargrilledMeat;
 import com.poorcoding.dixelpungeon.items.food.Food;
 import com.poorcoding.dixelpungeon.items.food.FrozenCarpaccio;
+import com.poorcoding.dixelpungeon.items.food.LobsterSubmarineSandwich;
 import com.poorcoding.dixelpungeon.items.food.MysteryMeat;
 import com.poorcoding.dixelpungeon.items.food.OverpricedRation;
 import com.poorcoding.dixelpungeon.items.food.Pasty;
+import com.poorcoding.dixelpungeon.items.food.Sushi;
 import com.poorcoding.dixelpungeon.levels.Level;
 import com.poorcoding.dixelpungeon.sprites.CharSprite;
 import com.poorcoding.dixelpungeon.utils.GLog;
@@ -403,12 +406,12 @@ public abstract class Mob extends Char {
 		Dungeon.level.drop( new Soul(HT), pos ).sprite.drop();
 
 		// Sometimes drop food.
-		if (Random.Int(0,9) == 0) {
+		if (Random.Int(0,4) == 0) {
 
 			Food eatz;
 
 			// Pick a random edible object.
-			switch (Random.Int(0,5)) {
+			switch (Random.Int(0,8)) {
 				case 0:
 					eatz = new Pasty();
 					break;
@@ -425,6 +428,15 @@ public abstract class Mob extends Char {
 					eatz = new MysteryMeat();
 					break;
 				case 5:
+					eatz = new Sushi();
+					break;
+				case 6:
+					eatz = new Apple();
+					break;
+				case 7:
+					eatz = new LobsterSubmarineSandwich();
+					break;
+				case 8:
 				default:
 					eatz = new Food();
 					break;

@@ -188,4 +188,8 @@ public class ItemSpriteSheet {
 	public static final int FIREARM_GENERIC = 130;
 	public static final int FIREARM_FIRE = 131;
 	public static final int BULLET = 132;
+	public static final int FIREARM_FIRE_OVERLAY = 133;
+	public static final int FOOD_SUSHI = 134;
+	public static final int FOOD_APPLE = 135;
+	public static final int FOOD_LOBSTERSUB = 136;
 }

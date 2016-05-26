@@ -29,6 +29,7 @@ import com.poorcoding.dixelpungeon.actors.buffs.Frost;
 import com.poorcoding.dixelpungeon.actors.buffs.Paralysis;
 import com.poorcoding.dixelpungeon.actors.buffs.Roots;
 import com.poorcoding.dixelpungeon.items.food.MysteryMeat;
+import com.poorcoding.dixelpungeon.items.food.Sushi;
 import com.poorcoding.dixelpungeon.levels.Level;
 import com.poorcoding.dixelpungeon.sprites.PiranhaSprite;
 import com.poorcoding.utils.Random;
@@ -78,7 +79,8 @@ public class Piranha extends Mob {
 	
 	@Override
 	public void die( Object cause ) {
-		Dungeon.level.drop( new MysteryMeat(), pos ).sprite.drop();
+		//Dungeon.level.drop( new MysteryMeat(), pos ).sprite.drop();
+		Dungeon.level.drop( new Sushi(), pos ).sprite.drop();
 		super.die( cause );
 		
 		Statistics.piranhasKilled++;
