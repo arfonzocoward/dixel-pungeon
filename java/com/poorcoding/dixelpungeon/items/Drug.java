@@ -21,6 +21,7 @@ import com.poorcoding.dixelpungeon.Assets;
 import com.poorcoding.dixelpungeon.Dungeon;
 import com.poorcoding.dixelpungeon.actors.buffs.Awareness;
 import com.poorcoding.dixelpungeon.actors.buffs.Buff;
+import com.poorcoding.dixelpungeon.actors.buffs.Hunger;
 import com.poorcoding.dixelpungeon.actors.buffs.Light;
 import com.poorcoding.dixelpungeon.actors.buffs.MindVision;
 import com.poorcoding.dixelpungeon.actors.buffs.Regeneration;
@@ -123,8 +124,11 @@ public class Drug extends Item {
 				GLog.i(Utils.capitalize(this.name) + " affect: you sense the presence of only a few creatures nearby." );
 			}
 
+			// Increase hunger.
+			Dungeon.hero.buff(Hunger.class).satisfy(-50f);
+
 			// Random chance actions
-			switch (Random.Int(5)) {
+			switch (Random.Int(0,5)) {
 				case 0:
 					GLog.i( "... that's some gooooood sheee-iiit! :D ");
 					break;
