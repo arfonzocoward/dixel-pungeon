@@ -62,7 +62,8 @@ public class WndBag extends WndTabbed {
 		ARMOR,
 		ENCHANTABLE,
 		WAND,
-		SEED
+		SEED,
+		FIREARM
 	}
 	
 	protected static final int COLS_P	= 4;

@@ -25,6 +25,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.HashSet;
 
+import com.poorcoding.dixelpungeon.items.dixel.Firearm;
 import com.poorcoding.noosa.Game;
 import com.poorcoding.dixelpungeon.actors.Actor;
 import com.poorcoding.dixelpungeon.actors.Char;
@@ -111,6 +112,8 @@ public class Dungeon {
 		Scroll.initLabels();
 		Potion.initColors();
 		Wand.initWoods();
+		//Dixel: Firearms
+		Firearm.initWoods();
 		Ring.initGems();
 		
 		Statistics.reset();
@@ -429,6 +432,8 @@ public class Dungeon {
 			Bundle badges = new Bundle();
 			Badges.saveLocal( badges );
 			bundle.put( BADGES, badges );
+
+			Firearm.save( bundle );
 			
 			OutputStream output = Game.instance.openFileOutput( fileName, Game.MODE_PRIVATE );
 			Bundle.write( bundle, output );
@@ -491,6 +496,8 @@ public class Dungeon {
 		Potion.restore( bundle );
 		Wand.restore( bundle );
 		Ring.restore( bundle );
+
+		Firearm.restore( bundle );
 		
 		potionOfStrength = bundle.getInt( POS );
 		scrollsOfUpgrade = bundle.getInt( SOU );

@@ -25,6 +25,7 @@ import com.poorcoding.dixelpungeon.items.Item;
 import com.poorcoding.dixelpungeon.items.KindOfWeapon;
 import com.poorcoding.dixelpungeon.items.armor.Armor;
 import com.poorcoding.dixelpungeon.items.bags.Bag;
+import com.poorcoding.dixelpungeon.items.dixel.Firearm;
 import com.poorcoding.dixelpungeon.items.keys.IronKey;
 import com.poorcoding.dixelpungeon.items.keys.Key;
 import com.poorcoding.dixelpungeon.items.rings.Ring;
@@ -207,8 +208,16 @@ public class Belongings implements Iterable<Item> {
 				if (wand.curCharges < wand.maxCharges) {
 					wand.curCharges = full ? wand.maxCharges : wand.curCharges + 1;
 					count++;
-					
+
 					wand.updateQuickslot();
+				}
+			} else if (item instanceof Firearm) {
+				Firearm firearm = (Firearm)item;
+				if (firearm.curCharges < firearm.maxCharges) {
+					firearm.curCharges = full ? firearm.maxCharges : firearm.curCharges + 1;
+					count++;
+
+					firearm.updateQuickslot();
 				}
 			}
 		}
@@ -228,6 +237,15 @@ public class Belongings implements Iterable<Item> {
 					count++;
 					
 					wand.updateQuickslot();
+				}
+			}
+			else if (item instanceof Firearm) {
+				Firearm firearm = (Firearm)item;
+				if (firearm.curCharges > 0) {
+					firearm.curCharges--;
+					count++;
+
+					firearm.updateQuickslot();
 				}
 			}
 		}

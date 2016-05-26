@@ -21,6 +21,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
+import com.poorcoding.dixelpungeon.items.dixel.Firearm;
 import com.poorcoding.noosa.audio.Sample;
 import com.poorcoding.dixelpungeon.Assets;
 import com.poorcoding.dixelpungeon.Badges;
@@ -318,6 +319,9 @@ public class Item implements Bundlable {
 					} else if (this instanceof Ring) {
 						sprite.parent.add( Degradation.ring( point ) );
 					} else if (this instanceof Wand) {
+						sprite.parent.add( Degradation.wand( point ) );
+					} else if (this instanceof Firearm) {
+						// TODO: Firearm-specific sprite.
 						sprite.parent.add( Degradation.wand( point ) );
 					}
 					Sample.INSTANCE.play( Assets.SND_DEGRADE );

@@ -184,4 +184,8 @@ public class ItemSpriteSheet {
 	// Dixel
 	public static final int SOULS	= 128;
 	public static final int WANNABLISS	= 129;
+
+	public static final int FIREARM_GENERIC = 130;
+	public static final int FIREARM_FIRE = 131;
+	public static final int BULLET = 132;
 }

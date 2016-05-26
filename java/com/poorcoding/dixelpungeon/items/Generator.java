@@ -34,6 +34,7 @@ import com.poorcoding.dixelpungeon.items.weapon.*;
 import com.poorcoding.dixelpungeon.items.weapon.melee.*;
 import com.poorcoding.dixelpungeon.items.weapon.missiles.*;
 import com.poorcoding.dixelpungeon.plants.*;
+import com.poorcoding.dixelpungeon.items.dixel.*;
 import com.poorcoding.utils.Random;
 
 public class Generator {
@@ -44,6 +45,7 @@ public class Generator {
 		POTION	( 50,	Potion.class ),
 		SCROLL	( 40,	Scroll.class ),
 		WAND	( 4,	Wand.class ),
+		FIREARM ( 1000,	Firearm.class),
 		RING	( 2,	Ring.class ),
 		SEED	( 5,	Plant.Seed.class ),
 		FOOD	( 0,	Food.class ),
@@ -125,6 +127,13 @@ public class Generator {
 			WandOfDisintegration.class,
 			WandOfAvalanche.class };
 		Category.WAND.probs = new float[]{ 10, 10, 15, 6, 10, 11, 15, 10, 6, 10, 0, 5, 5 };
+
+		Category.FIREARM.classes = new Class<?>[] {
+				PistolStandard.class,
+				PistolFirebolt.class,
+				Bullets.class
+		};
+		Category.FIREARM.probs = new float[]{ 1, 0, 10};
 		
 		Category.WEAPON.classes = new Class<?>[]{ 
 			Dagger.class, 
@@ -144,7 +153,8 @@ public class Generator {
 			CurareDart.class,
 			Shuriken.class,
 			Boomerang.class,
-			Tamahawk.class };
+			Tamahawk.class
+		};
 		Category.WEAPON.probs = new float[]{ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 1 };
 		
 		Category.ARMOR.classes = new Class<?>[]{ 

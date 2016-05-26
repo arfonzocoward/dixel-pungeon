@@ -19,9 +19,13 @@ package com.poorcoding.dixelpungeon.actors.hero;
 
 import com.poorcoding.dixelpungeon.Assets;
 import com.poorcoding.dixelpungeon.Badges;
+import com.poorcoding.dixelpungeon.DixelPungeon;
 import com.poorcoding.dixelpungeon.items.TomeOfMastery;
 import com.poorcoding.dixelpungeon.items.armor.ClothArmor;
 import com.poorcoding.dixelpungeon.items.bags.Keyring;
+import com.poorcoding.dixelpungeon.items.dixel.Bullets;
+import com.poorcoding.dixelpungeon.items.dixel.Pistol;
+import com.poorcoding.dixelpungeon.items.dixel.PistolStandard;
 import com.poorcoding.dixelpungeon.items.food.Food;
 import com.poorcoding.dixelpungeon.items.potions.PotionOfStrength;
 import com.poorcoding.dixelpungeon.items.rings.RingOfShadows;
@@ -114,17 +118,21 @@ public enum HeroClass {
 	
 	private static void initCommon( Hero hero ) {
 		(hero.belongings.armor = new ClothArmor()).identify();
-		// Add 10 units of food to start.
+
 		new Food().identify().collect();
-		new Food().identify().collect();
-		new Food().identify().collect();
-		new Food().identify().collect();
-		new Food().identify().collect();
-		new Food().identify().collect();
-		new Food().identify().collect();
-		new Food().identify().collect();
-		new Food().identify().collect();
-		new Food().identify().collect();
+
+		if (DixelPungeon.DIXEL_DEBUG) {
+			// Add 10 units of food to start.
+			int i = 0;
+			while (i < 10) {
+				new Food().identify().collect();
+				i++;
+			}
+
+			new PistolStandard().identify().collect();
+			new Bullets(10).identify().collect();
+		}
+
 		new Keyring().collect();
 	}
 	
