@@ -19,6 +19,7 @@ package com.poorcoding.dixelpungeon.scenes;
 
 import java.io.FileNotFoundException;
 
+import com.poorcoding.dixelpungeon.ui.Toolbar;
 import com.poorcoding.noosa.BitmapText;
 import com.poorcoding.noosa.Camera;
 import com.poorcoding.noosa.Game;
@@ -39,6 +40,8 @@ public class InterlevelScene extends PixelScene {
 	private static final float TIME_TO_FADE = 0.3f;
 	
 	private static final String TXT_DESCENDING	= "Descending...";
+	private static final String TXT_DESCENDING_SUBTEXT = "Patience my pretty: generating level...";
+	private static final String TXT_DESCENDING_SUBTEXT2 = "(this could take a while on slower devices)";
 	private static final String TXT_ASCENDING	= "Ascending...";
 	private static final String TXT_LOADING		= "Loading...";
 	private static final String TXT_RESURRECTING= "Resurrecting...";
@@ -67,6 +70,8 @@ public class InterlevelScene extends PixelScene {
 	private float timeLeft;
 	
 	private BitmapText message;
+	private BitmapText message2;
+	private BitmapText message3;
 	
 	private Thread thread;
 	private String error = null;
@@ -103,6 +108,20 @@ public class InterlevelScene extends PixelScene {
 		message.x = (Camera.main.width - message.width()) / 2; 
 		message.y = (Camera.main.height - message.height()) / 2;
 		add( message );
+
+		if (text == TXT_DESCENDING) {
+			message2 = PixelScene.createText( TXT_DESCENDING_SUBTEXT, 6 );
+			message2.measure();
+			message2.x = (Camera.main.width - message2.width()) / 2;
+			message2.y = (Camera.main.height - message2.height()) / 2 + 20;
+			add( message2 );
+
+			message3 = PixelScene.createText( TXT_DESCENDING_SUBTEXT2, 6 );
+			message3.measure();
+			message3.x = (Camera.main.width - message3.width()) / 2;
+			message3.y = (Camera.main.height - message3.height()) / 2 + 28;
+			add( message3 );
+		}
 		
 		phase = Phase.FADE_IN;
 		timeLeft = TIME_TO_FADE;
