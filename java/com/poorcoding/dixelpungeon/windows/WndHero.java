@@ -285,6 +285,11 @@ public class WndHero extends WndTabbed {
 			}
 			pos += GAP;
 
+			dixelSlot( "Level size", Dungeon.level.WIDTH + "x" + Dungeon.level.HEIGHT);
+			pos += GAP;
+
+			dixelSlot( "MOBs this level", Dungeon.level.nMobs());
+			pos += GAP;
 		}
 
 		private void dixelSlot( String label, String value ) {
