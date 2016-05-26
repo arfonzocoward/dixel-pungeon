@@ -40,9 +40,22 @@ public class SoulforgeCampPainter extends Painter {
 		Point c = room.center();
 		set( level, c.x, c.y, Terrain.CAMPFIRE);
 
-		// TODO: Add forge.
-		set( level, c.x + Random.Int(1,2), c.y + Random.Int(1,3), Terrain.SOULFORGE);
+		// Add forge location.
+		Point pointForge = new Point();
+		Integer forgeLocation = room.random();
+		pointForge.x = forgeLocation % Level.WIDTH;
+		pointForge.y = forgeLocation / Level.WIDTH;
 
+		// Ensure forge location is inside room, and not at center.
+		while (pointForge == room.center() || !room.inside(pointForge)) {
+			forgeLocation = room.random();
+			pointForge.x = forgeLocation % Level.WIDTH;
+			pointForge.y = forgeLocation / Level.WIDTH;
+		}
+		//set(level, pointForge.x + Random.Int(1, 2), pointForge.y + Random.Int(1, 3), Terrain.SOULFORGE);
+		set(level, pointForge.x, pointForge.y, Terrain.SOULFORGE);
+
+		/*
 		@SuppressWarnings("unchecked")
 		Class<? extends SoulforgeForce> waterClass =
 			(Class<? extends SoulforgeForce>)Random.element( WATERS );
@@ -57,6 +70,7 @@ public class SoulforgeCampPainter extends Painter {
 		}
 		water.seed( c.x + Level.WIDTH * c.y, 1 );
 		level.blobs.put( waterClass, water );
+		*/
 		
 		room.entrance().set( Room.Door.Type.REGULAR );
 		
