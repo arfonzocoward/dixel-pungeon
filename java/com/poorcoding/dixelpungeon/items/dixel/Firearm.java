@@ -370,7 +370,7 @@ public abstract class Firearm extends MeleeWeapon {
 	
 	@Override
 	public int price() {
-		return considerState( 100 );
+		return considerState( 50 );
 	}
 	
 	private static final String UNFAMILIRIARITY		= "unfamiliarity";
