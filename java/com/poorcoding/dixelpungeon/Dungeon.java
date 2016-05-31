@@ -337,6 +337,12 @@ public class Dungeon {
 	
 	private static final String RN_GAME_FILE	= "ranger.dat";
 	private static final String RN_DEPTH_FILE	= "ranger%d.dat";
+
+	private static final String TP_GAME_FILE	= "techno.dat";
+	private static final String TP_DEPTH_FILE	= "techno%d.dat";
+
+	private static final String PP_GAME_FILE	= "pepe.dat";
+	private static final String PP_DEPTH_FILE	= "pepe%d.dat";
 	
 	private static final String VERSION		= "version";
 	private static final String CHALLENGES	= "challenges";
@@ -364,6 +370,10 @@ public class Dungeon {
 			return MG_GAME_FILE;
 		case HUNTRESS:
 			return RN_GAME_FILE;
+		case TECHNOPRANCER:
+			return TP_GAME_FILE;
+		case PEPE:
+			return PP_GAME_FILE;
 		default:
 			return RG_GAME_FILE;
 		}
@@ -377,6 +387,10 @@ public class Dungeon {
 			return MG_DEPTH_FILE;
 		case HUNTRESS:
 			return RN_DEPTH_FILE;
+		case TECHNOPRANCER:
+			return TP_DEPTH_FILE;
+		case PEPE:
+			return PP_DEPTH_FILE;
 		default:
 			return RG_DEPTH_FILE;
 		}

@@ -57,6 +57,14 @@ abstract public class ClassArmor extends Armor {
 		case HUNTRESS:
 			classArmor = new HuntressArmor();
 			break;
+		case TECHNOPRANCER:
+			// TODO: Create class specific Armor set for TPs.
+			classArmor = new RogueArmor();
+			break;
+		case PEPE:
+			// TODO: Create class specific Armor set for PP.
+			classArmor = new MageArmor();
+			break;
 		}
 		
 		classArmor.STR = armor.STR;

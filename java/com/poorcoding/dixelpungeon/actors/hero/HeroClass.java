@@ -28,6 +28,7 @@ import com.poorcoding.dixelpungeon.items.dixel.PistolFirebolt;
 import com.poorcoding.dixelpungeon.items.dixel.PistolStandard;
 import com.poorcoding.dixelpungeon.items.food.Food;
 import com.poorcoding.dixelpungeon.items.potions.PotionOfStrength;
+import com.poorcoding.dixelpungeon.items.rings.RingOfMending;
 import com.poorcoding.dixelpungeon.items.rings.RingOfShadows;
 import com.poorcoding.dixelpungeon.items.scrolls.ScrollOfIdentify;
 import com.poorcoding.dixelpungeon.items.scrolls.ScrollOfMagicMapping;
@@ -42,7 +43,7 @@ import com.poorcoding.utils.Bundle;
 
 public enum HeroClass {
 
-	WARRIOR( "warrior" ), MAGE( "mage" ), ROGUE( "rogue" ), HUNTRESS( "huntress" );
+	WARRIOR( "warrior" ), MAGE( "mage" ), ROGUE( "rogue" ), HUNTRESS( "huntress" ), TECHNOPRANCER( "technoprancer"), PEPE( "pepe" ) ;
 	
 	private String title;
 	
@@ -75,6 +76,14 @@ public enum HeroClass {
 		"Rogues can go without food longer.",
 		"Scrolls of Magic Mapping are identified from the beginning."
 	};
+
+	public static final String[] TEC_PERKS = {
+		"Technoprancers start with 9 points of Health",
+		"Technoprancers start with a unique pistol: Jengo's Justice. (+unique)",
+		"Technoprancers are proficient with Pistols, dealing more damage with them than other classes. (+pistol)",
+		"Technoprancers do not need to equip Firearms to use them. (+firearm)",
+		"Scrolls of Identify are identified from the beginning. (+)"
+	};
 	
 	public static final String[] HUN_PERKS = {
 			"Jengolia Roundstone, Huntress of the Betrayers.",
@@ -84,6 +93,10 @@ public enum HeroClass {
 		"Huntresses gain more health from dewdrops.",
 		"Huntresses sense neighbouring monsters even if they are hidden behind obstacles."
 	};
+
+	public static final String[] PEP_PERKS = {
+		"Pepe starts with a Ring of Mending+1."
+	};
 	
 	public void initHero( Hero hero ) {
 		
@@ -92,27 +105,35 @@ public enum HeroClass {
 		initCommon( hero );
 		
 		switch (this) {
-		case WARRIOR:
-			initWarrior( hero );
-			break;
-			
-		case MAGE:
-			initMage( hero );
-			break;
-			
-		case ROGUE:
-			initRogue( hero );
-			break;
-			
-		case HUNTRESS:
-			initHuntress( hero );
-			break;
+			case WARRIOR:
+				initWarrior(hero);
+				break;
+
+			case MAGE:
+				initMage(hero);
+				break;
+
+			case ROGUE:
+				initRogue(hero);
+				break;
+
+			case HUNTRESS:
+				initHuntress(hero);
+				break;
+
+			case TECHNOPRANCER:
+				initTechnoprancer(hero);
+				break;
+
+			case PEPE:
+				initPepe(hero);
+				break;
 		}
-		
+
 		if (Badges.isUnlocked( masteryBadge() )) {
 			new TomeOfMastery().collect();
 		}
-		
+
 		hero.updateAwareness();
 	}
 	
@@ -194,6 +215,23 @@ public enum HeroClass {
 		
 		QuickSlot.primaryValue = boomerang;
 	}
+
+	private static void initTechnoprancer( Hero hero ) {
+		hero.STR = hero.STR - 1;
+
+		new ScrollOfIdentify().setKnown();
+
+		(hero.belongings.weapon = new Dagger()).identify();
+
+		new Bullets( 50 ).identify().collect();
+
+		new PistolFirebolt().identify().collect();
+		//QuickSlot.primaryValue = PistolFirebolt.class;
+	}
+
+	private static void initPepe( Hero hero ) {
+		(hero.belongings.ring1 = new RingOfMending()).upgrade().identify();
+	}
 	
 	public String title() {
 		return title;
@@ -210,6 +248,10 @@ public enum HeroClass {
 			return Assets.ROGUE;
 		case HUNTRESS:
 			return Assets.HUNTRESS;
+		case TECHNOPRANCER:
+			return Assets.TECHNOPRANCER;
+		case PEPE:
+			return Assets.PEPE;
 		}
 		
 		return null;
@@ -226,6 +268,10 @@ public enum HeroClass {
 			return ROG_PERKS;
 		case HUNTRESS:
 			return HUN_PERKS;
+		case TECHNOPRANCER:
+			return TEC_PERKS;
+		case PEPE:
+			return  PEP_PERKS;
 		}
 		
 		return null;
@@ -240,5 +286,24 @@ public enum HeroClass {
 	public static HeroClass restoreInBundle( Bundle bundle ) {
 		String value = bundle.getString( CLASS );
 		return value.length() > 0 ? valueOf( value ) : ROGUE;
+	}
+
+	public String getCharName() {
+		switch (this) {
+			case WARRIOR:
+				return "Simon";
+			case MAGE:
+				return "Arfonzo J. Coward";
+			case ROGUE:
+				return "Matteo";
+			case HUNTRESS:
+				return "Funzetta";
+			case TECHNOPRANCER:
+				return "Jengus Roundstone";
+			case PEPE:
+				return "Pepe the Frog";
+		}
+
+		return null;
 	}
 }

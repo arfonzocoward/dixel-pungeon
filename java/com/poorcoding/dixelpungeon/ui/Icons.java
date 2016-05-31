@@ -50,7 +50,8 @@ public enum Icons {
 	EXIT,
 	CHALLENGE_OFF,
 	CHALLENGE_ON,
-	RESUME;
+	RESUME,
+	TECHNOPRANCER;
 	
 	public Image get() {
 		return get( this );
@@ -143,6 +144,9 @@ public enum Icons {
 		case RESUME:
 			icon.frame( icon.texture.uvRect( 114, 0, 126, 11 ) );
 			break;
+		case TECHNOPRANCER:
+			icon.frame( icon.texture.uvRect( 62, 45, 78, 61 ) );
+			break;
 		}
 		return icon;
 	}
@@ -157,6 +161,8 @@ public enum Icons {
 			return get( ROGUE );
 		case HUNTRESS:
 			return get( HUNTRESS );
+		case TECHNOPRANCER:
+			return get( TECHNOPRANCER );
 		default:
 			return null;
 		}
