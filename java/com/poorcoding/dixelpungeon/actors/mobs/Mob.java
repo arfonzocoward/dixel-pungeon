@@ -40,6 +40,7 @@ import com.poorcoding.dixelpungeon.items.food.Apple;
 import com.poorcoding.dixelpungeon.items.food.ChargrilledMeat;
 import com.poorcoding.dixelpungeon.items.food.Food;
 import com.poorcoding.dixelpungeon.items.food.FrozenCarpaccio;
+import com.poorcoding.dixelpungeon.items.food.Hotdog;
 import com.poorcoding.dixelpungeon.items.food.LobsterSubmarineSandwich;
 import com.poorcoding.dixelpungeon.items.food.MysteryMeat;
 import com.poorcoding.dixelpungeon.items.food.OverpricedRation;
@@ -438,6 +439,9 @@ public abstract class Mob extends Char {
 					eatz = new LobsterSubmarineSandwich();
 					break;
 				case 8:
+					eatz = new Hotdog();
+					break;
+				case 9:
 				default:
 					eatz = new Food();
 					break;

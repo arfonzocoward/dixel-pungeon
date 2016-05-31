@@ -24,6 +24,7 @@ import com.poorcoding.dixelpungeon.actors.hero.Hero;
 import com.poorcoding.dixelpungeon.items.armor.*;
 import com.poorcoding.dixelpungeon.items.bags.Bag;
 import com.poorcoding.dixelpungeon.items.food.Food;
+import com.poorcoding.dixelpungeon.items.food.Hotdog;
 import com.poorcoding.dixelpungeon.items.food.LobsterSubmarineSandwich;
 import com.poorcoding.dixelpungeon.items.food.MysteryMeat;
 import com.poorcoding.dixelpungeon.items.food.Pasty;
@@ -174,9 +175,10 @@ public class Generator {
 			MysteryMeat.class,
 			Sushi.class,
 			Apple.class,
-			LobsterSubmarineSandwich.class
+			LobsterSubmarineSandwich.class,
+			Hotdog.class
 		};
-		Category.FOOD.probs = new float[]{ 4, 1, 0, 4, 8, 4};
+		Category.FOOD.probs = new float[]{ 4, 1, 0, 4, 8, 4, 6};
 			
 		Category.RING.classes = new Class<?>[]{ 
 			RingOfMending.class,
