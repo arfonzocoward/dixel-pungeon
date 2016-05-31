@@ -90,7 +90,10 @@ public class SewerLevel extends RegularLevel {
 						break;
 					case 3:
 						//map[i] = Terrain.WALL_DECO_WINDOW;
-						map[i] = Terrain.WALL_DECO_4;
+
+						if (map[i + WIDTH] == Terrain.WATER) {
+							map[i] = Terrain.WALL_DECO_4;
+						}
 						break;
 				}
 
