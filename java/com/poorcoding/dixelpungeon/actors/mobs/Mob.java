@@ -408,7 +408,7 @@ public abstract class Mob extends Char {
 		Dungeon.level.drop( new Soul(HT), pos ).sprite.drop();
 
 		// Sometimes drop food.
-		if (Random.Int(0,4) == 0) {
+		if (Random.Int(10) == 0) {
 
 			Food eatz;
 

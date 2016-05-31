@@ -88,7 +88,9 @@ public class Thief extends Mob {
 			Dungeon.level.drop( item, pos ).sprite.drop();
 		}
 
-		Dungeon.level.drop( new Drug(), pos ).sprite.drop();
+		if (Random.Int(10) == 0) {
+			Dungeon.level.drop(new Drug(), pos).sprite.drop();
+		}
 	}
 	
 	@Override
