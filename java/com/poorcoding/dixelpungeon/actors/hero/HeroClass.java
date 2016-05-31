@@ -20,6 +20,7 @@ package com.poorcoding.dixelpungeon.actors.hero;
 import com.poorcoding.dixelpungeon.Assets;
 import com.poorcoding.dixelpungeon.Badges;
 import com.poorcoding.dixelpungeon.DixelPungeon;
+import com.poorcoding.dixelpungeon.items.Ankh;
 import com.poorcoding.dixelpungeon.items.TomeOfMastery;
 import com.poorcoding.dixelpungeon.items.armor.ClothArmor;
 import com.poorcoding.dixelpungeon.items.bags.Keyring;
@@ -147,6 +148,8 @@ public enum HeroClass {
 				new Food().identify().collect();
 				i++;
 			}
+
+			new Ankh().identify().collect();
 
 			new PistolStandard().identify().collect();
 			new Bullets(10).identify().collect();
