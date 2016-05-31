@@ -141,7 +141,7 @@ public class WndRanking extends WndTabbed {
 	
 	private class StatsTab extends Group {
 		
-		private static final int GAP	= 4;
+		private static final int GAP	= 2;
 		
 		private static final String TXT_TITLE	= "Level %d %s";
 		

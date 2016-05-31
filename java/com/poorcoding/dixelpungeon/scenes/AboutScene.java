@@ -74,21 +74,39 @@ public class AboutScene extends PixelScene {
 		};
 		add( hotArea );
 
-		// PixelDungeon original icon.
-		Image wata = Icons.WATA.get();
-		wata.x = align( (Camera.main.width - wata.width) / 2 );
-		wata.y = text.y - wata.height + 75;
-		add( wata );
+		if (DixelPungeon.landscape()) {
+			// PixelDungeon original icon.
+			Image wata = Icons.WATA.get();
+			wata.x = text.x - 20;
+			wata.y = text.y + 65;
+			add(wata);
 
-		new Flare( 7, 64 ).color( 0x112233, true ).show( wata, 0 ).angularSpeed = +20;
+			new Flare(7, 64).color(0x112233, true).show(wata, 0).angularSpeed = +20;
 
-		// DixelPungeon icon.
-		Image iconDp= Icons.TECHNOPRANCER.get();
-		iconDp.x = align( (Camera.main.width - iconDp.width) / 2 );
-		iconDp.y = text.y - iconDp.height - 8;
-		add( iconDp );
+			// DixelPungeon icon.
+			Image iconDp = Icons.TECHNOPRANCER.get();
+			iconDp.x = text.x - 20;
+			iconDp.y = text.y;
+			add(iconDp);
 
-		new Flare( 7, 64 ).color( 0x117733, true ).show( iconDp, 0 ).angularSpeed = +40;
+			new Flare(7, 64).color(0x117733, true).show(iconDp, 0).angularSpeed = +40;
+		} else {
+			// PixelDungeon original icon.
+			Image wata = Icons.WATA.get();
+			wata.x = align( (Camera.main.width - wata.width) / 2 );
+			wata.y = text.y - wata.height + 75;
+			add(wata);
+
+			new Flare(7, 64).color(0x112233, true).show(wata, 0).angularSpeed = +20;
+
+			// DixelPungeon icon.
+			Image iconDp = Icons.TECHNOPRANCER.get();
+			iconDp.x = align( (Camera.main.width - iconDp.width) / 2 );
+			iconDp.y = text.y - iconDp.height - 8;
+			add(iconDp);
+
+			new Flare(7, 64).color(0x117733, true).show(iconDp, 0).angularSpeed = +40;
+		}
 		
 		Archs archs = new Archs();
 		archs.setSize( Camera.main.width, Camera.main.height );
