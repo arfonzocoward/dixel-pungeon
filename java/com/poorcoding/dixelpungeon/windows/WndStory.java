@@ -48,8 +48,8 @@ public class WndStory extends Window {
 		CHAPTERS.put( ID_SEWERS,
 		"Under the fine city of LelDorado, the sewers lead into the ancient dungeon ruins. Typical.\n\n" +
 		"The city dwellers lurk above, while the scum of the underworld fester below. \n\n" +
-		"You shrug off the cobwebs leading down, pick up an old pistol and bullets off some dead guy (how convenient), and enter the filth.\n\n" +
-		"... Welcome to Dixel Pungeon: Betrayal at LelDorado. At least at this depth, they can't be that bad...");
+		"You shrug off the cobwebs leading down, pick up an old pistol and bullets off some dead guy (how convenient), and enter the filth. At this depth, surely it can't be that bad...\n\n" +
+		"... Welcome to Dixel Pungeon: Betrayal at LelDorado.");
 		
 		CHAPTERS.put( ID_PRISON,
 				"The ancient ruins were originally built to hold the most dangerous criminals and beasts.\n\n" +

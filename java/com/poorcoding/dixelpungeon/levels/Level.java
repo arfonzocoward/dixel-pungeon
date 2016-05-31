@@ -101,7 +101,7 @@ public abstract class Level implements Bundlable {
 	
 	protected static final float TIME_TO_RESPAWN	= 50;
 	
-	private static final String TXT_HIDDEN_PLATE_CLICKS = "A hidden pressure plate clicks!";
+	private static final String TXT_HIDDEN_PLATE_CLICKS = "*click";
 	
 	public static boolean resizingNeeded;
 	public static int loadedMapSize;

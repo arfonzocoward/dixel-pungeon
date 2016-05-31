@@ -34,7 +34,6 @@ import com.poorcoding.dixelpungeon.actors.hero.HeroSubClass;
 import com.poorcoding.dixelpungeon.effects.Flare;
 import com.poorcoding.dixelpungeon.effects.Wound;
 import com.poorcoding.dixelpungeon.items.Generator;
-import com.poorcoding.dixelpungeon.items.Gold;
 import com.poorcoding.dixelpungeon.items.Item;
 import com.poorcoding.dixelpungeon.items.Soul;
 import com.poorcoding.dixelpungeon.items.food.Apple;
@@ -60,7 +59,7 @@ public abstract class Mob extends Char {
 	protected static final String	TXT_ECHO	= "echo of ";
 	
 	protected static final String TXT_NOTICE1	= "?!";
-	protected static final String TXT_RAGE		= "#$%^";
+	protected static final String TXT_RAGE		= "!!ROID RAGE!!";
 	protected static final String TXT_EXP		= "%+dEXP";
 	
 	public AiState SLEEPING = new Sleeping();
