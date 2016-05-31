@@ -39,7 +39,7 @@ public class Sign {
 		"You can spend your gold in shops, or sell off inventory.",
 		"Identify your potions and scrolls as soon as possible. Don't put it off to the moment when you actually need them.",
 
-		"Beware of Goo!",
+		"Beware of Goo!\n\nTravel at your own peril: ensure you are well supplied before venturing further.\n\nLelDorado City cannot be held responsible for loss personal property, injury or death beyond this point.",
 
 		"Remember, that raising your strength is not the only way to access better equipment. You can go " +
 				"the other way, lowering its strength requirement with Scrolls of Upgrade.\n\nYou can also spend souls to upgrade at Soulforges.",
