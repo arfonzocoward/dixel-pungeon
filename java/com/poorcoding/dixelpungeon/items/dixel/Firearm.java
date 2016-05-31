@@ -300,7 +300,9 @@ public abstract class Firearm extends MeleeWeapon {
 	
 	@Override
 	public int maxDurability( int lvl ) {
-		return 6 * (lvl < 16 ? 16 - lvl : 1);
+
+		//return 6 * (lvl < 16 ? 16 - lvl : 1);
+		return 20 * (lvl < 16 ? 16 - lvl : 1);
 	}
 	
 	protected void updateLevel() {
