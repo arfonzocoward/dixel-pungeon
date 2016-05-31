@@ -101,7 +101,7 @@ public class Bullets extends Item {
 	
 	@Override
 	public Item random() {
-		quantity = 1 + Random.Int(Dungeon.depth, Dungeon.depth*10 );
+		quantity = 10 + Random.Int(Dungeon.depth, Dungeon.depth*10 );
 		return this;
 	}
 	
