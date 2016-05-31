@@ -31,8 +31,8 @@ import com.poorcoding.utils.Random;
 
 public class Hunger extends Buff implements Hero.Doom {
 
-	//private static final float STEP	= 10f;
-	private static final float STEP	= 2f;
+	private static final float STEP	= 10f;
+	//private static final float STEP	= 2f;
 	
 	//public static final float HUNGRY	= 260f;
 	//public static final float STARVING	= 360f;
