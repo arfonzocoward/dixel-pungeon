@@ -24,6 +24,7 @@ import com.poorcoding.dixelpungeon.Dungeon;
 import com.poorcoding.dixelpungeon.actors.hero.Hero;
 import com.poorcoding.dixelpungeon.items.Item;
 import com.poorcoding.dixelpungeon.items.Soul;
+import com.poorcoding.dixelpungeon.items.rings.Ring;
 import com.poorcoding.dixelpungeon.items.scrolls.ScrollOfUpgrade;
 import com.poorcoding.dixelpungeon.scenes.GameScene;
 import com.poorcoding.dixelpungeon.scenes.PixelScene;
@@ -41,10 +42,10 @@ public class WndSoulforge extends Window {
 
 	private float pos;
 
-	private static final int BTN_HEIGHT	= 20;
+	private static final int BTN_HEIGHT	= 12;
 	private static final int BTN_SIZE	= 36;
 	private static final float GAP		= 2;
-	private static final float BTN_GAP	= 4;
+	private static final float BTN_GAP	= 2;
 	private static final int WIDTH		= 128;
 
 	private ItemButton btnPressed;
@@ -72,7 +73,7 @@ public class WndSoulforge extends Window {
 	private static final String TXT_REPAIRED	= "you repair the %s for %d point(s)";
 
 	private static Integer SOUL_UPGRADE_FACTOR = 5 + Dungeon.hero.lvl;
-	private static Integer SOUL_REPAIR_FACTOR = 2 + (Math.round(Math.max(1,Dungeon.hero.lvl)/2));
+	private static Integer SOUL_REPAIR_FACTOR = (Math.round(Math.max(1,Dungeon.hero.lvl)/2));
 
 	private static Integer repairAmount = 0;
 
@@ -155,7 +156,7 @@ public class WndSoulforge extends Window {
 			}
 		};
 		btnRepair.enable( false );
-		btnRepair.setRect( 0, btnPlus.bottom() + BTN_GAP, WIDTH, 20 );
+		btnRepair.setRect( 0, btnPlus.bottom() + BTN_GAP, WIDTH, BTN_HEIGHT );
 		add( btnRepair );
 
 		btnReforge = new RedButton( TXT_REFORGE ) {
@@ -167,7 +168,7 @@ public class WndSoulforge extends Window {
 			}
 		};
 		btnReforge.enable( false );
-		btnReforge.setRect( 0, btnRepair.bottom() + BTN_GAP, WIDTH, 20 );
+		btnReforge.setRect( 0, btnRepair.bottom() + BTN_GAP, WIDTH, BTN_HEIGHT );
 		add( btnReforge );
 
 		btnExit = new RedButton( TXT_EXIT ) {
@@ -177,7 +178,7 @@ public class WndSoulforge extends Window {
 			}
 		};
 		btnExit.enable( true );
-		btnExit.setRect( 0, btnReforge.bottom() + BTN_GAP, WIDTH, 20 );
+		btnExit.setRect( 0, btnReforge.bottom() + BTN_GAP, WIDTH, BTN_HEIGHT );
 		add( btnExit );
 
 		resize( WIDTH, (int)btnExit.bottom() );
@@ -338,14 +339,27 @@ public class WndSoulforge extends Window {
 			repairAmount = 0;
 		}
 
-		int repairCost = repairAmount * SOUL_REPAIR_FACTOR;
-		btnRepair.text("Repair " + repairAmount + " (" + (item.durability() + repairAmount) + "/" + item.maxDurability() + "): " + repairCost + " Souls");
+		int repairCost = 0;
+
+
+
+		if (item.getClass().getSuperclass() == Ring.class) {
+			// Don't display X/Y stats for Rings.
+			repairCost = repairAmount * SOUL_REPAIR_FACTOR;
+
+			//btnRepair.text("Repair " + repairAmount + ": " + repairCost + " Souls");
+
+			btnRepair.text("Can't Repair Rings");
+		} else {
+			repairCost = repairAmount * SOUL_REPAIR_FACTOR;
+			btnRepair.text("Repair " + repairAmount + " (" + (item.durability() + repairAmount) + "/" + item.maxDurability() + "): " + repairCost + " Souls");
+		}
 
 		btnMinus.enable(true);
 		btnPlus.enable(true);
 
 		// If repairAmount > 0, and can afford, enable button.
-		if ((repairAmount > 0) && (repairCost < Dungeon.souls) ) {
+		if ((repairAmount > 0) && (repairCost < Dungeon.souls) && (item.getClass().getSuperclass() != Ring.class) ) {
 			btnRepair.enable( true );
 		} else {
 			btnRepair.enable( false );
