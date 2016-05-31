@@ -31,6 +31,7 @@ import com.poorcoding.dixelpungeon.items.Item;
 import com.poorcoding.dixelpungeon.items.ItemStatusHandler;
 import com.poorcoding.dixelpungeon.items.bags.Bag;
 import com.poorcoding.dixelpungeon.items.rings.RingOfPower.Power;
+import com.poorcoding.dixelpungeon.items.weapon.enchantments.Poison;
 import com.poorcoding.dixelpungeon.items.weapon.melee.MeleeWeapon;
 import com.poorcoding.dixelpungeon.mechanics.Ballistica;
 import com.poorcoding.dixelpungeon.scenes.CellSelector;
@@ -328,8 +329,46 @@ public abstract class Firearm extends MeleeWeapon {
 	}
 	
 	protected void fx( int cell, Callback callback ) {
-		MagicMissile.blueLight( curUser.sprite.parent, curUser.pos, cell, callback );
+
 		Sample.INSTANCE.play( Assets.SND_FIREARM);
+
+		if (isEnchanted()) {
+			Enchantment e = enchantment;
+			String en = e.getClass().toString();
+			int a = en.lastIndexOf(".") + 1;
+
+			//GLog.i("TODO: fx Enchantments: " + en.substring(a));
+
+			switch (en.substring(a).toUpperCase()) {
+				case "FIRE":
+					MagicMissile.fire(curUser.sprite.parent, curUser.pos, cell, callback);
+					break;
+				case "INSTABILTY":
+				case "POISON":
+					MagicMissile.purpleLight(curUser.sprite.parent, curUser.pos, cell, callback);
+					break;
+				case "DEATH":
+				case "HORROR":
+				case "LEECH":
+				case "LUCK":
+				case "TEMPERING":
+					MagicMissile.whiteLight(curUser.sprite.parent, curUser.pos, cell, callback);
+					break;
+				case "PARALYSIS":
+				case "SLOW":
+					MagicMissile.foliage(curUser.sprite.parent, curUser.pos, cell, callback);
+					break;
+				case "SHOCK":
+					MagicMissile.coldLight(curUser.sprite.parent, curUser.pos, cell, callback);
+					break;
+				default:
+					MagicMissile.blueLight(curUser.sprite.parent, curUser.pos, cell, callback);
+					break;
+			}
+		} else {
+			MagicMissile.blueLight(curUser.sprite.parent, curUser.pos, cell, callback);
+		}
+
 	}
 
 	protected void wandUsed() {

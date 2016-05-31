@@ -31,6 +31,8 @@ import com.poorcoding.dixelpungeon.actors.hero.HeroClass;
 import com.poorcoding.dixelpungeon.effects.MagicMissile;
 import com.poorcoding.dixelpungeon.effects.particles.BloodParticle;
 import com.poorcoding.dixelpungeon.effects.particles.FlameParticle;
+import com.poorcoding.dixelpungeon.effects.particles.PoisonParticle;
+import com.poorcoding.dixelpungeon.items.weapon.enchantments.Poison;
 import com.poorcoding.dixelpungeon.levels.Level;
 import com.poorcoding.dixelpungeon.mechanics.Ballistica;
 import com.poorcoding.dixelpungeon.scenes.GameScene;
@@ -70,6 +72,8 @@ public class Pistol extends Firearm {
 			} else {
 				// Not missed: calculate damage
 
+				//GLog.i("DEBUG: Pistol level is " + level);
+
 				//int damage = Random.Int( 1, 8 + level * level );
 				int damage = Random.Int(1, 5 + level * 2);
 
@@ -80,6 +84,17 @@ public class Pistol extends Firearm {
 
 				ch.damage(damage, this);
 				ch.sprite.emitter().burst(BloodParticle.FACTORY, damage);
+
+				// Enchantment damage: does up to half physical damage as enchanted damage.
+				if (isEnchanted()) {
+					//GLog.i("DEBUG: TODO Enchantment damage: " + enchantment.getClass().toString()));
+					int d = damage / 2;
+					enchantment.proc(this, curUser, ch, d);
+					if (enchantment.equals(Poison.class)) {
+						// Poison affect
+						ch.sprite.emitter().burst(PoisonParticle.SPLASH,d);
+					}
+				}
 			}
 		}
 	}
