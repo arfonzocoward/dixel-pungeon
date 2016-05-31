@@ -27,12 +27,14 @@ import com.poorcoding.dixelpungeon.actors.blobs.Fire;
 import com.poorcoding.dixelpungeon.actors.buffs.Buff;
 import com.poorcoding.dixelpungeon.actors.buffs.Burning;
 import com.poorcoding.dixelpungeon.actors.hero.Hero;
+import com.poorcoding.dixelpungeon.actors.hero.HeroClass;
 import com.poorcoding.dixelpungeon.effects.MagicMissile;
 import com.poorcoding.dixelpungeon.effects.particles.BloodParticle;
 import com.poorcoding.dixelpungeon.effects.particles.FlameParticle;
 import com.poorcoding.dixelpungeon.levels.Level;
 import com.poorcoding.dixelpungeon.mechanics.Ballistica;
 import com.poorcoding.dixelpungeon.scenes.GameScene;
+import com.poorcoding.dixelpungeon.sprites.CharSprite;
 import com.poorcoding.dixelpungeon.utils.GLog;
 import com.poorcoding.dixelpungeon.utils.Utils;
 import com.poorcoding.noosa.audio.Sample;
@@ -40,6 +42,9 @@ import com.poorcoding.utils.Callback;
 import com.poorcoding.utils.Random;
 
 public class Pistol extends Firearm {
+
+	private static final String TXT_YOU_MISSED	= "%s %s your shot";
+	private static final String TXT_SMB_MISSED	= "%s %s %s's shot";
 
 	{
 		name = "Pistol";
@@ -52,10 +57,30 @@ public class Pistol extends Firearm {
 
 		Char ch = Actor.findChar( cell );
 		if (ch != null) {
-			//int damage = Random.Int( 1, 8 + level * level );
-			int damage = Random.Int( 1, 8 + level*2 );
-			ch.damage( damage, this );
-			ch.sprite.emitter().burst( BloodParticle.FACTORY, damage );
+			if (Random.Int(0,9) == 0) {
+				// Calculate dodge
+				String defense = ch.defenseVerb();
+				ch.sprite.showStatus(CharSprite.NEUTRAL, defense);
+				if (curUser == Dungeon.hero) {
+					GLog.i(TXT_YOU_MISSED, ch.name, defense);
+				} else {
+					GLog.i(TXT_SMB_MISSED, ch.name, defense, name);
+				}
+				Sample.INSTANCE.play(Assets.SND_MISS);
+			} else {
+				// Not missed: calculate damage
+
+				//int damage = Random.Int( 1, 8 + level * level );
+				int damage = Random.Int(1, 5 + level * 2);
+
+				if (curUser.heroClass == HeroClass.TECHNOPRANCER) {
+					// Increased Pistol damage for Technoprancers.
+					damage *= Random.Float(1.25f,2f);
+				}
+
+				ch.damage(damage, this);
+				ch.sprite.emitter().burst(BloodParticle.FACTORY, damage);
+			}
 		}
 	}
 

@@ -26,7 +26,7 @@ public class PistolStandard extends Pistol {
 	@Override
 	public String desc() {
 		return
-				"This is a standard pistol. It needs to be equipped to be used.\n\nIt shoots enemies with bullets, thereby causing injury.";
+				"This is a standard pistol. It needs to be equipped to be used.\n\nIt shoots enemies with bullets, thereby causing injury. You can use in melee attacks by pistol whipping.";
 	}
 
 }

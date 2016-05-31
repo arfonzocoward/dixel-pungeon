@@ -29,11 +29,9 @@ import com.poorcoding.dixelpungeon.actors.hero.HeroClass;
 import com.poorcoding.dixelpungeon.effects.MagicMissile;
 import com.poorcoding.dixelpungeon.items.Item;
 import com.poorcoding.dixelpungeon.items.ItemStatusHandler;
-import com.poorcoding.dixelpungeon.items.KindOfWeapon;
 import com.poorcoding.dixelpungeon.items.bags.Bag;
 import com.poorcoding.dixelpungeon.items.rings.RingOfPower.Power;
 import com.poorcoding.dixelpungeon.items.weapon.melee.MeleeWeapon;
-import com.poorcoding.dixelpungeon.items.weapon.missiles.MissileWeapon;
 import com.poorcoding.dixelpungeon.mechanics.Ballistica;
 import com.poorcoding.dixelpungeon.scenes.CellSelector;
 import com.poorcoding.dixelpungeon.scenes.GameScene;
@@ -86,8 +84,9 @@ public abstract class Firearm extends MeleeWeapon {
 			{"dark gray", "shiny black"};
 			//{"holly", "yew"};
 	private static final Integer[] images = {
-		ItemSpriteSheet.FIREARM_GENERIC,
-		ItemSpriteSheet.FIREARM_FIRE
+		ItemSpriteSheet.FIREARM_BROWN,
+		ItemSpriteSheet.FIREARM_BLACK,
+		ItemSpriteSheet.FIREARM_PURPLE
 	};
 
 	private static ItemStatusHandler<Firearm> handler;
@@ -114,7 +113,7 @@ public abstract class Firearm extends MeleeWeapon {
 
 	public Firearm() {
 		// public MeleeWeapon( int tier, float acu, float dly )
-		super( 1, 1f, 0.5f );
+		super( 0, 1f, 0.5f );
 
 		try {
 			image = handler.image( this );
@@ -346,7 +345,7 @@ public abstract class Firearm extends MeleeWeapon {
 		} else {
 			updateQuickslot();
 		}
-		
+
 		use();
 		
 		curUser.spendAndNext( TIME_TO_ZAP );
@@ -396,6 +395,11 @@ public abstract class Firearm extends MeleeWeapon {
 		maxCharges = bundle.getInt( MAX_CHARGES );
 		curCharges = bundle.getInt( CUR_CHARGES );
 		curChargeKnown = bundle.getBoolean( CUR_CHARGE_KNOWN );
+	}
+
+	@Override
+	public void updateQuickslot() {
+		super.updateQuickslot();
 	}
 	
 	protected static CellSelector.Listener zapper = new  CellSelector.Listener() {
@@ -491,7 +495,7 @@ public abstract class Firearm extends MeleeWeapon {
 	}
 
 	public static boolean canZap() {
-		if (!curItem.isEquipped(curUser)) {
+		if (curUser.heroClass != HeroClass.TECHNOPRANCER && !curItem.isEquipped(curUser)) {
 			GLog.h("Needs to be equipped to use.");
 			return false;
 		}
@@ -503,4 +507,5 @@ public abstract class Firearm extends MeleeWeapon {
 		}
 		return true;
 	}
+
 }

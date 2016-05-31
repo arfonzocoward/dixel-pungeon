@@ -40,9 +40,9 @@ import com.poorcoding.utils.Random;
 public class PistolFirebolt extends Pistol {
 
 	{
-		name = "Firebolt Pistol";
+		name = "Jengo's Justice (Firebolt Pistol)";
 	}
-	
+
 	@Override
 	protected void onZap( int cell ) {
 
@@ -71,22 +71,29 @@ public class PistolFirebolt extends Pistol {
 
 				if (ch == curUser && !ch.isAlive()) {
 					Dungeon.fail(Utils.format(ResultDescriptions.FIREARM, name, Dungeon.depth));
-					GLog.n("You killed yourself with your own Pistol of Firebolt...");
+					GLog.n("You killed yourself with " + name + ": justice is served, sucka.");
 				}
 			}
+
+			//updateQuickslot();
 		}
 	}
-	
+
 	protected void fx( int cell, Callback callback ) {
 		MagicMissile.fire( curUser.sprite.parent, curUser.pos, cell, callback );
 		Sample.INSTANCE.play( Assets.SND_FIREARM);
+		Sample.INSTANCE.play( Assets.SND_BURNING);
 	}
-	
+
+	@Override
+	protected int initialCharges() {
+		return 2;
+	}
+
 	@Override
 	public String desc() {
 		return
-			"This pistol unleashes flaming bullets. It will ignite " +
-			"flammable terrain, and will damage and burn a creature it hits.";
+				"Jengo's Justice is a unique firearm that unleashes flaming bullets. It will ignite " +
+						"any flesh and items it hits. BBQ, anyone?";
 	}
-
 }

@@ -121,6 +121,6 @@ public class Bullets extends Item {
 
 	@Override
 	public int price() {
-		return 0;
+		return 5 * quantity;
 	}
 }

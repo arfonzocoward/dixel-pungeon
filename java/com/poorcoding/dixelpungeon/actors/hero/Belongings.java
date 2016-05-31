@@ -31,6 +31,7 @@ import com.poorcoding.dixelpungeon.items.keys.Key;
 import com.poorcoding.dixelpungeon.items.rings.Ring;
 import com.poorcoding.dixelpungeon.items.scrolls.ScrollOfRemoveCurse;
 import com.poorcoding.dixelpungeon.items.wands.Wand;
+import com.poorcoding.dixelpungeon.utils.GLog;
 import com.poorcoding.utils.Bundle;
 import com.poorcoding.utils.Random;
 
@@ -239,6 +240,8 @@ public class Belongings implements Iterable<Item> {
 					count++;
 					
 					wand.updateQuickslot();
+
+					GLog.w( "DEBUG: Belongings.discharge called! WAND" );
 				}
 			}
 			else if (item instanceof Firearm) {
@@ -248,6 +251,8 @@ public class Belongings implements Iterable<Item> {
 					count++;
 
 					firearm.updateQuickslot();
+
+					GLog.w( "DEBUG: Belongings.discharge called! FIREARM" );
 				}
 			}
 		}

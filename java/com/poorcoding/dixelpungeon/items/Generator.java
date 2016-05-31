@@ -133,10 +133,10 @@ public class Generator {
 
 		Category.FIREARM.classes = new Class<?>[] {
 				PistolStandard.class,
-				PistolFirebolt.class,
-				Bullets.class
+				Bullets.class,
+				PistolFirebolt.class
 		};
-		Category.FIREARM.probs = new float[]{ 1, 0, 10};
+		Category.FIREARM.probs = new float[]{ 1, 20, 0};
 		
 		Category.WEAPON.classes = new Class<?>[]{ 
 			Dagger.class, 

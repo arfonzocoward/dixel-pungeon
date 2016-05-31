@@ -24,7 +24,7 @@ import com.poorcoding.dixelpungeon.items.TomeOfMastery;
 import com.poorcoding.dixelpungeon.items.armor.ClothArmor;
 import com.poorcoding.dixelpungeon.items.bags.Keyring;
 import com.poorcoding.dixelpungeon.items.dixel.Bullets;
-import com.poorcoding.dixelpungeon.items.dixel.Pistol;
+import com.poorcoding.dixelpungeon.items.dixel.PistolFirebolt;
 import com.poorcoding.dixelpungeon.items.dixel.PistolStandard;
 import com.poorcoding.dixelpungeon.items.food.Food;
 import com.poorcoding.dixelpungeon.items.potions.PotionOfStrength;
