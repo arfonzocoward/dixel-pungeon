@@ -33,7 +33,8 @@ public class WndClass extends WndTabbed {
 	
 	private static final int WIDTH			= 110;
 	
-	private static final int TAB_WIDTH	= 50;
+	//private static final int TAB_WIDTH	= 50;
+	private static final int TAB_WIDTH	= 80;
 	
 	private HeroClass cl;
 	

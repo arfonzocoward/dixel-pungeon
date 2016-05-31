@@ -158,7 +158,7 @@ public class StartScene extends PixelScene {
 		float centralHeight = buttonY - title.y - title.height();
 		
 		HeroClass[] classes = {
-			HeroClass.WARRIOR, HeroClass.MAGE, HeroClass.ROGUE, HeroClass.HUNTRESS	
+			HeroClass.WARRIOR, HeroClass.MAGE, HeroClass.ROGUE, HeroClass.HUNTRESS, HeroClass.TECHNOPRANCER, HeroClass.PEPE
 		};
 		for (HeroClass cl : classes) {
 			ClassShield shield = new ClassShield( cl );
@@ -166,9 +166,11 @@ public class StartScene extends PixelScene {
 			add( shield );
 		}
 		if (DixelPungeon.landscape()) {
-			float shieldW = width / 4;
+			//float shieldW = width / 4;
+			float shieldW = width / 6;
 			float shieldH = Math.min( centralHeight, shieldW );
 			top = title.y + title.height + (centralHeight - shieldH) / 2;
+
 			for (int i=0; i < classes.length; i++) {
 				ClassShield shield = shields.get( classes[i] );
 				shield.setRect( left + i * shieldW, top, shieldW, shieldH );
@@ -177,26 +179,41 @@ public class StartScene extends PixelScene {
 			ChallengeButton challenge = new ChallengeButton();
 			challenge.setPos( 
 				w / 2 - challenge.width() / 2,
-				top + shieldH - challenge.height() / 2 );
+				//top + shieldH - challenge.height() / 2 );
+					top - challenge.height() / 2 - 8);
 			add( challenge );
 			
 		} else {
 			float shieldW = width / 2;
-			float shieldH = Math.min( centralHeight / 2, shieldW * 1.2f );
-			top = title.y + title.height() + centralHeight / 2 - shieldH;
+			//float shieldH = Math.min( centralHeight / 2, shieldW * 1.2f );
+			//top = title.y + title.height() + centralHeight / 2 - shieldH;
+			float shieldH = Math.min( centralHeight / 4, shieldW * 1.8f );
+
+			ChallengeButton challenge = new ChallengeButton();
+			/*challenge.setPos(
+				w / 2 - challenge.width() / 2,
+				top + shieldH - challenge.height() / 2 );*/
+			challenge.setPos(
+					w / 2 - challenge.width() / 2,
+					top + 35 - challenge.height() / 2 );
+			add( challenge );
+
+			top = challenge.bottom();
+			//top = title.y + title.height() + centralHeight / 3 - shieldH + 10;
+
 			for (int i=0; i < classes.length; i++) {
 				ClassShield shield = shields.get( classes[i] );
-				shield.setRect( 
+				/*shield.setRect(
 					left + (i % 2) * shieldW, 
 					top + (i / 2) * shieldH, 
-					shieldW, shieldH );
+					shieldW, shieldH );*/
+				shield.setRect(
+						left + (i % 2) * shieldW,
+						top + (i / 2) * shieldH,
+						shieldW, shieldH );
 			}
 			
-			ChallengeButton challenge = new ChallengeButton();
-			challenge.setPos( 
-				w / 2 - challenge.width() / 2,
-				top + shieldH - challenge.height() / 2 );
-			add( challenge );
+
 		}
 		
 		unlock = new Group();
@@ -370,14 +387,16 @@ public class StartScene extends PixelScene {
 		
 		private static final int WIDTH	= 24;
 		private static final int HEIGHT	= 28;
-		private static final int SCALE	= 2;
+		private static final int SCALE	= 1;
 		
 		private HeroClass cl;
 		
 		private Image avatar;
 		private BitmapText name;
 		private Emitter emitter;
-		
+
+		private BitmapText charName;
+
 		private float brightness;
 		
 		private int normal;
@@ -402,6 +421,11 @@ public class StartScene extends PixelScene {
 			name.text( cl.name() );
 			name.measure();
 			name.hardlight( normal );
+
+			charName.text( cl.getCharName() );
+			charName.measure();
+			//charName.hardlight( normal );
+			charName.hardlight(0x886600);
 			
 			brightness = MIN_BRIGHTNESS;
 			updateBrightness();
@@ -415,8 +439,11 @@ public class StartScene extends PixelScene {
 			avatar = new Image( Assets.AVATARS );
 			add( avatar );
 			
-			name = PixelScene.createText( 9 );
+			name = PixelScene.createText( 6 );
 			add( name );
+
+			charName = PixelScene.createText(4);
+			add(charName);
 			
 			emitter = new BitmaskEmitter( avatar );
 			add( emitter );
@@ -432,6 +459,9 @@ public class StartScene extends PixelScene {
 			
 			name.x = align( x + (width - name.width()) / 2 );
 			name.y = avatar.y + avatar.height() + SCALE;
+
+			charName.x = align( x + (width - charName.width()) / 2 );
+			charName.y = avatar.y + avatar.height() + SCALE + 6;
 		}
 		
 		@Override
@@ -460,9 +490,13 @@ public class StartScene extends PixelScene {
 			if (value) {
 				brightness = 1.0f;
 				name.hardlight( highlighted );
+				//charName.hardlight( highlighted );
+				charName.hardlight(0xffcc00);
 			} else {
 				brightness = 0.999f;
 				name.hardlight( normal );
+				//charName.hardlight( normal );
+				charName.hardlight(0x886600);
 			}
 
 			updateBrightness();
