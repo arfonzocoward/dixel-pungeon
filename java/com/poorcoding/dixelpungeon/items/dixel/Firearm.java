@@ -504,7 +504,7 @@ public abstract class Firearm extends MeleeWeapon {
 	protected class Charger extends Buff {
 		
 		//private static final float TIME_TO_CHARGE = 40f;
-		private static final float TIME_TO_CHARGE = 10f;
+		private static final float TIME_TO_CHARGE = 20f;
 		
 		@Override
 		public boolean attachTo( Char target ) {
