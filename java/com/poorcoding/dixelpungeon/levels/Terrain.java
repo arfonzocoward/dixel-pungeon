@@ -48,8 +48,6 @@ public class Terrain {
 	public static final int CHASM_FLOOR_SP	= 44;
 	public static final int CHASM_WALL		= 45;
 	public static final int CHASM_WATER		= 46;
-	public static final int CAMPFIRE		= 64;
-	public static final int SOULFORGE 		= 65;
 
 	public static final int SECRET_DOOR				= 16;
 	public static final int TOXIC_TRAP				= 17;
@@ -70,8 +68,19 @@ public class Terrain {
 	public static final int SUMMONING_TRAP			= 39;
 	public static final int SECRET_SUMMONING_TRAP	= 40;
 	
-	public static final int WATER_TILES	= 48;
-	public static final int WATER		= 63;
+	//public static final int WATER_TILES	= 48;
+	//public static final int WATER		= 63;
+	public static final int WATER_TILES	= 48 + 16;	// 16 = shift a row for Dixel tiles
+	public static final int WATER		= 63 + 16;
+
+	/* Dixel-specific tiles */
+	public static final int CAMPFIRE		= 48;
+	public static final int SOULFORGE 		= 49;
+	public static final int WALL_DECO_1		= 50;
+	public static final int WALL_DECO_2		= 51;
+	public static final int WALL_DECO_3		= 52;
+	public static final int WALL_DECO_4		= 53;
+	public static final int WALL_DECO_WINDOW		= 54;
 	
 	public static final int PASSABLE		= 0x01;
 	public static final int LOS_BLOCKING	= 0x02;
@@ -115,6 +124,12 @@ public class Terrain {
 
 		flags[CAMPFIRE]		= PASSABLE;
 		flags[SOULFORGE]		= PASSABLE;
+		flags[WALL_DECO_1]	= flags[WALL];
+		flags[WALL_DECO_2]	= flags[WALL];
+		flags[WALL_DECO_3]	= flags[WALL];
+		flags[WALL_DECO_4]	= flags[WALL];
+		flags[WALL_DECO_WINDOW]	= SOLID;
+
 		
 		flags[CHASM_WALL]		= flags[CHASM];
 		flags[CHASM_FLOOR]		= flags[CHASM];
