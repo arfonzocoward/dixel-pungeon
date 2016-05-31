@@ -37,17 +37,12 @@ import com.poorcoding.dixelpungeon.ui.Window;
 public class AboutScene extends PixelScene {
 
 	private static final String TXT =
-		"DIXEL PUNGEON:\n" +
-		"About: a fork of Pixel Dungeon.\n" +
-		"Code: Arfonzo J. Coward <arfonzo@gmail.com>\n" +
-		"\n\n\nPIXEL DUNGEON:\n" +
-		"Code & graphics: Watabou\n" +
-		"Music: Cube_Code\n\n" + 
-		"This game is inspired by Brian Walker's Brogue. " +
-		"Try it on Windows, Mac OS or Linux - it's awesome! ;)\n\n" +
-		"Please visit official website for additional info:";
+		"DIXEL PUNGEON is a fork of Pixel Dungeon. Explore the depths. Amass skills and items. Avoid death. Simples.\n\n" +
+		"- Arfonzo J. Coward <arfonzo@gmail.com>\n" +
+		"\n\n\nBased on Pixel Dungeon by Watabou."
+		;
 	
-	private static final String LNK = "pixeldungeon.watabou.ru";
+	private static final String LNK = "arfonzo.org/dix";
 	
 	@Override
 	public void create() {
@@ -68,7 +63,7 @@ public class AboutScene extends PixelScene {
 		add( link );
 		
 		link.x = text.x;
-		link.y = text.y + text.height();
+		link.y = text.y + text.height() + 20;
 		
 		TouchArea hotArea = new TouchArea( link ) {
 			@Override
@@ -79,17 +74,16 @@ public class AboutScene extends PixelScene {
 		};
 		add( hotArea );
 
-		// PixelOungeon original icon.
+		// PixelDungeon original icon.
 		Image wata = Icons.WATA.get();
 		wata.x = align( (Camera.main.width - wata.width) / 2 );
-		wata.y = text.y - wata.height + 52;
+		wata.y = text.y - wata.height + 75;
 		add( wata );
 
 		new Flare( 7, 64 ).color( 0x112233, true ).show( wata, 0 ).angularSpeed = +20;
 
 		// DixelPungeon icon.
-
-		Image iconDp= Icons.SEED_POUCH.get();
+		Image iconDp= Icons.TECHNOPRANCER.get();
 		iconDp.x = align( (Camera.main.width - iconDp.width) / 2 );
 		iconDp.y = text.y - iconDp.height - 8;
 		add( iconDp );
