@@ -94,7 +94,9 @@ public enum HeroClass {
 	};
 
 	public static final String[] PEP_PERKS = {
+		"Pepe uses what he finds around, he has no specialities nor shortcomings.",
 		"Pepe starts with a Ring of Mending+1."
+
 	};
 	
 	public void initHero( Hero hero ) {
