@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
-package com.poorcoding.dixelpungeon.items.dixel;
+package com.poorcoding.dixelpungeon.items.dixel.weapons.firearms;
 
 import com.poorcoding.dixelpungeon.Assets;
 import com.poorcoding.dixelpungeon.Dungeon;

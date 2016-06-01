@@ -21,7 +21,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
-import com.poorcoding.dixelpungeon.items.dixel.Firearm;
+import com.poorcoding.dixelpungeon.items.dixel.weapons.firearms.Firearm;
 import com.poorcoding.noosa.audio.Sample;
 import com.poorcoding.dixelpungeon.Assets;
 import com.poorcoding.dixelpungeon.Badges;

@@ -23,6 +23,10 @@ import com.poorcoding.dixelpungeon.Dungeon;
 import com.poorcoding.dixelpungeon.actors.hero.Hero;
 import com.poorcoding.dixelpungeon.items.armor.*;
 import com.poorcoding.dixelpungeon.items.bags.Bag;
+import com.poorcoding.dixelpungeon.items.dixel.weapons.Bullets;
+import com.poorcoding.dixelpungeon.items.dixel.weapons.firearms.Firearm;
+import com.poorcoding.dixelpungeon.items.dixel.weapons.firearms.PistolFirebolt;
+import com.poorcoding.dixelpungeon.items.dixel.weapons.firearms.PistolStandard;
 import com.poorcoding.dixelpungeon.items.food.Food;
 import com.poorcoding.dixelpungeon.items.food.Hotdog;
 import com.poorcoding.dixelpungeon.items.food.LobsterSubmarineSandwich;
@@ -38,7 +42,6 @@ import com.poorcoding.dixelpungeon.items.weapon.*;
 import com.poorcoding.dixelpungeon.items.weapon.melee.*;
 import com.poorcoding.dixelpungeon.items.weapon.missiles.*;
 import com.poorcoding.dixelpungeon.plants.*;
-import com.poorcoding.dixelpungeon.items.dixel.*;
 import com.poorcoding.utils.Random;
 
 public class Generator {

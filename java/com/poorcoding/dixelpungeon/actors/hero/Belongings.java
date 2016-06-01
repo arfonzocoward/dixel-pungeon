@@ -25,7 +25,7 @@ import com.poorcoding.dixelpungeon.items.Item;
 import com.poorcoding.dixelpungeon.items.KindOfWeapon;
 import com.poorcoding.dixelpungeon.items.armor.Armor;
 import com.poorcoding.dixelpungeon.items.bags.Bag;
-import com.poorcoding.dixelpungeon.items.dixel.Firearm;
+import com.poorcoding.dixelpungeon.items.dixel.weapons.firearms.Firearm;
 import com.poorcoding.dixelpungeon.items.keys.IronKey;
 import com.poorcoding.dixelpungeon.items.keys.Key;
 import com.poorcoding.dixelpungeon.items.rings.Ring;

@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
-package com.poorcoding.dixelpungeon.items.dixel;
+package com.poorcoding.dixelpungeon.items.dixel.weapons.firearms;
 
 import com.poorcoding.dixelpungeon.Assets;
 import com.poorcoding.dixelpungeon.Badges;
@@ -30,8 +30,8 @@ import com.poorcoding.dixelpungeon.effects.MagicMissile;
 import com.poorcoding.dixelpungeon.items.Item;
 import com.poorcoding.dixelpungeon.items.ItemStatusHandler;
 import com.poorcoding.dixelpungeon.items.bags.Bag;
+import com.poorcoding.dixelpungeon.items.dixel.weapons.Bullets;
 import com.poorcoding.dixelpungeon.items.rings.RingOfPower.Power;
-import com.poorcoding.dixelpungeon.items.weapon.enchantments.Poison;
 import com.poorcoding.dixelpungeon.items.weapon.melee.MeleeWeapon;
 import com.poorcoding.dixelpungeon.mechanics.Ballistica;
 import com.poorcoding.dixelpungeon.scenes.CellSelector;

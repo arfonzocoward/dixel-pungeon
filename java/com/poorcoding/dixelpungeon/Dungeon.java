@@ -25,7 +25,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.HashSet;
 
-import com.poorcoding.dixelpungeon.items.dixel.Firearm;
+import com.poorcoding.dixelpungeon.items.dixel.weapons.firearms.Firearm;
 import com.poorcoding.noosa.Game;
 import com.poorcoding.dixelpungeon.actors.Actor;
 import com.poorcoding.dixelpungeon.actors.Char;
