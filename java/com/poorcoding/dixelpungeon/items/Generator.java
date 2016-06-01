@@ -24,6 +24,8 @@ import com.poorcoding.dixelpungeon.actors.hero.Hero;
 import com.poorcoding.dixelpungeon.items.armor.*;
 import com.poorcoding.dixelpungeon.items.bags.Bag;
 import com.poorcoding.dixelpungeon.items.dixel.chemicals.Chemical;
+import com.poorcoding.dixelpungeon.items.dixel.chemicals.Gwailoprin;
+import com.poorcoding.dixelpungeon.items.dixel.chemicals.Mamba;
 import com.poorcoding.dixelpungeon.items.dixel.chemicals.Steroids;
 import com.poorcoding.dixelpungeon.items.dixel.weapons.Bullets;
 import com.poorcoding.dixelpungeon.items.dixel.weapons.firearms.Firearm;
@@ -52,15 +54,17 @@ public class Generator {
 		WEAPON	( 15,	Weapon.class ),
 		ARMOR	( 10,	Armor.class ),
 		POTION	( 50,	Potion.class ),
-		CHEMICAL	(5000,	Chemical.class),
 		SCROLL	( 40,	Scroll.class ),
 		WAND	( 4,	Wand.class ),
-		FIREARM ( 50,	Firearm.class),
 		RING	( 2,	Ring.class ),
 		SEED	( 5,	Plant.Seed.class ),
 		FOOD	( 0,	Food.class ),
 		GOLD	( 50,	Gold.class ),
-		MISC	( 5,	Item.class );
+		MISC	( 5,	Item.class ),
+
+		FIREARM 	( 50,	Firearm.class),
+		CHEMICAL	(20,	Chemical.class),
+		;
 		
 		public Class<?>[] classes;
 		public float[] probs;
@@ -121,11 +125,6 @@ public class Generator {
 			PotionOfMight.class,
 			PotionOfFrost.class };
 		Category.POTION.probs = new float[]{ 45, 4, 15, 10, 15, 10, 0, 20, 12, 10, 0, 10 };
-
-		Category.CHEMICAL.classes = new Class<?>[]{
-				Steroids.class
-		};
-		Category.CHEMICAL.probs = new float[]{ 1 };
 		
 		Category.WAND.classes = new Class<?>[]{ 
 			WandOfTeleportation.class, 
@@ -143,13 +142,6 @@ public class Generator {
 			WandOfAvalanche.class };
 		Category.WAND.probs = new float[]{ 10, 10, 15, 6, 10, 11, 15, 10, 6, 10, 0, 5, 5 };
 
-		Category.FIREARM.classes = new Class<?>[] {
-				PistolStandard.class,
-				Bullets.class,
-				PistolFirebolt.class
-		};
-		Category.FIREARM.probs = new float[]{ 1, 20, 0};
-		
 		Category.WEAPON.classes = new Class<?>[]{ 
 			Dagger.class, 
 			Knuckles.class,
@@ -216,7 +208,21 @@ public class Generator {
 			Fadeleaf.Seed.class,
 			Rotberry.Seed.class };
 		Category.SEED.probs = new float[]{ 1, 1, 1, 1, 1, 1, 1, 0 };
-		
+
+		Category.FIREARM.classes = new Class<?>[] {
+				PistolStandard.class,
+				Bullets.class,
+				PistolFirebolt.class
+		};
+		Category.FIREARM.probs = new float[]{ 1, 20, 0};
+
+		Category.CHEMICAL.classes = new Class<?>[]{
+				Steroids.class,
+				Mamba.class,
+				Gwailoprin.class
+		};
+		Category.CHEMICAL.probs = new float[]{ 2, 1, 1 };
+
 		Category.MISC.classes = new Class<?>[]{ 
 			Bomb.class,
 			Honeypot.class};

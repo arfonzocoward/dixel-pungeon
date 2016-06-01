@@ -35,7 +35,7 @@ import com.poorcoding.dixelpungeon.scenes.TitleScene;
 
 public class DixelPungeon extends Game {
 
-	public static String version_dixel = "59";
+	public static String version_dixel = "60";
 	public static final boolean DIXEL_DEBUG = true;
 	
 	public DixelPungeon() {

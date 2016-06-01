@@ -24,18 +24,6 @@ import com.poorcoding.dixelpungeon.actors.hero.Hero;
 import com.poorcoding.dixelpungeon.effects.Splash;
 import com.poorcoding.dixelpungeon.items.Item;
 import com.poorcoding.dixelpungeon.items.ItemStatusHandler;
-import com.poorcoding.dixelpungeon.items.potions.PotionOfExperience;
-import com.poorcoding.dixelpungeon.items.potions.PotionOfFrost;
-import com.poorcoding.dixelpungeon.items.potions.PotionOfHealing;
-import com.poorcoding.dixelpungeon.items.potions.PotionOfInvisibility;
-import com.poorcoding.dixelpungeon.items.potions.PotionOfLevitation;
-import com.poorcoding.dixelpungeon.items.potions.PotionOfLiquidFlame;
-import com.poorcoding.dixelpungeon.items.potions.PotionOfMight;
-import com.poorcoding.dixelpungeon.items.potions.PotionOfMindVision;
-import com.poorcoding.dixelpungeon.items.potions.PotionOfParalyticGas;
-import com.poorcoding.dixelpungeon.items.potions.PotionOfPurity;
-import com.poorcoding.dixelpungeon.items.potions.PotionOfStrength;
-import com.poorcoding.dixelpungeon.items.potions.PotionOfToxicGas;
 import com.poorcoding.dixelpungeon.levels.Level;
 import com.poorcoding.dixelpungeon.levels.Terrain;
 import com.poorcoding.dixelpungeon.scenes.GameScene;
@@ -53,25 +41,32 @@ public class Chemical extends Item {
 
 	public static final String AC_DRINK	= "INJECT";
 
-	private static final String TXT_HARMFUL		= "Harmful chemical!";
+	private static final String TXT_HARMFUL		= "Unknown or harmful chemical!";
 	private static final String TXT_BENEFICIAL	= "Beneficial chemical";
 	private static final String TXT_YES			= "Yes, I know what I'm doing";
 	private static final String TXT_NO			= "No, I changed my mind";
 	private static final String TXT_R_U_SURE_CONSUME =
-		"Are you sure you want to inject it? In most cases you should throw such chemicals at your enemies.";
+		//"Are you sure you want to inject it? In most cases you should throw such chemicals at your enemies.";
+			"Are you sure you want to inject it? Chemicals and drugs could be dangerous. Dangerous chemicals should be thrown.\n\nTaking unknown and harmful substances is illegal in the City of LelDorado.";
 	private static final String TXT_R_U_SURE_THROW =
 		"Are you sure you want to throw it? In most cases it makes sense to inject it.";
 
 	private static final float TIME_TO_CONSUME = 2f;
 
-	private static final Class<?>[] potions = {
-		Steroids.class
+	private static final Class<?>[] chemicals = {
+		Steroids.class,
+		Mamba.class,
+		Gwailoprin.class,
 	};
 	private static final String[] colors = {
-		"turquoise"
+		"turquoise",
+		"crimson",
+		"azure"
 	};
 	private static final Integer[] images = {
-		ItemSpriteSheet.CHEM_TURQUOISE
+		ItemSpriteSheet.CHEM_TURQUOISE,
+		ItemSpriteSheet.CHEM_CRIMSON,
+		ItemSpriteSheet.CHEM_AZURE
 	};
 
 	private static ItemStatusHandler<Chemical> handler;
@@ -85,7 +80,7 @@ public class Chemical extends Item {
 
 	@SuppressWarnings("unchecked")
 	public static void initColors() {
-		handler = new ItemStatusHandler<Chemical>( (Class<? extends Chemical>[])potions, colors, images );
+		handler = new ItemStatusHandler<Chemical>( (Class<? extends Chemical>[]) chemicals, colors, images );
 	}
 
 	public static void save( Bundle bundle ) {
@@ -94,7 +89,7 @@ public class Chemical extends Item {
 
 	@SuppressWarnings("unchecked")
 	public static void restore( Bundle bundle ) {
-		handler = new ItemStatusHandler<Chemical>( (Class<? extends Chemical>[])potions, colors, images, bundle );
+		handler = new ItemStatusHandler<Chemical>( (Class<? extends Chemical>[]) chemicals, colors, images, bundle );
 	}
 
 	public Chemical() {
@@ -114,22 +109,23 @@ public class Chemical extends Item {
 	public void execute( final Hero hero, String action ) {
 		if (action.equals( AC_DRINK )) {
 			
-			if (isKnown() && (this instanceof Steroids)) {
-				
-					GameScene.show( 
-						new WndOptions( TXT_HARMFUL, TXT_R_U_SURE_CONSUME, TXT_YES, TXT_NO ) {
-							@Override
-							protected void onSelect(int index) {
-								if (index == 0) {
-									drink( hero );
-								}
-							};
-						}
-					);
+			//if (isKnown() && (this instanceof Steroids)) {
+			if (!isKnown() || (isKnown() && (this instanceof Gwailoprin))){
+				// No harmful Chemicals implemented yet. They will be captured here.
+				GameScene.show(
+					new WndOptions( TXT_HARMFUL, TXT_R_U_SURE_CONSUME, TXT_YES, TXT_NO ) {
+						@Override
+						protected void onSelect(int index) {
+							if (index == 0) {
+								drink( hero );
+							}
+						};
+					}
+				);
 					
-				} else {
-					drink( hero );
-				}
+			} else {
+				drink( hero );
+			}
 			
 		} else {
 			
@@ -141,7 +137,10 @@ public class Chemical extends Item {
 	@Override
 	public void doThrow( final Hero hero ) {
 
-		if (isKnown() && (this instanceof Steroids)) {
+		if (isKnown() && (this instanceof Steroids ||
+			this instanceof Mamba
+			))
+		{
 		
 			GameScene.show( 
 				new WndOptions( TXT_BENEFICIAL, TXT_R_U_SURE_THROW, TXT_YES, TXT_NO ) {
@@ -255,7 +254,7 @@ public class Chemical extends Item {
 	}
 	
 	public static boolean allKnown() {
-		return handler.known().size() == potions.length;
+		return handler.known().size() == chemicals.length;
 	}
 	
 	protected void splash( int cell ) {		
