@@ -82,7 +82,7 @@ public abstract class Firearm extends MeleeWeapon {
 	/*private static final String[] woods =
 		{"holly", "yew", "ebony", "cherry", "teak", "rowan", "willow", "mahogany", "bamboo", "purpleheart", "oak", "birch"};*/
 	private static final String[] woods =
-			{"dark gray", "shiny black"};
+			{"dark gray", "shiny black", "purple"};
 			//{"holly", "yew"};
 	private static final Integer[] images = {
 		ItemSpriteSheet.FIREARM_BROWN,
