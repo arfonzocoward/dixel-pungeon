@@ -194,4 +194,7 @@ public class ItemSpriteSheet {
 	public static final int FOOD_LOBSTERSUB = 136;
 	public static final int FOOD_HOTDOG = 137;
 	public static final int FIREARM_PURPLE = 138;
+
+	// Chemicals
+	public static final int CHEM_TURQUOISE = 144;
 }

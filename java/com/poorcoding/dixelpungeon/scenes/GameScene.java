@@ -20,6 +20,7 @@ package com.poorcoding.dixelpungeon.scenes;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import com.poorcoding.dixelpungeon.items.dixel.chemicals.Chemical;
 import com.poorcoding.noosa.Camera;
 import com.poorcoding.noosa.Game;
 import com.poorcoding.noosa.Group;
@@ -279,6 +280,8 @@ public class GameScene extends PixelScene {
 				int pos = Dungeon.level.randomRespawnCell();
 				if (item instanceof Potion) {
 					((Potion)item).shatter( pos );
+				} else if (item instanceof Chemical) {
+					((Chemical)item).shatter( pos );
 				} else if (item instanceof Plant.Seed) {
 					Dungeon.level.plant( (Plant.Seed)item, pos );
 				} else {

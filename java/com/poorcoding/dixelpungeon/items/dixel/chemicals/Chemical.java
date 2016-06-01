@@ -17,9 +17,13 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */package com.poorcoding.dixelpungeon.items.dixel.chemicals;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-
+import com.poorcoding.dixelpungeon.Assets;
+import com.poorcoding.dixelpungeon.Badges;
+import com.poorcoding.dixelpungeon.Dungeon;
+import com.poorcoding.dixelpungeon.actors.hero.Hero;
+import com.poorcoding.dixelpungeon.effects.Splash;
+import com.poorcoding.dixelpungeon.items.Item;
+import com.poorcoding.dixelpungeon.items.ItemStatusHandler;
 import com.poorcoding.dixelpungeon.items.potions.PotionOfExperience;
 import com.poorcoding.dixelpungeon.items.potions.PotionOfFrost;
 import com.poorcoding.dixelpungeon.items.potions.PotionOfHealing;
@@ -32,14 +36,6 @@ import com.poorcoding.dixelpungeon.items.potions.PotionOfParalyticGas;
 import com.poorcoding.dixelpungeon.items.potions.PotionOfPurity;
 import com.poorcoding.dixelpungeon.items.potions.PotionOfStrength;
 import com.poorcoding.dixelpungeon.items.potions.PotionOfToxicGas;
-import com.poorcoding.noosa.audio.Sample;
-import com.poorcoding.dixelpungeon.Assets;
-import com.poorcoding.dixelpungeon.Badges;
-import com.poorcoding.dixelpungeon.Dungeon;
-import com.poorcoding.dixelpungeon.actors.hero.Hero;
-import com.poorcoding.dixelpungeon.effects.Splash;
-import com.poorcoding.dixelpungeon.items.Item;
-import com.poorcoding.dixelpungeon.items.ItemStatusHandler;
 import com.poorcoding.dixelpungeon.levels.Level;
 import com.poorcoding.dixelpungeon.levels.Terrain;
 import com.poorcoding.dixelpungeon.scenes.GameScene;
@@ -47,53 +43,36 @@ import com.poorcoding.dixelpungeon.sprites.ItemSprite;
 import com.poorcoding.dixelpungeon.sprites.ItemSpriteSheet;
 import com.poorcoding.dixelpungeon.utils.GLog;
 import com.poorcoding.dixelpungeon.windows.WndOptions;
+import com.poorcoding.noosa.audio.Sample;
 import com.poorcoding.utils.Bundle;
+
+import java.util.ArrayList;
+import java.util.HashSet;
 
 public class Chemical extends Item {
 
-	public static final String AC_DRINK	= "DRINK";
+	public static final String AC_DRINK	= "INJECT";
 
-	private static final String TXT_HARMFUL		= "Harmful potion!";
-	private static final String TXT_BENEFICIAL	= "Beneficial potion";
+	private static final String TXT_HARMFUL		= "Harmful chemical!";
+	private static final String TXT_BENEFICIAL	= "Beneficial chemical";
 	private static final String TXT_YES			= "Yes, I know what I'm doing";
 	private static final String TXT_NO			= "No, I changed my mind";
-	private static final String TXT_R_U_SURE_DRINK =
-		"Are you sure you want to drink it? In most cases you should throw such potions at your enemies.";
+	private static final String TXT_R_U_SURE_CONSUME =
+		"Are you sure you want to inject it? In most cases you should throw such chemicals at your enemies.";
 	private static final String TXT_R_U_SURE_THROW =
-		"Are you sure you want to throw it? In most cases it makes sense to drink it.";
+		"Are you sure you want to throw it? In most cases it makes sense to inject it.";
 
-	private static final float TIME_TO_DRINK = 1f;
+	private static final float TIME_TO_CONSUME = 2f;
 
 	private static final Class<?>[] potions = {
-		PotionOfHealing.class,
-		PotionOfExperience.class,
-		PotionOfToxicGas.class,
-		PotionOfLiquidFlame.class,
-		PotionOfStrength.class,
-		PotionOfParalyticGas.class,
-		PotionOfLevitation.class,
-		PotionOfMindVision.class,
-		PotionOfPurity.class,
-		PotionOfInvisibility.class,
-		PotionOfMight.class,
-		PotionOfFrost.class
+		Steroids.class
 	};
 	private static final String[] colors = {
-		"turquoise", "crimson", "azure", "jade", "golden", "magenta",
-		"charcoal", "ivory", "amber", "bistre", "indigo", "silver"};
+		"turquoise"
+	};
 	private static final Integer[] images = {
-		ItemSpriteSheet.POTION_TURQUOISE,
-		ItemSpriteSheet.POTION_CRIMSON,
-		ItemSpriteSheet.POTION_AZURE,
-		ItemSpriteSheet.POTION_JADE,
-		ItemSpriteSheet.POTION_GOLDEN,
-		ItemSpriteSheet.POTION_MAGENTA,
-		ItemSpriteSheet.POTION_CHARCOAL,
-		ItemSpriteSheet.POTION_IVORY,
-		ItemSpriteSheet.POTION_AMBER,
-		ItemSpriteSheet.POTION_BISTRE,
-		ItemSpriteSheet.POTION_INDIGO,
-		ItemSpriteSheet.POTION_SILVER};
+		ItemSpriteSheet.CHEM_TURQUOISE
+	};
 
 	private static ItemStatusHandler<Chemical> handler;
 
@@ -135,13 +114,10 @@ public class Chemical extends Item {
 	public void execute( final Hero hero, String action ) {
 		if (action.equals( AC_DRINK )) {
 			
-			if (isKnown() && (
-					this instanceof PotionOfLiquidFlame || 
-					this instanceof PotionOfToxicGas || 
-					this instanceof PotionOfParalyticGas)) {
+			if (isKnown() && (this instanceof Steroids)) {
 				
 					GameScene.show( 
-						new WndOptions( TXT_HARMFUL, TXT_R_U_SURE_DRINK, TXT_YES, TXT_NO ) {
+						new WndOptions( TXT_HARMFUL, TXT_R_U_SURE_CONSUME, TXT_YES, TXT_NO ) {
 							@Override
 							protected void onSelect(int index) {
 								if (index == 0) {
@@ -165,14 +141,7 @@ public class Chemical extends Item {
 	@Override
 	public void doThrow( final Hero hero ) {
 
-		if (isKnown() && (
-			this instanceof PotionOfExperience || 
-			this instanceof PotionOfHealing || 
-			this instanceof PotionOfLevitation ||
-			this instanceof PotionOfMindVision ||
-			this instanceof PotionOfStrength ||
-			this instanceof PotionOfInvisibility || 
-			this instanceof PotionOfMight)) {
+		if (isKnown() && (this instanceof Steroids)) {
 		
 			GameScene.show( 
 				new WndOptions( TXT_BENEFICIAL, TXT_R_U_SURE_THROW, TXT_YES, TXT_NO ) {
@@ -194,7 +163,7 @@ public class Chemical extends Item {
 		
 		detach( hero.belongings.backpack );
 		
-		hero.spend( TIME_TO_DRINK );
+		hero.spend(TIME_TO_CONSUME);
 		hero.busy();
 		onThrow( hero.pos );
 		
@@ -226,7 +195,7 @@ public class Chemical extends Item {
 	
 	public void shatter( int cell ) {
 		if (Dungeon.visible[cell]) {
-			GLog.i( "The flask shatters and " + color() + " liquid splashes harmlessly" );
+			GLog.i( "The syringe shatters and " + color() + " liquid splashes harmlessly" );
 			Sample.INSTANCE.play( Assets.SND_SHATTER );
 			splash( cell );
 		}
@@ -256,15 +225,15 @@ public class Chemical extends Item {
 	
 	@Override
 	public String name() {
-		return isKnown() ? name : color + " potion";
+		return "Syringe with " + (isKnown() ? name : color + " chemical");
 	}
 	
 	@Override
 	public String info() {
 		return isKnown() ?
 			desc() :
-			"This flask contains a swirling " + color + " liquid. " +
-			"Who knows what it will do when drunk or thrown?";
+			"This syringe contains a swirling " + color + " chemical. " +
+			"Who knows what it will do when injected or thrown?";
 	}
 	
 	@Override

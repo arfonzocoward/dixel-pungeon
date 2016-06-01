@@ -23,6 +23,8 @@ import com.poorcoding.dixelpungeon.Dungeon;
 import com.poorcoding.dixelpungeon.actors.hero.Hero;
 import com.poorcoding.dixelpungeon.items.armor.*;
 import com.poorcoding.dixelpungeon.items.bags.Bag;
+import com.poorcoding.dixelpungeon.items.dixel.chemicals.Chemical;
+import com.poorcoding.dixelpungeon.items.dixel.chemicals.Steroids;
 import com.poorcoding.dixelpungeon.items.dixel.weapons.Bullets;
 import com.poorcoding.dixelpungeon.items.dixel.weapons.firearms.Firearm;
 import com.poorcoding.dixelpungeon.items.dixel.weapons.firearms.PistolFirebolt;
@@ -50,6 +52,7 @@ public class Generator {
 		WEAPON	( 15,	Weapon.class ),
 		ARMOR	( 10,	Armor.class ),
 		POTION	( 50,	Potion.class ),
+		CHEMICAL	(5000,	Chemical.class),
 		SCROLL	( 40,	Scroll.class ),
 		WAND	( 4,	Wand.class ),
 		FIREARM ( 50,	Firearm.class),
@@ -118,6 +121,11 @@ public class Generator {
 			PotionOfMight.class,
 			PotionOfFrost.class };
 		Category.POTION.probs = new float[]{ 45, 4, 15, 10, 15, 10, 0, 20, 12, 10, 0, 10 };
+
+		Category.CHEMICAL.classes = new Class<?>[]{
+				Steroids.class
+		};
+		Category.CHEMICAL.probs = new float[]{ 1 };
 		
 		Category.WAND.classes = new Class<?>[]{ 
 			WandOfTeleportation.class, 

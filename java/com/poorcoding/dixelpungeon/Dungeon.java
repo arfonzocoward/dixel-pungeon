@@ -25,6 +25,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.HashSet;
 
+import com.poorcoding.dixelpungeon.items.dixel.chemicals.Chemical;
 import com.poorcoding.dixelpungeon.items.dixel.weapons.firearms.Firearm;
 import com.poorcoding.noosa.Game;
 import com.poorcoding.dixelpungeon.actors.Actor;
@@ -43,7 +44,6 @@ import com.poorcoding.dixelpungeon.items.Item;
 import com.poorcoding.dixelpungeon.items.potions.Potion;
 import com.poorcoding.dixelpungeon.items.rings.Ring;
 import com.poorcoding.dixelpungeon.items.scrolls.Scroll;
-import com.poorcoding.dixelpungeon.items.Soul;
 import com.poorcoding.dixelpungeon.items.wands.Wand;
 import com.poorcoding.dixelpungeon.levels.CavesBossLevel;
 import com.poorcoding.dixelpungeon.levels.CavesLevel;
@@ -111,6 +111,8 @@ public class Dungeon {
 		
 		Scroll.initLabels();
 		Potion.initColors();
+		// Dixel: Chemicals
+		Chemical.initColors();
 		Wand.initWoods();
 		//Dixel: Firearms
 		Firearm.initWoods();
@@ -448,6 +450,7 @@ public class Dungeon {
 			bundle.put( BADGES, badges );
 
 			Firearm.save( bundle );
+			Chemical.save( bundle );
 			
 			OutputStream output = Game.instance.openFileOutput( fileName, Game.MODE_PRIVATE );
 			Bundle.write( bundle, output );
@@ -512,6 +515,7 @@ public class Dungeon {
 		Ring.restore( bundle );
 
 		Firearm.restore( bundle );
+		Chemical.restore( bundle );
 		
 		potionOfStrength = bundle.getInt( POS );
 		scrollsOfUpgrade = bundle.getInt( SOU );
