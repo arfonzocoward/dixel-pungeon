@@ -40,7 +40,7 @@ import com.poorcoding.utils.Random;
 public class PistolFirebolt extends Pistol {
 
 	{
-		name = "Jengo's Justice (Firebolt Pistol)";
+		name = "Jengo's Justice";
 	}
 
 	@Override
@@ -93,7 +93,7 @@ public class PistolFirebolt extends Pistol {
 	@Override
 	public String desc() {
 		return
-				"Jengo's Justice is a unique firearm that unleashes flaming bullets. It will ignite " +
+				"Jengo's Justice is a _unique_ firearm that unleashes flaming bullets. It will ignite " +
 						"any flesh and items it hits. BBQ, anyone?";
 	}
 }
