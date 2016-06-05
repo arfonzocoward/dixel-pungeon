@@ -24,6 +24,10 @@ import com.poorcoding.dixelpungeon.items.Ankh;
 import com.poorcoding.dixelpungeon.items.TomeOfMastery;
 import com.poorcoding.dixelpungeon.items.armor.ClothArmor;
 import com.poorcoding.dixelpungeon.items.bags.Keyring;
+import com.poorcoding.dixelpungeon.items.dixel.chemicals.Gwailoprin;
+import com.poorcoding.dixelpungeon.items.dixel.chemicals.Mamba;
+import com.poorcoding.dixelpungeon.items.dixel.chemicals.StemCells;
+import com.poorcoding.dixelpungeon.items.dixel.chemicals.Steroids;
 import com.poorcoding.dixelpungeon.items.dixel.weapons.Bullets;
 import com.poorcoding.dixelpungeon.items.dixel.weapons.firearms.PistolFirebolt;
 import com.poorcoding.dixelpungeon.items.dixel.weapons.firearms.PistolStandard;
@@ -95,8 +99,8 @@ public enum HeroClass {
 
 	public static final String[] PEP_PERKS = {
 		"Pepe uses what he finds around, he has no specialities nor shortcomings.",
-		"Pepe starts with a Ring of Mending+1."
-
+		"Pepe starts with a Ring of Mending+1.",
+		"Pepe starts with all Chemicals: one of each kind."
 	};
 	
 	public void initHero( Hero hero ) {
@@ -234,6 +238,22 @@ public enum HeroClass {
 
 	private static void initPepe( Hero hero ) {
 		(hero.belongings.ring1 = new RingOfMending()).upgrade().identify();
+
+		Mamba mamba = new Mamba();
+		mamba.quantity(1);
+		mamba.identify().collect();
+
+		Steroids steroids = new Steroids();
+		steroids.quantity(1);
+		steroids.identify().collect();
+
+		Gwailoprin gwailoprin = new Gwailoprin();
+		gwailoprin.quantity(1);
+		gwailoprin.identify().collect();
+
+		StemCells stemcells = new StemCells();
+		stemcells.quantity(1);
+		stemcells.identify().collect();
 	}
 	
 	public String title() {

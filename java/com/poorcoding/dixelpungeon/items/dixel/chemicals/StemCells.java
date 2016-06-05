@@ -17,43 +17,37 @@
  */
 package com.poorcoding.dixelpungeon.items.dixel.chemicals;
 
-import com.poorcoding.dixelpungeon.Assets;
 import com.poorcoding.dixelpungeon.actors.buffs.Buff;
-import com.poorcoding.dixelpungeon.actors.buffs.Invisibility;
+import com.poorcoding.dixelpungeon.actors.buffs.Regeneration;
+import com.poorcoding.dixelpungeon.actors.buffs.Speed;
 import com.poorcoding.dixelpungeon.actors.hero.Hero;
+import com.poorcoding.dixelpungeon.items.potions.PotionOfHealing;
 import com.poorcoding.dixelpungeon.sprites.CharSprite;
 import com.poorcoding.dixelpungeon.utils.GLog;
-import com.poorcoding.noosa.audio.Sample;
 
-public class Gwailoprin extends Chemical {
+public class StemCells extends Chemical {
 
 	{
-		name = "Gwailoprin";
+		name = "Stem Cells";
 	}
 	
 	@Override
 	protected void apply( Hero hero ) {
 		setKnown();
 
-		Buff.affect( hero, Invisibility.class, Invisibility.DURATION );
-		GLog.i( "You see your hands turn invisible!" );
-		Sample.INSTANCE.play( Assets.SND_MELD );
-
-		hero.damage(hero.HP-1, this);
-		hero.sprite.showStatus( CharSprite.NEGATIVE, "GWAILOPRIN!!! U FUCKED ME OVER!" );
-		GLog.p( "You take the Gwailoprin, vanish from this realm, and knock on death's door." );
+		hero.sprite.showStatus( CharSprite.POSITIVE, "+HP" );
+		GLog.p( "As the stem cells rush into your bloodstream, you feel your life force healing." );
+		PotionOfHealing.heal(hero);
 	}
 	
 	@Override
 	public String desc() {
 		return
-			"This magic juice has a delightful taste of passion fruit, " +
-			"with a mild aftertaste of death." +
-				"\n\nBrings one to the brink of death. It does turn one invisible though, which could be handy.";
+			"Stem Cells. These little beauts will heal anything, real quick.";
 	}
 	
 	@Override
 	public int price() {
-		return isKnown() ? 100 * quantity : super.price();
+		return isKnown() ? 150 * quantity : super.price();
 	}
 }

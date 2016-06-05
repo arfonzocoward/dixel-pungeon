@@ -199,4 +199,5 @@ public class ItemSpriteSheet {
 	public static final int CHEM_TURQUOISE = 144;
 	public static final int CHEM_CRIMSON = 145;
 	public static final int CHEM_AZURE = 146;
+	public static final int CHEM_JADE = 147;
 }

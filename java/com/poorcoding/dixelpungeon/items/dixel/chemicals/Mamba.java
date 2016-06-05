@@ -18,6 +18,9 @@
 package com.poorcoding.dixelpungeon.items.dixel.chemicals;
 
 import com.poorcoding.dixelpungeon.actors.buffs.Awareness;
+import com.poorcoding.dixelpungeon.actors.buffs.Buff;
+import com.poorcoding.dixelpungeon.actors.buffs.Invisibility;
+import com.poorcoding.dixelpungeon.actors.buffs.Speed;
 import com.poorcoding.dixelpungeon.actors.hero.Hero;
 import com.poorcoding.dixelpungeon.sprites.CharSprite;
 import com.poorcoding.dixelpungeon.utils.GLog;
@@ -31,18 +34,17 @@ public class Mamba extends Chemical {
 	@Override
 	protected void apply( Hero hero ) {
 		setKnown();
-		
-		//hero.STR++;
-		hero.sprite.showStatus( CharSprite.POSITIVE, "Awareness" );
-		GLog.p( "The Mamba temporarily heightens your awareness." );
-		hero.add(new Awareness());
+
+		hero.sprite.showStatus( CharSprite.POSITIVE, "speed++" );
+		GLog.p( "The Mamba temporarily heightens your speed." );
+		Buff.affect( hero, Speed.class, Speed.DURATION );
 	}
 	
 	@Override
 	public String desc() {
 		return
 			"Filthy ol' Mamba. Drug of choice for the wastrels of LelDorado due to it being a legal gray market substance.\n\n" +
-			"Side effects include: feeling like a bigwig for about 10 minutes (+Awareness).";
+			"Side effects include: feeling like a bigwig for about 10 minutes (+speed).";
 	}
 	
 	@Override

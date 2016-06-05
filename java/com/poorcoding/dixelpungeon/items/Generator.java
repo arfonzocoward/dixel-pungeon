@@ -26,6 +26,7 @@ import com.poorcoding.dixelpungeon.items.bags.Bag;
 import com.poorcoding.dixelpungeon.items.dixel.chemicals.Chemical;
 import com.poorcoding.dixelpungeon.items.dixel.chemicals.Gwailoprin;
 import com.poorcoding.dixelpungeon.items.dixel.chemicals.Mamba;
+import com.poorcoding.dixelpungeon.items.dixel.chemicals.StemCells;
 import com.poorcoding.dixelpungeon.items.dixel.chemicals.Steroids;
 import com.poorcoding.dixelpungeon.items.dixel.weapons.Bullets;
 import com.poorcoding.dixelpungeon.items.dixel.weapons.firearms.Firearm;
@@ -62,8 +63,8 @@ public class Generator {
 		GOLD	( 50,	Gold.class ),
 		MISC	( 5,	Item.class ),
 
-		FIREARM 	( 50,	Firearm.class),
-		CHEMICAL	(20,	Chemical.class),
+		FIREARM 	( 25,	Firearm.class),
+		CHEMICAL	( 5,	Chemical.class),
 		;
 		
 		public Class<?>[] classes;
@@ -219,9 +220,10 @@ public class Generator {
 		Category.CHEMICAL.classes = new Class<?>[]{
 				Steroids.class,
 				Mamba.class,
-				Gwailoprin.class
+				Gwailoprin.class,
+				StemCells.class
 		};
-		Category.CHEMICAL.probs = new float[]{ 2, 1, 1 };
+		Category.CHEMICAL.probs = new float[]{ 1, 3, 2 };
 
 		Category.MISC.classes = new Class<?>[]{ 
 			Bomb.class,

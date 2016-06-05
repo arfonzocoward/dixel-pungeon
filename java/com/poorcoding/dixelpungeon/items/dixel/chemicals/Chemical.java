@@ -57,16 +57,19 @@ public class Chemical extends Item {
 		Steroids.class,
 		Mamba.class,
 		Gwailoprin.class,
+		StemCells.class
 	};
 	private static final String[] colors = {
 		"turquoise",
 		"crimson",
-		"azure"
+		"azure",
+		"jade"
 	};
 	private static final Integer[] images = {
 		ItemSpriteSheet.CHEM_TURQUOISE,
 		ItemSpriteSheet.CHEM_CRIMSON,
-		ItemSpriteSheet.CHEM_AZURE
+		ItemSpriteSheet.CHEM_AZURE,
+		ItemSpriteSheet.CHEM_JADE,
 	};
 
 	private static ItemStatusHandler<Chemical> handler;
@@ -108,10 +111,9 @@ public class Chemical extends Item {
 	@Override
 	public void execute( final Hero hero, String action ) {
 		if (action.equals( AC_DRINK )) {
-			
-			//if (isKnown() && (this instanceof Steroids)) {
+
+			// Harmful Chemicals captured here.
 			if (!isKnown() || (isKnown() && (this instanceof Gwailoprin))){
-				// No harmful Chemicals implemented yet. They will be captured here.
 				GameScene.show(
 					new WndOptions( TXT_HARMFUL, TXT_R_U_SURE_CONSUME, TXT_YES, TXT_NO ) {
 						@Override
@@ -138,7 +140,8 @@ public class Chemical extends Item {
 	public void doThrow( final Hero hero ) {
 
 		if (isKnown() && (this instanceof Steroids ||
-			this instanceof Mamba
+			this instanceof Mamba ||
+			this instanceof StemCells
 			))
 		{
 		
