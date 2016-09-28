@@ -223,7 +223,7 @@ public class Generator {
 				Gwailoprin.class,
 				StemCells.class
 		};
-		Category.CHEMICAL.probs = new float[]{ 1, 3, 2 };
+		Category.CHEMICAL.probs = new float[]{ 1, 5, 3, 3 };
 
 		Category.MISC.classes = new Class<?>[]{ 
 			Bomb.class,
