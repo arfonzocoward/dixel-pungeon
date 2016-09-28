@@ -34,7 +34,7 @@ import java.util.ArrayList;
 
 public class Soul extends Item {
 
-	private static final String TXT_COLLECT	= "Collect souls to upgrade at campfires.";
+	private static final String TXT_COLLECT	= "The soul of some vanquished foe. Used to upgrade at campfires.";
 	private static final String TXT_INFO	= "%d souls. " + TXT_COLLECT;
 	private static final String TXT_INFO_1	= "One soul. " + TXT_COLLECT;
 	private static final String TXT_VALUE	= "%+d souls";
