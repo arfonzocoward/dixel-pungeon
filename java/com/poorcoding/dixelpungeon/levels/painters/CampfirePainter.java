@@ -75,8 +75,7 @@ public class CampfirePainter extends Painter {
 		for (int i=0; i < n; i++) {
 			level.drop( prize( level ), remains );
 		}
-
-		// TODO: Paint a campfire.
+		
 		fill( level, c.x - 1, c.y - 1, 3, 3, Terrain.GRASS );
 		set( level, c, Terrain.ALCHEMY );
 		level.drop(new Soul(77), room.random());

@@ -41,7 +41,6 @@ public class Soul extends Item {
 
 	{
 		name = "souls";
-		// TODO: Create image sprite.
 		image = ItemSpriteSheet.SOULS;
 		stackable = true;
 	}

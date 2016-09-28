@@ -74,7 +74,6 @@ public class Pistol extends Firearm {
 
 				// Enchantment damage: does up to half physical damage as enchanted damage.
 				if (isEnchanted()) {
-					//GLog.i("DEBUG: TODO Enchantment damage: " + enchantment.getClass().toString()));
 					int d = damage / 2;
 					enchantment.proc(this, curUser, ch, d);
 					if (enchantment.equals(Poison.class)) {

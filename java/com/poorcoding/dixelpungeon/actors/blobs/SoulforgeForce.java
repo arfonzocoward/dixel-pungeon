@@ -129,29 +129,4 @@ public class SoulforgeForce extends Blob {
 		pos = cell;
 		volume = cur[pos] = amount;
 	}
-	
-	/*public static void affectCell( int cell ) {
-		
-		//Class<?>[] waters = {WaterOfHealth.class, WaterOfAwareness.class, WaterOfTransmutation.class};
-		Class<?>[] waters = {Soulforge.class};
-		
-		for (Class<?>waterClass : waters) {
-			SoulforgeForce water = (SoulforgeForce)Dungeon.level.blobs.get( waterClass );
-			//java.lang.NullPointerException
-			//water.emitter.start( ShaftParticle.FACTORY, 0.2f, 3);
-
-			if (water != null && 
-				water.volume > 0 && 
-				water.pos == cell && 
-				water.affect()) {
-				
-				//Level.set( cell, Terrain.EMPTY_WELL );
-				// TODO: Visited campfire.
-				Level.set( cell, Terrain.CAMPFIRE);
-				GameScene.updateMap( cell );
-				
-				return;
-			}
-		}
-	}*/
 }

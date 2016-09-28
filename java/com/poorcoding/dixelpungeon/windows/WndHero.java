@@ -158,7 +158,7 @@ public class WndHero extends WndTabbed {
 				protected void onClick() {
 					//hide();
 					//GameScene.show( new WndJournal() );
-					GameScene.show( new WndError("TODO."));
+					GameScene.show( new WndError("Nothing here yet."));
 				}
 			};
 			btnDixel.setRect(

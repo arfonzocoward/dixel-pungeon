@@ -55,7 +55,7 @@ public class WndGame extends Window {
 		
 		super();
 
-		// TODO: Display debug button.
+		// Display debug button.
 		if (DixelPungeon.DIXEL_DEBUG ) {
 			addButton( new RedButton( TXT_DEBUG ) {
 				@Override

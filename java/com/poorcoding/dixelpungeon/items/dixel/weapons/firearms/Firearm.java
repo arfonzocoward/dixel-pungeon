@@ -337,8 +337,6 @@ public abstract class Firearm extends MeleeWeapon {
 			String en = e.getClass().toString();
 			int a = en.lastIndexOf(".") + 1;
 
-			//GLog.i("TODO: fx Enchantments: " + en.substring(a));
-
 			switch (en.substring(a).toUpperCase()) {
 				case "FIRE":
 					MagicMissile.fire(curUser.sprite.parent, curUser.pos, cell, callback);

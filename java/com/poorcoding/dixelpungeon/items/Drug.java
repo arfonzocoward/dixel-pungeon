@@ -110,7 +110,7 @@ public class Drug extends Item {
 
 			//GLog.i( "You smoke some " + this.name + ". ");
 
-			// TODO: Affects - mind, perception, hunger up.
+			// Affects - mind, perception, hunger up.
 			//Buff.affect( hero, Light.class, Light.DURATION );
 			//Buff.affect( hero, Awareness.class, Awareness.DURATION );
 
