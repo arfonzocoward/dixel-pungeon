@@ -12,8 +12,7 @@ Dixel Pungeon is based on Pixel Dungeon (see below). Key changes:
 
 * More food: start with more food, and MOBs have a chance of dropping food. Enables more focus on exploring levels to their fullest.
 
-Dixel Pungeon web-site:
-http://arfonzo.org/dix/
+Dixel Pungeon website and Android binaries: http://arfonzo.org/dix/
 
 
 Pixel Dungeon
